@@ -16,12 +16,11 @@ set $WS9 9 
 set $WS0 10 
 
 # assign gaps to workspaces
-workspace "$WS1" gaps inner 10
+#workspace "$WS1" gaps inner 10
 
 # Apps assigned to workspaces
 assign [instance="urxvt|ws1_termite|gnome-terminal"] $WS1
 assign [instance="franz"] $WS4
-assign [instance="SmartGit"] $WS7
 assign [instance="nylas n1"] $WS5
 assign [class="Code"] $WS6
 assign [class="Atom"] $WS6
@@ -56,7 +55,7 @@ for_window [workspace="$WS3|$WS6"] layout tabbed
 set $mod Mod4
 
 # fonts
-font pango:Roboto 12, FontAwesome Regular 12
+font pango:Roboto 10, FontAwesome Regular 10
 
 # Move windows with mouse+$mod
 floating_modifier $mod
@@ -265,19 +264,19 @@ bar {
         status_command py3status
         workspace_buttons yes
         tray_padding 3
-        tray_output none
+        tray_output primary 
         # tray_output primary
         separator_symbol " "
         height 24
         colors {
-              background #282A2E
-              statusline #839496
-              separator  #586e75
- 				 #border backgr. text
-              focused_workspace  #282A2E #758486 #002b36
-              active_workspace   #282A2E #586e75 #002b36
-              inactive_workspace #282A2E #282A2E #839496
-              urgent_workspace   #282A2E #dc322f #fdf6e3
+		background #002b36
+		statusline #839496
+		separator  #586e75
+
+		focused_workspace  #b58900 #b58900 #002b36
+		active_workspace   #586e75 #586e75 #002b36
+		inactive_workspace #073642 #002b36 #839496
+		urgent_workspace   #dc322f #dc322f #fdf6e3
         }
 }
 
