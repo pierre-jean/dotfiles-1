@@ -6,7 +6,7 @@
 
 export XDG_CONFIG_HOME=$HOME/.config
 export JAVA8_HOME=/usr/lib/jvm/java-8-jdk/
-export BROWSER=firefox
+export BROWSER=google-chrome-stable
 export EDITOR=vim
 
 source ~/dotfiles/prompt.sh
