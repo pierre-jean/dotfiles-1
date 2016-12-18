@@ -189,9 +189,7 @@ installYaourt() {
 
 installVim() {
   #Install plugin system 
-  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  #Configuration	  
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   ln -sfn ${dir}/.vimrc ${HOME}/.vimrc
   #ensime scala needed dependencies
   pip install websocket-client sexpdata
