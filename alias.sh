@@ -13,9 +13,6 @@ alias yu='yaourt -Syua'
 alias yp='yaourt -Qm'
 alias yr='yaourt -R'
 
-alias calmonth='gcalcli calw 4 --monday'
-alias calweek='gcalcli calw 1 --monday'
-
 ## Favourites directories
 alias blog='cd ~/Repositories/Blog/carlosmchica.github.io'
 alias site='cd ~/Repositories/Ruby/Codurance/site'
@@ -23,9 +20,6 @@ alias araback='cd ~/Repositories/Java/Ararauna-Backend'
 alias arafront='cd ~/Repositories/JavaScript/Ararauna-Frontend' 
 alias repositories='cd ~/Repositories'
 alias dotfiles='cd ~/dotfiles'
-
-## Use hub wrapper for git-hub features 
-alias git=hub
 
 ## Ararauna 
 export TWITTER_CONSUMER_KEY='WdIQmqSsN1px1waGexenIJDDe'
