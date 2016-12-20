@@ -39,6 +39,7 @@ assign [class="Spotify"] $WS8
 assign [instance="thunar"] $WS9
 assign [instance="caja"] $WS9
 assign [title="TweetDeck"] $WS0
+assign [class="wmail"] $WS5
 
 #Apps without borders
 #for_window [class="Firefox"] border 1pixel
