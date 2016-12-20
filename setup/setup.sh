@@ -146,9 +146,7 @@ installTools() {
       franz-bin \
       keeweb-desktop \
       parcellite \
-      wmail-bin \
-      lightscreen -d \
-
+      wmail-bin
 }
 
 installRedshift() {
