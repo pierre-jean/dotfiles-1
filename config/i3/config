@@ -48,9 +48,6 @@ new_window 1pixel
 #Nyan saver full screen always
 for_window [title="^Nyanyanyanyanyanyanya...$"] mark "STATWIN", fullscreen enable
 
-#layout
-for_window [workspace="$WS3|$WS6"] layout tabbed
-
 #Sets the modifier to the Windows key
 set $mod Mod4
 
