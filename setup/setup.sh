@@ -144,7 +144,11 @@ installTools() {
       spotify \
       archey3 \
       franz-bin \
-      keeweb-desktop
+      keeweb-desktop \
+      parcellite \
+      wmail-bin \
+      lightscreen -d \
+
 }
 
 installRedshift() {
