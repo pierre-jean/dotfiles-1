@@ -175,3 +175,8 @@ orphans() {
     sudo pacman -Rns $(pacman -Qdtq)
   fi
 }
+
+# test microphone
+test-microphone() {
+  arecord -vvv -f dat /dev/null
+}
