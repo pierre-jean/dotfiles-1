@@ -5,3 +5,4 @@ franz-bin &
 wmail &
 termite &
 compton -b &
+thunar &
