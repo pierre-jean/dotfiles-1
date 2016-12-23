@@ -98,6 +98,7 @@ for_window [title="Preferences$"] floating enable
 
 for_window [class="feh"] floating enable
 for_window [instance="pavucontrol"] floating enable
+for_window [class="Thunderbird"] floating enable
 for_window [instance="chrome_app_list"] floating enable
 for_window [class="genymotion"] floating enable
 for_window [class="Wicd-client.py"] floating enable
