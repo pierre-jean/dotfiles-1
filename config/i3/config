@@ -36,7 +36,6 @@ assign [instance="gitkraken"] $WS7
 assign [class="stremio"] $WS8
 assign [class="^(?i)vlc$"] $WS8
 assign [class="Spotify"] $WS8
-assign [title=["/^(?:(?!Dropbox).)*$/" class="Thunar"] $WS9
 assign [instance="caja"] $WS9
 assign [title="TweetDeck"] $WS0
 assign [class="wmail"] $WS5
