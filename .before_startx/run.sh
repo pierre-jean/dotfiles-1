@@ -4,5 +4,5 @@ google-chrome-stable &
 franz-bin &
 wmail &
 termite &
-compton -b &
+compton -c -i 0.9 -b &
 thunar &
