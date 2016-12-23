@@ -63,7 +63,8 @@ installi3() {
     acpi \
     iw \
     imagemagick \
-    i3lock-blur
+    i3lock-blur \
+    gksu
 
     # Default thunar to file directories
     #gvfs-mime --set inode/directory thunar.desktop
