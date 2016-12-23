@@ -95,7 +95,6 @@ bindsym $mod+Shift+Control+Right exec i3-msg move workspace to output right
 for_window [window_role="pop-up"] floating enable 
 for_window [window_role="task_dialog"] floating enable
 for_window [title="Preferences$"] floating enable
-
 for_window [instance="pavucontrol"] floating enable
 for_window [instance="chrome_app_list"] floating enable
 for_window [class="genymotion"] floating enable
@@ -163,7 +162,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Take screenshot
-Bindsym F5 exec scrot 'screenshot_%Y-%m-%d-%H_%M.jpg' -q 100 && mv ~/screenshot*.jpg ~/Screenshots
+# bindsym --release Shift+Print exec --no-startup-id scrot -s
+bindsym --release F5 exec scrot -s 'screenshot_%Y-%m-%d-%H_%M.jpg' -q 100 && mv ~/screenshot*.jpg ~/Screenshots
 
 # Volume keys
 bindsym F2 exec pulseaudio-ctl down
