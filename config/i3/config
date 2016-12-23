@@ -36,7 +36,7 @@ assign [instance="gitkraken"] $WS7
 assign [class="stremio"] $WS8
 assign [class="^(?i)vlc$"] $WS8
 assign [class="Spotify"] $WS8
-assign [instance="thunar"] $WS9
+assign [title=["/^(?:(?!Dropbox).)*$/" class="Thunar"] $WS9
 assign [instance="caja"] $WS9
 assign [title="TweetDeck"] $WS0
 assign [class="wmail"] $WS5
@@ -102,9 +102,8 @@ for_window [class="Thunderbird"] floating enable
 for_window [instance="chrome_app_list"] floating enable
 for_window [class="genymotion"] floating enable
 for_window [class="Wicd-client.py"] floating enable
-for_window [class="Wicd-client.py"] floating enable
 for_window [instance="sun-awt-X11-XDialogPeer"] floating enable
-for_window [title="Dropbox- File Manager"] floating enable
+for_window [title="Dropbox - File Manager"] floating enable
 for_window [title="^floatme$"] floating enable move position 25px 10px
 
 # split in horizontal orientation
