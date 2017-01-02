@@ -63,7 +63,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+Alt+q exec --no-startup-id kill $(xprop -id `xdotool getwindowfocus` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$')
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'Roboto-10'"
 bindsym $mod+Tab exec --no-startup-id quickswitch.py -d "dmenu -b -i -l 20 -nb \#002b36 -nf \#FFFFFF -sb \#839496 -sf \#3E719F"
-#bindsym Shift+Print exec ~/.bin/scrot-with-message -s
+bindsym --release Control+Shift+Print exec --no-startup-id scrot -s
 bindsym Shift+Print exec --no-startup-id scrot
 
 # change focus
@@ -174,8 +174,8 @@ bindsym F4 exec pulseaudio-ctl mute
 bindsym XF86AudioMicMute exec pulseaudio-ctl mute
 
 # Brightness
-bindsym XF86KbdBrightnessDown exec xbacklight -dec 5
-bindsym XF86KbdBrightnessUp exec xbacklight -inc 10
+bindsym XF86KbdBrightnessDown exec kbdlight down 5
+bindsym XF86KbdBrightnessUp exec kbdlight up 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
