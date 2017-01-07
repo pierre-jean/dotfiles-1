@@ -4,6 +4,13 @@
 # use gtk for java apps
 # export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
+## Ararauna 
+export TWITTER_CONSUMER_KEY='WdIQmqSsN1px1waGexenIJDDe'
+export TWITTER_CONSUMER_SECRET='tlyCdKO6k958m1UzpU2ea81C30q53wToxo9Ymv55N5GEaYTNQG'
+export DATABASE_NAME='heroku_wmzjzp0s'
+export JWT_SIGNING_KEY='tlyCdKO6k958m1UzpU2ea81C30q53wToxo9Ymv55N5GEaYTNQG'\
+##
+
 export XDG_CONFIG_HOME=$HOME/.config
 export JAVA8_HOME=/usr/lib/jvm/java-8-jdk/
 export BROWSER=google-chrome-stable
