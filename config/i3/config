@@ -174,7 +174,7 @@ bindsym --release F5 exec scrot -s 'screenshot_%Y-%m-%d-%H_%M.jpg' -q 100 && mv 
 # Volume keys
 bindsym F2 exec pulseaudio-ctl down
 bindsym F3 exec pulseaudio-ctl up
-bindsym F4 exec pulseaudio-ctl mute
+bindsym F1 exec pulseaudio-ctl mute
 bindsym XF86AudioMicMute exec pulseaudio-ctl mute
 
 # Brightness
