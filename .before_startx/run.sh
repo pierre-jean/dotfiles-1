@@ -1,3 +1,5 @@
+xrandr --dpi 160 &
+xrdb -merge ~/.Xresources &
 dropbox &
 parcellite &
 google-chrome-stable &
