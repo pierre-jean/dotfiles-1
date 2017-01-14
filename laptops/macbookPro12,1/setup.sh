@@ -1,9 +1,13 @@
 yaourt -R xorg-xbacklight
-yaourt -S --noconfirm 
-	xf86-input-mtrack-git \   # Touchpad
-	kbdlight \ 		  # keyboard brightness
-	bcwc-pcie-git \		  # webcam
-	acpilight		  # screen brightness
+
+yaourt --noconfirm -S \
+  kbdlight \
+	bcwc-pcie-git \
+	acpilight	\
+  mbpfan-git
+
+# Fix wifi connection flickering
+sudo cp 40-ipv6.conf /etc/sysctl.d
 
 # Acpi light permissions
 sudo cp 90-backlight.rules /etc/udev/rules.d/90-backlight.rules
@@ -15,3 +19,10 @@ bash -c 'echo -e "Xft.dpi: 160.0" >> ~/.Xresources'
 
 #Fns instead of media keys
 sudo cp apple.conf /etc/modprobe.d/apple.conf
+
+#Enable fan service
+sudo systemctl enable mbfan.service
+sudo systemctl start mbfan.service
+
+#Enable inverted natural touchpad scrolling
+sudo cp 70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
