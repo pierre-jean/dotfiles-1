@@ -230,12 +230,14 @@ installCompton() {
   yaourt -S --noconfirm \
     compton \
     xorg-xwininfo
-  mkdir ~/.before_startx
-  echo "compton -c -i 0.9 -b &" >> ~/.before_startx/run.sh	
-  chmod a+x ~/.before_startx/run.sh
-  ln -sfn ${dir}/config/compton/compton.conf ${HOME}/.config/compton.conf
+    ln -sfn ${dir}/config/compton/compton.conf ${HOME}/.config/compton.conf
 }
 
+installAppsOnStartUp() {
+  mkdir -p ~/.before_startx
+  cp ${dir}/.before_startx/run.sh ~/.before_startx/run.sh
+  chmod a+x ~/.before_startx/run.sh
+}
 dir=`pwd`
 if [ ! -e "${dir}/${0}" ]; then
   echo "Script not called from within repository directory. Aborting."
@@ -277,3 +279,4 @@ ask "Install configuration for termite?" Y && ln -sfn ${dir}/config/termite ${HO
 ask "Install screensavers?" Y && installScreensavers;
 ask "Install Ranger" Y && installRanger; 
 ask "Install Khal" Y && installKhal;
+ask "Install apps to launch on system boot" Y && installAppsOnStartUp;
