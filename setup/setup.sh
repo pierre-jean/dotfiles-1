@@ -21,7 +21,7 @@ ask() {
 
     # default?
     if [ -z "$REPLY" ]; then
-       REPLY=$default
+      REPLY=$default
     fi
 
     # check if the reply is valid
@@ -66,70 +66,76 @@ installi3() {
     i3lock-blur \
     gksu
 
-    # Default thunar to file directories
-    #gvfs-mime --set inode/directory thunar.desktop
-    #xdg-mime default thunar.desktop inode/directory
-    sudo pip install py3status
-    # Window switcher
-    sudo pip install i3-py
-    sudo pip install quickswitch-i3
-    #for spotify py3 module
-    sudo pip install dbus-python
-    sleep 2
+  # Default thunar to file directories
+  #gvfs-mime --set inode/directory thunar.desktop
+  #xdg-mime default thunar.desktop inode/directory
+  # Window switcher
+  sudo pip install i3-py
+  sudo pip install quickswitch-i3
+  #for spotify py3 module
+  sudo pip install dbus-python
+  sleep 2
 
-    # gsimplecal configuration
-    [ -d ${HOME}/.config/gsimplecal ] || mkdir -p ${HOME}/.config/gsimplecal
-    ln -sfn ${dir}/config/gsimplecal/config ${HOME}/.config/gsimplecal/config
-  }
+  ln -sfn ${dir}/config/i3 ${HOME}/.config/i3
+  
+  # gsimplecal configuration
+  [ -d ${HOME}/.config/gsimplecal ] || mkdir -p ${HOME}/.config/gsimplecal
+  ln -sfn ${dir}/config/gsimplecal/config ${HOME}/.config/gsimplecal/config
+
+  #py3status
+  sudo pip install py3status
+  ln -sfn ${dir}/config/i3status/i3status.conf ${HOME}/.i3/i3status.conf
+  sudo cp ${dir}/config/i3status/xrandr.py /usr/lib/python3.6/site-packages/py3status/modules
+  sudo cp ${dir}/config/i3status/pomodoro.py /usr/lib/python3.6/site-packages/py3status/modules	
+  [ -e /etc/i3status.conf ] && sudo rm /etc/i3status.conf
+}
 
 installFonts() {
   echo "Installing fonts"
   sleep 2
   yaourt --noconfirm -S \
-      ttf-font-awesome \
-      ttf-google-fonts-git \
-      ttf-ms-fonts \
-      ttf-droid-sans-mono-dotted-powerline-git
+    ttf-font-awesome \
+    ttf-google-fonts-git \
+    ttf-ms-fonts \
+    ttf-droid-sans-mono-dotted-powerline-git
 }
 
 installThemes() {
   echo "Installing themes"
   sleep 2
   yaourt --noconfirm -S \
-      paper-gtk-theme-git \
-      paper-icon-theme-git \
-      numix-icon-theme-git \
-      gtk-theme-arc-git \
-      gtk-theme-arc-grey-git \
-      gtk-theme-solarc-git \
-      lxappearance
+    paper-gtk-theme-git \
+    paper-icon-theme-git \
+    numix-icon-theme-git \
+    gtk-theme-arc-git \
+    gtk-theme-arc-grey-git \
+    gtk-theme-solarc-git \
+    lxappearance
 }
 
 installDevTools() {
   echo "Installing developer tools"
   sleep 2
   yaourt --noconfirm -S \
-      jdk \
-      jdk7 \
-      jd-gui-bin \
-      scala \
-      sbt \
-      android-file-transfer \
-      android-studio \
-      android-apktool \
-      android-sdk-build-tools \
-      android-udev \
-      intellij-idea-community-edition \
-      dex2jar \
-      visual-studio-code \
-      virtualbox \
-      linux-headers \
-      genymotion \
-      gitflow-git \
-      smartgit
+    jdk \
+    jdk7 \
+    jd-gui-bin \
+    scala \
+    sbt \
+    android-file-transfer \
+    android-studio \
+    android-apktool \
+    android-sdk-build-tools \
+    android-udev \
+    intellij-idea-community-edition \
+    dex2jar \
+    visual-studio-code \
+    virtualbox \
+    linux-headers \
+    genymotion \
+    gitflow-git \
+    smartgit
 
-  sudo pacman -S --noconfirm unzip
-      
   #IntelliJ watches in the FS
   sudo bash -c 'echo "fs.inotify.max_user_watches = 524288" > /etc/sysctl.d/99-sysctl.conf'
   sudo sysctl --system
@@ -139,17 +145,17 @@ installTools() {
   echo "Installing apps and tools"
   sleep 2
   yaourt --noconfirm -S \
-      firefox \
-      dropbox \
-      dropbox-cli \
-      google-chrome \
-      google-talkplugin \
-      spotify \
-      archey3 \
-      franz-bin \
-      keeweb-desktop \
-      parcellite \
-      wmail-bin
+    openssh \
+    firefox \
+    dropbox \
+    dropbox-cli \
+    google-chrome \
+    google-talkplugin \
+    spotify \
+    archey3 \
+    franz-bin \
+    parcellite \
+    wmail-bin
 }
 
 installRedshift() {
@@ -164,12 +170,6 @@ installScreensavers() {
   echo "Installing screensavers"
   sleep 2
   yaourt --noconfirm -S nyancat
-}
-
-installBluetoothResumePatch() {
-  echo "Installing resume patch"
-  sleep 2
-  sudo cat 'ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"' >> /etc/udev/rules.d/10-local.rules
 }
 
 installYaourt() {
@@ -194,50 +194,46 @@ installYaourt() {
 }
 
 installVim() {
+  yaourt -S --noconfirm gvim
   #Install plugin system 
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   ln -sfn ${dir}/.vimrc ${HOME}/.vimrc
-  #ensime scala needed dependencies
-  pip install websocket-client sexpdata
-  echo "Open vim and run :PlugInstall to complete plugin installation"
+  echo "Open vim and run :PluginInstall to complete plugin installation"
 }
 
 installRanger() { 
-	yaourt -S ranger --noconfirm
-	ranger --copy-config=scope
-	ln -sfn ${dir}/config/ranger/config ${HOME}/.config/ranger/rc.conf
+  yaourt -S ranger --noconfirm
+  ranger --copy-config=scope
+  ln -sfn ${dir}/config/ranger/config ${HOME}/.config/ranger/rc.conf
 }
 
 installKhal() { 
-	sudo pip install khal
-	sudo pip install vdirsyncer
-	sudo pip install requests-oauthlib
-	ln -sfn ${dir}/config/khal/khal.conf ${HOME}/.config/khal/khal.conf
-	cp ${dir}/config/khal/vdirsyncerconfig ${HOME}/.config/vdirsyncer/config
+  sudo pip install khal
+  sudo pip install vdirsyncer
+  sudo pip install requests-oauthlib
+  
+  [ -d ${HOME}/.config/khal ] || mkdir -p ${HOME}/.config/khal
+  [ -d ${HOME}/.config/vdirsyncer ] || mkdir -p ${HOME}/.config/vdirsyncer
+
+  ln -sfn ${dir}/config/khal/khal.conf ${HOME}/.config/khal/khal.conf
+  cp ${dir}/config/khal/vdirsyncerconfig ${HOME}/.config/vdirsyncer/config
 }
 
 installAudio() { 
-	yaourt -S --noconfirm \
-		pulseaudio \
-		pulseaudio-ctl \
-		pavucontrol
+  yaourt -S --noconfirm \
+    pulseaudio \
+    pulseaudio-ctl \
+    pavucontrol
 }
 
 installCompton() {
-	yaourt -S --noconfirm \
-		compton \
-		xorg-xwininfo
-	mkdir ~/.before_startx
-        echo "compton -c -i 0.9 -b &" >> ~/.before_startx/run.sh	
-	chmod a+x ~/.before_startx/run.sh
-	ln -sfn ${dir}/config/compton/compton.conf ${HOME}/.config/compton.conf
-}
-
-configPy3status() { 
-	ln -sfn ${dir}/config/i3status/i3status.conf ${HOME}/.i3/i3status.conf
-        cp ${dir}/config/i3status/xrandr.py /usr/lib/python3.6/site-packages/py3status/modules
-        cp ${dir}/config/i3status/pomodoro.py /usr/lib/python3.6/site-packages/py3status/modules	
-	[ -e /etc/i3status.conf ] && sudo rm /etc/i3status.conf
+  yaourt -S --noconfirm \
+    compton \
+    xorg-xwininfo
+  mkdir ~/.before_startx
+  echo "compton -c -i 0.9 -b &" >> ~/.before_startx/run.sh	
+  chmod a+x ~/.before_startx/run.sh
+  ln -sfn ${dir}/config/compton/compton.conf ${HOME}/.config/compton.conf
 }
 
 dir=`pwd`
@@ -276,11 +272,8 @@ ask "Install symlink for .bashrc?" Y && ln -sfn ${dir}/.bashrc ${HOME}/.bashrc
 ask "Install symlink for .bash_profile?" Y && ln -sfn ${dir}/.bash_profile ${HOME}/.bash_profile
 
 ask "Install configuration for bin?" Y && ln -sfn ${dir}/bin ${HOME}/.bin
-ask "Install configuration for i3?" Y && ln -sfn ${dir}/config/i3 ${HOME}/.config/i3
-ask "Install configuration for i3status/py3status?" Y && configPy3status;
 ask "Install configuration for dunst?" Y && ln -sfn ${dir}/config/dunst ${HOME}/.config/dunst
 ask "Install configuration for termite?" Y && ln -sfn ${dir}/config/termite ${HOME}/.config/termite && ln -sfn ${dir}/.dircolors ${HOME}/.dircolors;
 ask "Install screensavers?" Y && installScreensavers;
-ask "Install bluetooth resume patch?" Y && installBluetoothResumePatch; 
 ask "Install Ranger" Y && installRanger; 
 ask "Install Khal" Y && installKhal;
