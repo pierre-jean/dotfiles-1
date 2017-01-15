@@ -24,4 +24,4 @@ sudo systemctl enable mbpfan.service
 sudo systemctl start mbpfan.service
 
 #Enable inverted natural touchpad scrolling
-sudo cp 70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
+sudo ln -sfn 70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
