@@ -93,6 +93,8 @@ bindsym $mod+Shift+Tab workspace prev
 # move workspace to monitors
 bindsym $mod+Shift+Control+Left exec i3-msg move workspace to output left
 bindsym $mod+Shift+Control+Right exec i3-msg move workspace to output right
+bindsym $mod+Shift+Control+Up exec i3-msg move workspace to output up
+bindsym $mod+Shift+Control+Down exec i3-msg move workspace to output down
 
 #float windows
 for_window [window_role="pop-up"] floating enable 
@@ -172,9 +174,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym --release F5 exec scrot -s 'screenshot_%Y-%m-%d-%H_%M.jpg' -q 100 && mv ~/screenshot*.jpg ~/Screenshots
 
 # Volume keys
-bindsym F2 exec pulseaudio-ctl down
-bindsym F3 exec pulseaudio-ctl up
-bindsym F1 exec pulseaudio-ctl mute
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
+bindsym XF86AudioMute exec pulseaudio-ctl mute
 bindsym XF86AudioMicMute exec pulseaudio-ctl mute
 
 # Brightness
@@ -237,6 +239,9 @@ mode "$mode_session" {
 bindsym $mod+Shift+S mode "$mode_session"
 
 # Monitor handling
+
+exec xrandr --output HDMI-2 --mode 1920x1080 --pos 312x0  --output eDP-1 --primary --mode 2560x1600 --pos 0x1080
+
 set $mode_monitor Monitor (0) Normal, (1) Vertical LTR, (2) Inverted, (3) Vertical RTL
 mode "$mode_monitor" {
   bindsym 0 exec --no-startup-id xrandr -o 0, mode "default"
