@@ -20,8 +20,8 @@ bash -c 'echo -e "Xft.dpi: 160.0" >> ~/.Xresources'
 sudo cp apple.conf /etc/modprobe.d/apple.conf
 
 #Enable fan service
-sudo systemctl enable mbfan.service
-sudo systemctl start mbfan.service
+sudo systemctl enable mbpfan.service
+sudo systemctl start mbpfan.service
 
 #Enable inverted natural touchpad scrolling
 sudo cp 70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
