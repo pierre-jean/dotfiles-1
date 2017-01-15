@@ -129,12 +129,10 @@ installDevTools() {
     android-udev \
     intellij-idea-community-edition \
     dex2jar \
-    visual-studio-code \
     virtualbox \
     linux-headers \
     genymotion \
-    gitflow-git \
-    smartgit
+    docker \
 
   #IntelliJ watches in the FS
   sudo bash -c 'echo "fs.inotify.max_user_watches = 524288" > /etc/sysctl.d/99-sysctl.conf'
