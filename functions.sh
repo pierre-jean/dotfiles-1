@@ -176,7 +176,17 @@ orphans() {
   fi
 }
 
-# test microphone
+# Test microphone
 test-microphone() {
   arecord -vvv -f dat /dev/null
+}
+
+# Setup macos X with external apple monitor
+macosx-apple-monitor() {
+  xrandr --output DP-1 --mode 2560x1440 --pos 0x0 --output eDP-1 --primary --mode 2560x1600 --pos 0x1440 
+}
+
+# Setup macos X with external normal monitor
+macosx-normal-monitor() {
+  xrandr --output HDMI-2 --mode 1920x1080 --pos 312x0 --output eDP-1 --primary --mode 2560x1600 --pos 0x1080
 }

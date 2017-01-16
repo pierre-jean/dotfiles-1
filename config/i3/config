@@ -238,10 +238,6 @@ mode "$mode_session" {
 }
 bindsym $mod+Shift+S mode "$mode_session"
 
-# Monitor handling
-
-exec xrandr --output HDMI-2 --mode 1920x1080 --pos 312x0  --output eDP-1 --primary --mode 2560x1600 --pos 0x1080
-
 set $mode_monitor Monitor (0) Normal, (1) Vertical LTR, (2) Inverted, (3) Vertical RTL
 mode "$mode_monitor" {
   bindsym 0 exec --no-startup-id xrandr -o 0, mode "default"
@@ -338,5 +334,6 @@ focus_follows_mouse no
 smart_borders on
 smart_gaps on
 
-exec --no-startup-id feh --bg-scale ~/Pictures/pict.png
+exec --no-startup-id DISPLAY=:0.0 feh --bg-scale ~/Pictures/pict.png
+exec --no-startup-id DISPLAY=:0.1 feh --bg-scale ~/Pictures/pict.png
 
