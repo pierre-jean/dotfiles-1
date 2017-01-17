@@ -22,7 +22,8 @@ alias araback='cd ~/Repositories/Java/Ararauna-Backend'
 alias arafront='cd ~/Repositories/JavaScript/Ararauna-Frontend' 
 alias repositories='cd ~/Repositories'
 alias dotfiles='cd ~/dotfiles'
-
+alias mns='cd ~/Repositories/Java/mns
+'
 ## Ararauna 
 export TWITTER_CONSUMER_KEY='WdIQmqSsN1px1waGexenIJDDe'
 export TWITTER_CONSUMER_SECRET='tlyCdKO6k958m1UzpU2ea81C30q53wToxo9Ymv55N5GEaYTNQG'
