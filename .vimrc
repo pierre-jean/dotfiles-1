@@ -49,55 +49,25 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-" " The following are examples of different formats supported.
-
 " " Keep Plugin commands between vundle#begin/end.
 
-" " plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'               "Bottom status bar
 
-Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-sensible.git'           "Default sensible vim config
 
-Plugin 'tpope/vim-sensible.git'
+Plugin 'scrooloose/nerdtree.git'          "Project tree
 
-" " plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'scrooloose/syntastic.git'         "Syntax highlighting
 
-Plugin 'L9'
+Plugin 'vim-airline/vim-airline'          " Bottom status bar
 
-" " Git plugin not hosted on GitHub
+Plugin 'vim-airline/vim-airline-themes'   " Bottom status bar themes
 
-Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'altercation/vim-colors-solarized' " Solarized vim colors
 
-" " git repos on your local machine (i.e. when working on your own plugin)
+Plugin 'ctrlp.vim'                        " File/Directories finder
 
-Plugin 'scrooloose/nerdtree.git'
-
-Plugin 'scrooloose/syntastic.git'
-
-Plugin 'vim-airline/vim-airline'
-
-Plugin 'vim-airline/vim-airline-themes'
-
-Plugin 'altercation/vim-colors-solarized'
-
-Plugin 'ctrlp.vim'
-
-Plugin 'MatchTagAlways.vim'
-
-" Plugin 'file:///home/gmarik/path/to/plugin'
-
-" " The sparkup vim script is in a subdirectory of this repo called vim.
-
-" " Pass the path to set the runtimepath properly.
-
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-
-" " Install L9 and avoid a Naming conflict if you've already installed a
-
-" " different version somewhere else.
-
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
-"
+Plugin 'Valloric/MatchTagAlways'          " Highlighting current block tags
 
 " " All of your Plugins must be added before the following line
 
@@ -112,6 +82,7 @@ filetype plugin indent on    " required
 set background=dark
 colorscheme solarized
 
+let g:airline_theme='solarized' " Set theme for airline plugin
 
 "===============================================================================
 "                     SYNTAX HIGHLIGHTING 
@@ -128,7 +99,7 @@ endif
 
 
 "===============================================================================
-"                      INDENTENTION
+"                      INDENTATION
 "===============================================================================
 
 set smartindent
@@ -137,7 +108,7 @@ set shiftwidth=2
 set expandtab
 set smarttab
 
-" Only do this part when compiled with support for autocommands.
+" Only do this part when compiled with support for auto commands.
 if has("autocmd")
 
   " Enable file type detection.
@@ -190,6 +161,12 @@ function! XTermPasteBegin()
 endfunction
 
 set clipboard+=unnamed
+
+
+"===============================================================================
+"                      CUT TO CLIPBOARD
+"===============================================================================
+vnoremap <C-x> "+c
 
 "===============================================================================
 "                      COPY TO CLIPBOARD
