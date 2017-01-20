@@ -4,3 +4,4 @@ export PATH=${PATH}:/opt/pypy3/bin/
 export PATH=${PATH}:~/.bin/
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH=$PATH:$HOME/.local/bin/
+export PATH=${PATH}:/usr/bin/terragrunt

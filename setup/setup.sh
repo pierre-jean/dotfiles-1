@@ -127,12 +127,18 @@ installDevTools() {
     android-apktool \
     android-sdk-build-tools \
     android-udev \
-    intellij-idea-community-edition \
+    intellij-idea-ce \
     dex2jar \
     virtualbox \
     linux-headers \
     genymotion \
     docker \
+    terraform 
+
+  #Terragrunt
+  curl -s https://api.github.com/repos/gruntwork-io/terragrunt/releases | grep browser_download_url | head -n 4 | cut -d '"' -f 4 | grep "linux_386"
+  
+  sudo mv ~/terragrunt_linux_386 /usr/bin/terragrunt
 
   #IntelliJ watches in the FS
   sudo bash -c 'echo "fs.inotify.max_user_watches = 524288" > /etc/sysctl.d/99-sysctl.conf'

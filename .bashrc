@@ -15,6 +15,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export JAVA8_HOME=/usr/lib/jvm/java-8-jdk/
 export BROWSER=google-chrome-stable
 export EDITOR=vim
+export TERRAGRUNT_TFPATH=/usr/bin/terraform
 
 source ~/dotfiles/prompt.sh
 source ~/dotfiles/git-completion.bash

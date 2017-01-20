@@ -76,6 +76,12 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 "===============================================================================
+"                     AIRLINE PLUGIN 
+"===============================================================================
+let g:airline_powerline_fonts = 1 " Fixes font in airline bar
+set laststatus=2 " This fixes a bug that prevents the bar not showing with nerdtree
+
+"===============================================================================
 "                     COLORS 
 "===============================================================================
 
@@ -182,7 +188,6 @@ set clipboard+=unnamed
 "                      REPLACE TEXT 
 "===============================================================================
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-
 
 "===============================================================================
 "                      CUT TO CLIPBOARD
