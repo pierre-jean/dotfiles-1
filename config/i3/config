@@ -179,7 +179,7 @@ bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
 bindsym XF86AudioMute exec pulseaudio-ctl mute
 bindsym XF86AudioMicMute exec pulseaudio-ctl mute
 
-bindsym $mod-F3 exec pulseaudio-ctl up
+bindsym $mod+F3 exec pulseaudio-ctl up
 bindsym $mod+F2 exec pulseaudio-ctl down
 bindsym $mod+F1 exec pulseaudio-ctl mute
 
