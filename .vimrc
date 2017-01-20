@@ -57,7 +57,7 @@ Plugin 'tpope/vim-sensible.git'           "Default sensible vim config
 
 Plugin 'scrooloose/nerdtree.git'          "Project tree
 
-Plugin 'scrooloose/syntastic.git'         "Syntax highlighting
+Plugin 'vim-syntastic/syntastic'         "Syntax highlighting
 
 Plugin 'vim-airline/vim-airline'          " Bottom status bar
 
@@ -97,6 +97,23 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+let g:syntastic_auto_loc_list=1
+"===============================================================================
+"                     HASKELL 
+"===============================================================================
+
+" ghc-mod
+
+" Reload
+map <silent> tu :call GHC_BrowseAll()<CR>
+" Type Lookup
+map <silent> tw :call GHC_ShowType(1)<CR>
+
+" hdevtools
+
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
 
 "===============================================================================
 "                      INDENTATION
