@@ -77,7 +77,7 @@ installi3() {
   sleep 2
 
   ln -sfn ${dir}/config/i3 ${HOME}/.config/i3
-  
+
   # gsimplecal configuration
   [ -d ${HOME}/.config/gsimplecal ] || mkdir -p ${HOME}/.config/gsimplecal
   ln -sfn ${dir}/config/gsimplecal/config ${HOME}/.config/gsimplecal/config
@@ -86,7 +86,7 @@ installi3() {
   sudo pip install py3status
   ln -sfn ${dir}/config/i3status/i3status.conf ${HOME}/.i3/i3status.conf
   sudo cp ${dir}/config/i3status/xrandr.py /usr/lib/python3.6/site-packages/py3status/modules
-  sudo cp ${dir}/config/i3status/pomodoro.py /usr/lib/python3.6/site-packages/py3status/modules	
+  sudo cp ${dir}/config/i3status/pomodoro.py /usr/lib/python3.6/site-packages/py3status/modules
   [ -e /etc/i3status.conf ] && sudo rm /etc/i3status.conf
 }
 
@@ -113,42 +113,92 @@ installThemes() {
     lxappearance
 }
 
-installDevTools() {
-  echo "Installing developer tools"
+installJava() {
+  echo "Installing Java"
   sleep 2
-  yaourt --noconfirm -S \
+  yaourt --noconfirm -s \
     jdk \
     jdk7 \
     jd-gui-bin \
-    scala \
-    sbt \
+    intellij-idea-ce
+}
+
+installAndroid() {
+  echo "Installing Android"
+  sleep 2
+  yaourt --noconfirm -S \
     android-file-transfer \
     android-studio \
     android-apktool \
     android-sdk-build-tools \
     android-udev \
-    intellij-idea-ce \
     dex2jar \
     virtualbox \
     linux-headers \
-    genymotion \
-    docker \
-    terraform 
+    genymotion
+}
 
-  #Terragrunt
-  curl -s https://api.github.com/repos/gruntwork-io/terragrunt/releases | grep browser_download_url | head -n 4 | cut -d '"' -f 4 | grep "linux_386"
-  
-  sudo mv ~/terragrunt_linux_386 /usr/bin/terragrunt
+installScala() {
+  echo "Installing Scala"
+  sleep 2
+  yaourt --noconfirm -S \
+    scala \
+    sbt
+}
 
-  #IntelliJ watches in the FS
-  sudo bash -c 'echo "fs.inotify.max_user_watches = 524288" > /etc/sysctl.d/99-sysctl.conf'
-  sudo sysctl --system
+installClojure() {
+  echo "Installing Clojure"
+  sleep 2
+  yaourt --noconfirm -S \
+    clojure \
+    leiningen-standalone \
+    leiningen-completions
+}
+
+installDocker() {
+  echo "Installing Docker"
+  sleep 2
+  yaourt --noconfirm -S \
+    docker
 
   #Setup Docker
   sudo systemctl start docker
   sudo systemctl enable docker
   sudo usermod -aG docker carlos
- 
+}
+
+installTerragrunt() {
+  echo "Installing Terraform & Terragrunt"
+  sleep 2
+  yaourt --noconfirm -S \
+    terraform
+
+  #Terragrunt
+  curl -s https://api.github.com/repos/gruntwork-io/terragrunt/releases | grep browser_download_url | head -n 4 | cut -d '"' -f 4 | grep "linux_386"
+  sudo mv ./terragrunt_linux_386 /usr/bin/terragrunt
+}
+
+installIntellij() {
+  echo "Installing IntelliJ"
+  sleep 2
+  yaourt --noconfirm -S \
+    intellij-idea-ce
+
+  #IntelliJ watches in the FS
+  sudo bash -c 'echo "fs.inotify.max_user_watches = 524288" > /etc/sysctl.d/99-sysctl.conf'
+  sudo sysctl --system
+}
+
+installDevTools() {
+  echo "Installing developer tools"
+  sleep 2
+  installJava
+  installAndroid
+  installScala
+  installClojure
+  installDocker
+  installTerragrunt
+  installIntellij
 }
 
 installTools() {
@@ -199,29 +249,29 @@ installYaourt() {
   rm -rf yaourt
   rm yaourt.tar.gz
   #init keyring
-  sudo pacman-key --init 
+  sudo pacman-key --init
   sudo pacman-key --populate archlinux
 }
 
 installVim() {
   yaourt -S --noconfirm gvim
-  #Install plugin system 
+  #Install plugin system
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   ln -sfn ${dir}/.vimrc ${HOME}/.vimrc
   echo "Open vim and run :PluginInstall to complete plugin installation"
 }
 
-installRanger() { 
+installRanger() {
   yaourt -S ranger --noconfirm
   ranger --copy-config=scope
   ln -sfn ${dir}/config/ranger/config ${HOME}/.config/ranger/rc.conf
 }
 
-installKhal() { 
+installKhal() {
   sudo pip install khal
   sudo pip install vdirsyncer
   sudo pip install requests-oauthlib
-  
+
   [ -d ${HOME}/.config/khal ] || mkdir -p ${HOME}/.config/khal
   [ -d ${HOME}/.config/vdirsyncer ] || mkdir -p ${HOME}/.config/vdirsyncer
 
@@ -229,7 +279,7 @@ installKhal() {
   cp ${dir}/config/khal/vdirsyncerconfig ${HOME}/.config/vdirsyncer/config
 }
 
-installAudio() { 
+installAudio() {
   yaourt -S --noconfirm \
     pulseaudio \
     pulseaudio-ctl \
@@ -240,7 +290,7 @@ installCompton() {
   yaourt -S --noconfirm \
     compton \
     xorg-xwininfo
-    ln -sfn ${dir}/config/compton/compton.conf ${HOME}/.config/compton.conf
+  ln -sfn ${dir}/config/compton/compton.conf ${HOME}/.config/compton.conf
 }
 
 installAppsOnStartUp() {
@@ -287,6 +337,6 @@ ask "Install configuration for bin?" Y && ln -sfn ${dir}/bin ${HOME}/.bin
 ask "Install configuration for dunst?" Y && ln -sfn ${dir}/config/dunst ${HOME}/.config/dunst
 ask "Install configuration for termite?" Y && ln -sfn ${dir}/config/termite ${HOME}/.config/termite && ln -sfn ${dir}/.dircolors ${HOME}/.dircolors;
 ask "Install screensavers?" Y && installScreensavers;
-ask "Install Ranger" Y && installRanger; 
+ask "Install Ranger" Y && installRanger;
 ask "Install Khal" Y && installKhal;
 ask "Install apps to launch on system boot" Y && installAppsOnStartUp;
