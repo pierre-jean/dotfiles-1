@@ -63,6 +63,8 @@ Plugin 'Valloric/MatchTagAlways'          " Highlighting current block tags
 
 Plugin 'sjl/gundo.vim'                    " Undo tree
 
+Plugin 'bitc/vim-hdevtools'               " Extra support for haskell hdevtools
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -112,23 +114,29 @@ set statusline+=%*
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 
 let g:syntastic_javascript_checkers = ['eslint', 'jshint']
 let g:syntastic_html_checkers = ['w3']
+
+"===============================================================================
+"                     AUTO COMPLETION 
+"===============================================================================
+
+set completeopt+=longest            "  popup menu doesn't select the first completion item, but rather just inserts the longest common text of all matches
+set completeopt+=menuone            "  The menu will come up even if there's only one match
+
+"  when the pop-up menu is visible the Enter key will simply select the highlighted menu item
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+"  when the menu appears, the <Down> key will be simulated. What this accomplishes is it keeps a menu item always highlighted. This way you can keep typing characters to narrow the matches, and the nearest match will be selected so that you can hit Enter at any time to insert it.
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
 "===============================================================================
 "                     HASKELL
 "===============================================================================
-
-" ghc-mod
-
-" Reload
-map <silent> tu :call GHC_BrowseAll()<CR>
-" Type Lookup
-map <silent> tw :call GHC_ShowType(1)<CR>
-
-" hdevtools
 
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
