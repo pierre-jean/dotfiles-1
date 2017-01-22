@@ -1,5 +1,5 @@
 "===============================================================================
-"                     GENERAL 
+"                     GENERAL
 "===============================================================================
 
 set number		      " enable line nubers
@@ -29,7 +29,7 @@ if has('mouse')
 endif
 
 "===============================================================================
-"                      PLUGINS 
+"                      PLUGINS
 "===============================================================================
 
 
@@ -41,15 +41,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
-" " alternatively, pass a path where Vundle should install plugins
-
-" "call vundle#begin('~/some/path/here')
-
-" " let Vundle manage Vundle, required
-
 Plugin 'VundleVim/Vundle.vim'
-
-" " Keep Plugin commands between vundle#begin/end.
 
 Plugin 'tpope/vim-fugitive'               "Bottom status bar
 
@@ -57,7 +49,7 @@ Plugin 'tpope/vim-sensible.git'           "Default sensible vim config
 
 Plugin 'scrooloose/nerdtree.git'          "Project tree
 
-Plugin 'vim-syntastic/syntastic'         "Syntax highlighting
+Plugin 'vim-syntastic/syntastic'          "Syntax highlighting
 
 Plugin 'vim-airline/vim-airline'          " Bottom status bar
 
@@ -69,20 +61,46 @@ Plugin 'ctrlp.vim'                        " File/Directories finder
 
 Plugin 'Valloric/MatchTagAlways'          " Highlighting current block tags
 
-" " All of your Plugins must be added before the following line
+Plugin 'sjl/gundo.vim'                    " Undo tree
 
 call vundle#end()            " required
 
 filetype plugin indent on    " required
 
 "===============================================================================
-"                     AIRLINE PLUGIN 
+"                     GUNDO PLUGIN
 "===============================================================================
+
+nnoremap <F5> :GundoToggle<CR>
+awdawd
+awdawd
+awdawdaw\
+
+
+
+awdawdwa
+
+
+awdawd
+a
+awdwad
+awdawda
+w
+
+
+let g:gundo_width = 60
+let g:gundo_preview_height = 40
+let g:gundo_right = 1
+
+"===============================================================================
+"                     AIRLINE PLUGIN
+"===============================================================================
+
 let g:airline_powerline_fonts = 1 " Fixes font in airline bar
 set laststatus=2 " This fixes a bug that prevents the bar not showing with nerdtree
 
 "===============================================================================
-"                     COLORS 
+"                     COLORS
 "===============================================================================
 
 set background=dark
@@ -91,7 +109,7 @@ colorscheme solarized
 let g:airline_theme='solarized' " Set theme for airline plugin
 
 "===============================================================================
-"                     SYNTAX HIGHLIGHTING 
+"                     SYNTAX HIGHLIGHTING
 "===============================================================================
 
 syntax enable
@@ -103,9 +121,17 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-let g:syntastic_auto_loc_list=1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
 "===============================================================================
-"                     HASKELL 
+"                     HASKELL
 "===============================================================================
 
 " ghc-mod
@@ -142,20 +168,20 @@ if has("autocmd")
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
-  au!
+    au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+    " For all text files set 'textwidth' to 78 characters.
+    autocmd FileType text setlocal textwidth=78
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
-  " position when opening a file.
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    " Also don't do it when the mark is in the first line, that is the default
+    " position when opening a file.
+    autocmd BufReadPost *
+          \ if line("'\"") > 1 && line("'\"") <= line("$") |
+          \   exe "normal! g`\"" |
+          \ endif
 
   augroup END
 
@@ -164,7 +190,7 @@ else
 endif " has("autocmd")
 
 "===============================================================================
-"                     NERD TREE 
+"                     NERD TREE
 "===============================================================================
 "
 let NERDTreeShowHidden=1
@@ -185,7 +211,7 @@ endfunction
 
 set clipboard+=unnamed
 "===============================================================================
-"                      REPLACE TEXT 
+"                      REPLACE TEXT
 "===============================================================================
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
@@ -205,7 +231,7 @@ vnoremap <C-c> "+y
 :set spell spelllang=en_gb
 
 "===============================================================================
-"                      COMMANDS 
+"                      COMMANDS
 "===============================================================================
 
 " Convenient command to see the difference between the current buffer and the
@@ -213,6 +239,6 @@ vnoremap <C-c> "+y
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+        \ | wincmd p | diffthis
 endif
 
