@@ -72,22 +72,6 @@ filetype plugin indent on    " required
 "===============================================================================
 
 nnoremap <F5> :GundoToggle<CR>
-awdawd
-awdawd
-awdawdaw\
-
-
-
-awdawdwa
-
-
-awdawd
-a
-awdwad
-awdawda
-w
-
-
 let g:gundo_width = 60
 let g:gundo_preview_height = 40
 let g:gundo_right = 1
