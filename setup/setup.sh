@@ -190,6 +190,11 @@ installIntellij() {
   sudo sysctl --system
 }
 
+installWeb() {
+ npm install -g jshint
+ npm install -g eslint
+}
+
 installDevTools() {
   echo "Installing developer tools"
   sleep 2
@@ -200,6 +205,7 @@ installDevTools() {
   installDocker
   installTerragrunt
   installIntellij
+  installWeb
 }
 
 installTools() {
