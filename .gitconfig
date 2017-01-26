@@ -1,0 +1,8 @@
+[user]
+	email = carlos@codurance.com
+	name = Carlos Morera de la Chica
+[core]
+	ignorecase = false
+	fileMode = false
+[push]
+	default = current
