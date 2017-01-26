@@ -36,36 +36,7 @@ ask() {
 installi3() {
   echo "Installing i3 and required tools"
   sleep 2
-  yaourt --noconfirm -S \
-    xorg-server \
-    xorg-xinit \
-    xorg-xinput \
-    xorg-xprop \
-    i3-gaps \
-    j4-dmenu-desktop \
-    xtitle \
-    xdotool \
-    feh \
-    unclutter \
-    perl-anyevent-i3 \
-    scrot \
-    htop \
-    python-pip \
-    gsimplecal \
-    xorg-xbacklight \
-    jshon \
-    thunar \
-    thunar-volman \
-    thunar-archive-plugin \
-    thunar-dropbox \
-    termite \
-    dunst \
-    acpi \
-    iw \
-    imagemagick \
-    i3lock-blur \
-    gksu \
-    nitrogen
+  yaourt --noconfirm -S ./yaourt_i3.txt
 
   # Default thunar to file directories
   #gvfs-mime --set inode/directory thunar.desktop
@@ -94,71 +65,43 @@ installi3() {
 installFonts() {
   echo "Installing fonts"
   sleep 2
-  yaourt --noconfirm -S \
-    ttf-font-awesome \
-    ttf-google-fonts-git \
-    ttf-ms-fonts \
-    ttf-droid-sans-mono-dotted-powerline-git
+  yaourt --noconfirm -S ./yaourt_fonts.txt
 }
 
 installThemes() {
   echo "Installing themes"
   sleep 2
-  yaourt --noconfirm -S \
-    paper-gtk-theme-git \
-    paper-icon-theme-git \
-    numix-icon-theme-git \
-    gtk-theme-arc-git \
-    gtk-theme-arc-grey-git \
-    gtk-theme-solarc-git \
-    lxappearance
+  yaourt --noconfirm -S ./yaourt_themes.txt
 }
 
 installJava() {
   echo "Installing Java"
-  sleep 2
-  yaourt --noconfirm -s \
-    jdk \
-    jdk7 \
-    jd-gui-bin \
-    intellij-idea-ce
+  yaourt --noconfirm -S ./yaourt_java.txt
 }
 
 installAndroid() {
   echo "Installing Android"
-  sleep 2
-  yaourt --noconfirm -S \
-    android-file-transfer \
-    android-studio \
-    android-apktool \
-    android-sdk-build-tools \
-    android-udev \
-    dex2jar \
-    virtualbox \
-    linux-headers \
-    genymotion
+  yaourt --noconfirm -S ./yaourt_android.txt
 }
 
 installScala() {
   echo "Installing Scala"
-  sleep 2
-  yaourt --noconfirm -S \
-    scala \
-    sbt
+  yaourt --noconfirm -S ./yaourt_scala.txt
 }
 
 installClojure() {
   echo "Installing Clojure"
-  sleep 2
-  yaourt --noconfirm -S \
-    clojure \
-    leiningen-standalone \
-    leiningen-completions
+  yaourt --noconfirm -S ./yaourt_clojure.txt
+}
+
+installGit() {
+  echo "Installing Git"
+  yaourt --noconfirm -S diff-so-fancy
+  ln -sfn ${dir}/.gitconfig ${HOME}/.gitconfig
 }
 
 installDocker() {
   echo "Installing Docker"
-  sleep 2
   yaourt --noconfirm -S \
     docker
 
@@ -170,7 +113,6 @@ installDocker() {
 
 installTerragrunt() {
   echo "Installing Terraform & Terragrunt"
-  sleep 2
   yaourt --noconfirm -S \
     terraform
 
@@ -181,7 +123,6 @@ installTerragrunt() {
 
 installIntellij() {
   echo "Installing IntelliJ"
-  sleep 2
   yaourt --noconfirm -S \
     intellij-idea-ce
 
@@ -211,18 +152,7 @@ installDevTools() {
 installTools() {
   echo "Installing apps and tools"
   sleep 2
-  yaourt --noconfirm -S \
-    openssh \
-    firefox \
-    dropbox \
-    dropbox-cli \
-    google-chrome \
-    google-talkplugin \
-    spotify \
-    archey3 \
-    franz-bin \
-    parcellite \
-    wmail-bin
+  yaourt --noconfirm -S ./yaourt_tools.txt
 }
 
 installRedshift() {
@@ -287,10 +217,7 @@ installKhal() {
 }
 
 installAudio() {
-  yaourt -S --noconfirm \
-    pulseaudio \
-    pulseaudio-ctl \
-    pavucontrol
+  yaourt -S --noconfirm ./yaourt_audio.txt
 }
 
 installCompton() {
