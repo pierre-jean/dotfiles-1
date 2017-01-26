@@ -65,9 +65,31 @@ Plugin 'sjl/gundo.vim'                    " Undo tree
 
 Plugin 'bitc/vim-hdevtools'               " Extra support for haskell hdevtools
 
+Plugin 'ervandew/supertab'                " Tab completion
+
+Plugin 'eagletmt/neco-ghc'                " ghc completion
+
+Plugin 'eagletmt/ghcmod-vim'              " ghc completion
+
+Plugin 'Shougo/vimproc.vim'               " interactive command execution
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
+
+"===============================================================================
+"                     GUNDO PLUGIN
+"===============================================================================
+
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+
+if has("gui_running")
+  imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+else " no gui
+  if has("unix")
+    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+  endif
+endif
 
 "===============================================================================
 "                     GUNDO PLUGIN
@@ -137,10 +159,22 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
 "===============================================================================
 "                     HASKELL
 "===============================================================================
+" http://www.stephendiehl.com/posts/vim_2016.html
 
+" hdevtools
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
+
+" ghc-mod
+map <silent> tw :GhcModTypeInsert<CR>
+map <silent> ts :GhcModSplitFunCase<CR>
+map <silent> tq :GhcModType<CR>
+map <silent> te :GhcModTypeClear<CR>
+
+" Auto completion
+let g:haskellmode_completion_ghc = 1
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 "===============================================================================
 "                      INDENTATION
