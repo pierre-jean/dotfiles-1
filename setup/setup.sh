@@ -96,8 +96,9 @@ installClojure() {
 
 installGit() {
   echo "Installing Git"
-  yaourt --noconfirm -S diff-so-fancy
+  yaourt --noconfirm -S ./yaourt_git.txt
   ln -sfn ${dir}/.gitconfig ${HOME}/.gitconfig
+  gibo Vim JetBrains Tags Vagrant Windows macOS Linux Archives >> ~/.gitignore.global
 }
 
 installDocker() {
