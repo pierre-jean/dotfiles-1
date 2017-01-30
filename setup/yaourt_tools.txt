@@ -8,3 +8,4 @@ spotify
 archey3
 franz-bin
 keeweb-desktop
+libreoffice-fresh
