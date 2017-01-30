@@ -73,6 +73,8 @@ Plugin 'eagletmt/ghcmod-vim'              " ghc completion
 
 Plugin 'Shougo/vimproc.vim'               " interactive command execution
 
+Plugin 'nathanaelkane/vim-indent-guides'  " Visually display indent levels in Vim
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
