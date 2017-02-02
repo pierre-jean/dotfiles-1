@@ -189,7 +189,8 @@ nitrogen --restore
 
 # Setup macos X with external normal monitor
 macosx-normal-monitor() {
-xrandr --output HDMI-2 --mode 1920x1080 --pos 312x0 --output eDP-1 --primary --mode 2560x1600 --pos 0x1080
+xrandr --output HDMI-2 --primary --mode 1920x1080 --pos 0x240 --output eDP-1 --mode 2560x1600 --pos 1920x0
+nitrogen --restore
 }
 
 kernelModuleParameters() {
