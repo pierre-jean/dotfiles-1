@@ -20,6 +20,9 @@ source ~/dotfiles/paths.sh
 # Needed for autojump to work
 source /etc/profile.d/autojump.bash
 
+# Enable autocd
+shopt -s autocd
+
 # Use omtc in firefox (enables html5 youtube hi quality videos)
 export MOZ_USE_OMTC=1
 
