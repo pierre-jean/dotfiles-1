@@ -133,8 +133,8 @@ installIntellij() {
 }
 
 installWeb() {
- npm install -g jshint
- npm install -g eslint
+  npm install -g jshint
+  npm install -g eslint
 }
 
 installDevTools() {
