@@ -5,3 +5,4 @@ franz-bin &
 wmail &
 termite &
 compton -c -i 0.9 -b &
+pulseaudio-dlna &

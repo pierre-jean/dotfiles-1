@@ -1,3 +1,4 @@
 pulseaudio
 pulseaudio-ctl
 pavucontrol
+pulseaudio-dlna
