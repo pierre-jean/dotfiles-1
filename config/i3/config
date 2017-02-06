@@ -1,4 +1,4 @@
-# i3 config file PaNaVTEC
+# i3 config file Carlos
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -6,7 +6,7 @@
 # To convert from font awesome U+f1d3 to symbol: https://r12a.github.io/apps/conversion/
 set $WS1 1 
 set $WS2 2 
-set $WS3 3 
+set $WS3 3 λ
 set $WS4 4 
 set $WS5 5 
 set $WS6 6 
@@ -14,6 +14,7 @@ set $WS7 7 
 set $WS8 8 
 set $WS9 9 
 set $WS0 10 
+
 
 # assign gaps to workspaces
 #workspace "$WS1" gaps inner 10
@@ -348,3 +349,5 @@ smart_gaps on
 
 # wallpaper
 exec --no-startup-id nitrogen --restore
+
+# exec_always --no-startup-id polybar
