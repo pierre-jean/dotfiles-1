@@ -80,7 +80,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 "===============================================================================
-"                     GUNDO PLUGIN
+"                     SUPERTAB PLUGIN
 "===============================================================================
 
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
@@ -255,6 +255,14 @@ vnoremap <C-x> "+c
 "                      COPY TO CLIPBOARD
 "===============================================================================
 vnoremap <C-c> "+y
+
+"===============================================================================
+"                      SHOW HIDDEN CHARS 
+"===============================================================================
+set listchars=eol:¬,tab:▸␣,nbsp:␣,trail:␣,extends:→,precedes:←
+set list
+hi NonText ctermfg=7 guifg=Gray
+hi SpecialKey ctermfg=7 guifg=Gray
 
 "===============================================================================
 "                      SPELLING
