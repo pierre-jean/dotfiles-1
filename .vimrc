@@ -227,6 +227,10 @@ endif " has("autocmd")
 let NERDTreeShowHidden=1
 nmap <leader>nt :NERDTreeToggle<cr>
 
+" Hide hidden chars in NERDTree buffer
+autocmd bufenter * if (@% == "NERD_tree_1") | set nolist | else | set list
+
+
 "===============================================================================
 "                      PASTE FROM CLIPBOARD
 "===============================================================================
