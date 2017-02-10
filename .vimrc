@@ -267,8 +267,8 @@ vnoremap <C-c> "+y
 "===============================================================================
 set listchars=eol:¬,tab:▸␣,nbsp:␣,trail:␣,extends:→,precedes:←
 set list
-hi NonText ctermfg=7 guifg=Gray
-hi SpecialKey ctermfg=7 guifg=Gray
+hi NonText ctermfg=16 guifg=Gray
+hi SpecialKey ctermfg=16 guifg=Gray
 
 "===============================================================================
 "                      SPELLING
