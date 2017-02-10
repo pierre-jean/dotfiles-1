@@ -43,37 +43,41 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-fugitive'               "Bottom status bar
+Plugin 'tpope/vim-fugitive'                                              " Bottom status bar
 
-Plugin 'tpope/vim-sensible.git'           "Default sensible vim config
+Plugin 'tpope/vim-sensible.git'                                          " Default sensible vim config
 
-Plugin 'scrooloose/nerdtree.git'          "Project tree
+Plugin 'scrooloose/nerdtree.git'                                         " Project tree
 
-Plugin 'vim-syntastic/syntastic'          "Syntax highlighting
+Plugin 'vim-syntastic/syntastic'                                         " Syntax highlighting
 
-Plugin 'vim-airline/vim-airline'          " Bottom status bar
+Plugin 'vim-airline/vim-airline'                                         " Bottom status bar
 
-Plugin 'vim-airline/vim-airline-themes'   " Bottom status bar themes
+Plugin 'vim-airline/vim-airline-themes'                                  " Bottom status bar themes
 
-Plugin 'altercation/vim-colors-solarized' " Solarized vim colors
+Plugin 'altercation/vim-colors-solarized'                                " Solarized vim colors
 
-Plugin 'ctrlp.vim'                        " File/Directories finder
+Plugin 'ctrlpvim/ctrlp.vim'                                              " File/Directories finder
 
-Plugin 'Valloric/MatchTagAlways'          " Highlighting current block tags
+Plugin 'Valloric/MatchTagAlways'                                         " Highlighting current block tags
 
-Plugin 'sjl/gundo.vim'                    " Undo tree
+Plugin 'sjl/gundo.vim'                                                   " Undo tree
 
-Plugin 'bitc/vim-hdevtools'               " Extra support for haskell hdevtools
+Plugin 'bitc/vim-hdevtools'                                              " Extra support for haskell hdevtools
 
-Plugin 'ervandew/supertab'                " Tab completion
+Plugin 'ervandew/supertab'                                               " Tab completion
 
-Plugin 'eagletmt/neco-ghc'                " ghc completion
+Plugin 'eagletmt/neco-ghc'                                               " ghc completion
 
-Plugin 'eagletmt/ghcmod-vim'              " ghc completion
+Plugin 'eagletmt/ghcmod-vim'                                             " ghc completion
 
-Plugin 'Shougo/vimproc.vim'               " interactive command execution
+Plugin 'Shougo/vimproc.vim'                                              " interactive command execution
 
-Plugin 'nathanaelkane/vim-indent-guides'  " Visually display indent levels in Vim
+Plugin 'nathanaelkane/vim-indent-guides'                                 " Visually display indent levels in Vim
+
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'                         " NerdTree syntax highlight
+
+Plugin 'ryanoasis/vim-devicons'                                          " Add icons to plugins
 
 call vundle#end()            " required
 
@@ -224,6 +228,9 @@ endif " has("autocmd")
 "                     NERD TREE
 "===============================================================================
 "
+"
+set encoding=utf8   " Needed for the icons to work
+
 let NERDTreeShowHidden=1
 nmap <leader>nt :NERDTreeToggle<cr>
 nnoremap <silent> <Leader>1 :NERDTreeFind<CR>
@@ -264,7 +271,7 @@ vnoremap <C-x> "+c
 vnoremap <C-c> "+y
 
 "===============================================================================
-"                      SHOW HIDDEN CHARS 
+"                      SHOW HIDDEN CHARS
 "===============================================================================
 set listchars=eol:¬,tab:▸␣,nbsp:␣,trail:␣,extends:→,precedes:←
 set list
