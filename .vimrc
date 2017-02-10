@@ -229,7 +229,6 @@ endif " has("autocmd")
 "===============================================================================
 "
 "
-set encoding=utf8   " Needed for the icons to work
 
 let NERDTreeShowHidden=1
 nmap <leader>nt :NERDTreeToggle<cr>
@@ -238,8 +237,11 @@ nnoremap <silent> <Leader>1 :NERDTreeFind<CR>
 " Hide hidden chars in NERDTree buffer
 autocmd bufenter * if (@% == "NERD_tree_1") | set nolist | else | set list
 
+set encoding=utf8   " Needed for the icons to work
+
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 0 " Reduce icons padding
 
 "===============================================================================
 "                      PASTE FROM CLIPBOARD
