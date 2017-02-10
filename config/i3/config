@@ -24,6 +24,7 @@ set $WS0 10 
 workspace "$WS1" output eDP-1
 workspace "$WS2" output eDP-1
 workspace "$WS3" output DP-1
+workspace "$WS3" output HDMI-2
 workspace "$WS4" output eDP-1
 workspace "$WS5" output eDP-1
 
@@ -212,8 +213,8 @@ mode $resize {
   bindsym l resize shrink height 10 px or 10 ppt
   bindsym semicolon resize grow width 10 px or 10 ppt
   bindsym Left resize shrink width 10 px or 10 ppt
-  bindsym Down resize grow height 10 px or 10 ppt
-  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Down resize shrink height 10 px or 10 ppt
+  bindsym Up resize grow height 10 px or 10 ppt
   bindsym Right resize grow width 10 px or 10 ppt
   bindsym Return mode "default"
   bindsym Escape mode "default"
