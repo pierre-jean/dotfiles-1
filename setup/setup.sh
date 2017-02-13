@@ -196,6 +196,8 @@ installVim() {
   #Install plugin system
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   ln -sfn ${dir}/.vimrc ${HOME}/.vimrc
+  mkdir -p ~/.vim.backup
+  mkdir -p ~/.vim.tmp
   echo "Open vim and run :PluginInstall to complete plugin installation"
 }
 
