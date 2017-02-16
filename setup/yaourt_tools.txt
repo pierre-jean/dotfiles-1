@@ -7,6 +7,8 @@ google-talkplugin
 spotify
 archey3
 franz-bin
+yakyak
+slack-desktop
 keeweb-desktop
 libreoffice-fresh
 autojump
