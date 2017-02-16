@@ -1,7 +1,8 @@
 dropbox &
 parcellite &
 google-chrome-stable &
-franz-bin &
+slack &
+yakyak
 wmail &
 termite &
 compton -c -i 0.9 -b &
