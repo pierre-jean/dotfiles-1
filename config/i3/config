@@ -41,6 +41,7 @@ assign [class="genymotion"] $WS3
 assign [class="Genymotion Player"] $WS3
 assign [class="Scudcloud"] $WS4
 assign [instance="slack"] $WS4
+assign [instance="yakyak"] $WS4
 assign [class="Pidgin"] $WS4
 assign [instance="gitkraken"] $WS7
 assign [class="stremio"] $WS8
