@@ -238,8 +238,14 @@ let NERDTreeShowHidden=1
 nmap <leader>nt :NERDTreeToggle<cr>
 nnoremap <silent> <Leader>1 :NERDTreeFind<CR>
 
-" Hide hidden chars in NERDTree buffer
-autocmd bufenter * if (@% == "NERD_tree_1") | set nolist | else | set list
+function! OnBufEnter()
+  " Hide hidden chars in NERDTree buffer
+  if (@% == "NERD_tree_1") | set nolist | else | set list | endif
+  " Close NERDTree if it's the last open buffer
+  if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+endfunction
+
+autocmd bufenter * call OnBufEnter()
 
 set encoding=utf8   " Needed for the icons to work
 
