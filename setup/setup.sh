@@ -199,8 +199,8 @@ installVim() {
   mkdir -p ~/.vim.backup
   mkdir -p ~/.vim.tmp
   #Require for ferret plugin to work (search text across files)
-  yaourt -S --noconfirm the_silver_searcher 
-  echo "Open vim and run :PluginInstall to complete plugin installation"
+  yaourt -S --noconfirm the_silver_searcher
+  vim +PluginInstall +qall
 }
 
 installRanger() {
