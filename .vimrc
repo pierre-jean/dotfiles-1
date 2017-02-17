@@ -83,6 +83,8 @@ Plugin 'ryanoasis/vim-devicons'                                          " Add i
 
 Plugin 'wincent/ferret'                                                  " Search text in multiple files
 
+Plugin 'terryma/vim-multiple-cursors'                                    " Multiline cursors
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
