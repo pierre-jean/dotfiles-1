@@ -168,6 +168,13 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+autocmd Filetype *
+    \	if &omnifunc == "" |
+    \	setlocal omnifunc=syntaxcomplete#Complete |
+    \	endif
+
 "===============================================================================
 "                     HASKELL
 "===============================================================================
@@ -186,7 +193,6 @@ map <silent> te :GhcModTypeClear<CR>
 
 " Auto completion
 let g:haskellmode_completion_ghc = 1
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 "===============================================================================
 "                      INDENTATION
