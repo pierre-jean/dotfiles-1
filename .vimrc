@@ -81,6 +81,8 @@ Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'                         " NerdT
 
 Plugin 'ryanoasis/vim-devicons'                                          " Add icons to plugins
 
+Plugin 'wincent/ferret'                                                  " Search text in multiple files
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
