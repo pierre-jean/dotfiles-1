@@ -111,7 +111,7 @@ bindsym $mod+Shift+Control+Down exec i3-msg move workspace to output down
 for_window [window_role="pop-up"] floating enable 
 for_window [window_role="task_dialog"] floating enable
 for_window [title="Preferences$"] floating enable
-
+for_window [class="feh"] floating enable
 for_window [class="feh"] floating enable
 for_window [instance="pavucontrol"] floating enable
 for_window [class="Thunderbird"] floating enable
@@ -121,6 +121,8 @@ for_window [class="Wicd-client.py"] floating enable
 for_window [instance="sun-awt-X11-XDialogPeer"] floating enable
 for_window [title="Dropbox - File Manager"] floating enable
 for_window [title="^floatme$"] floating enable move position 25px 10px
+
+focus_follows_mouse no
 
 # split in horizontal orientation
 bindsym $mod+h split h
