@@ -285,71 +285,29 @@ mode "$mode_workspaces" {
 }
 bindsym $mod+Shift+w mode "$mode_workspaces"
 
-bar {
-  position top
-  status_command py3status
-  workspace_buttons yes
-  tray_padding 3
-  tray_output none
-  separator_symbol " "
-  height 24
-  colors {
-    background #282A2E
-    statusline #839496
-    separator  #586e75
-    #border backgr. text
-    focused_workspace  #282A2E #758486 #002b36
-    active_workspace   #282A2E #586e75 #002b36
-    inactive_workspace #282A2E #282A2E #839496
-    urgent_workspace   #282A2E #dc322f #fdf6e3
-  }
-}
-
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-  bindsym o      mode "$mode_gaps_outer"
-  bindsym i      mode "$mode_gaps_inner"
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
-
-mode "$mode_gaps_inner" {
-  bindsym plus  gaps inner current plus 5
-  bindsym minus gaps inner current minus 5
-  bindsym 0     gaps inner current set 0
-
-  bindsym Shift+plus  gaps inner all plus 5
-  bindsym Shift+minus gaps inner all minus 5
-  bindsym Shift+0     gaps inner all set 0
-
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-  bindsym plus  gaps outer current plus 5
-  bindsym minus gaps outer current minus 5
-  bindsym 0     gaps outer current set 0
-
-  bindsym Shift+plus  gaps outer all plus 5
-  bindsym Shift+minus gaps outer all minus 5
-  bindsym Shift+0     gaps outer all set 0
-
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
-
-
-#other
-workspace_auto_back_and_forth yes
-focus_follows_mouse no
-smart_borders on
-smart_gaps on
+#bar {
+#  position top
+#  status_command py3status
+#  workspace_buttons yes
+#  tray_padding 3
+#  tray_output none
+#  # tray_output primary
+#  separator_symbol " "
+#  height 24
+#  colors {
+#    background #282A2E
+#    statusline #839496
+#    separator  #586e75
+#    #border backgr. text
+#    focused_workspace  #282A2E #758486 #002b36
+#    active_workspace   #282A2E #586e75 #002b36
+#    inactive_workspace #282A2E #282A2E #839496
+#    urgent_workspace   #282A2E #dc322f #fdf6e3
+#  }
+#}
 
 # wallpaper
 exec --no-startup-id nitrogen --restore
 
-# exec_always --no-startup-id polybar
+# polybar
+exec --no-startup-id ~/dotfiles/config/polybar/launch.sh 
