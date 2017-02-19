@@ -5,7 +5,7 @@ foreground = #839496
 foreground-alt = #839496
 primary = #ffb52a
 secondary = #e60053
-alert = #bd2c40
+alert = #dc322f
 
 [global/wm]
 margin-top = 5
@@ -154,6 +154,8 @@ interval = 1
 click-left = if [ -f ~/.pomodoro_session ]; then rm ~/.pomodoro_session; else echo "25 5" > ~/.pomodoro_session; fi
 ; reset timer
 click-right = if [ -f ~/.pomodoro_session ]; then rm ~/.pomodoro_session; fi
+; Reduce pomodoro time
+click-middle = echo "$((`cut .pomodoro_session -d ' ' -f 1`-5)) 5" > .pomodoro_session
 
 [module/eth]
 type = internal/network
