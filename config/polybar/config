@@ -121,7 +121,7 @@ type = internal/memory
 interval = 2
 format = <label>
 format-prefix-foreground = ${colors.foreground-alt}
-label = %{A1:termite -e --name 'awdawdaw' htop &:} %percentage_used%%
+label = %{A1:termite -e htop &:} %percentage_used%%
 
 [module/wlan]
 type = internal/network
