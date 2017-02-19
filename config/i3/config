@@ -15,6 +15,7 @@ set $WS8 8 
 set $WS9 9 
 set $WS0 10 
 
+
 # assign gaps to workspaces
 #workspace "$WS1" gaps inner 10
 
@@ -57,9 +58,6 @@ new_window 1pixel
 
 #Nyan saver full screen always
 for_window [title="^Nyanyanyanyanyanyanya...$"] mark "STATWIN", fullscreen enable
-
-#layout
-for_window [workspace="$WS3] layout tabbed
 
 #Sets the modifier to the Windows key
 set $mod Mod4
@@ -178,13 +176,13 @@ bindsym $mod+Shift+0 move container to workspace $WS0
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec ~/dotfiles/bin/i3-restart.sh
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Take screenshot
 # bindsym --release Shift+Print exec --no-startup-id scrot -s
-bindsym --release $mod+F5 exec scrot ~/Screenshots/screenshot_%Y-%m-%d-%H_%M.jpg -s -q 100
+bindsym --release $mod+F5 exec scrot ~/Screenshots/screenshot_%Y-%m-%d-%H_%M.jpg -s -q 100 
 
 # Volume keys
 bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
@@ -205,7 +203,6 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 #Touchpad
 bindsym XF86TouchpadToggle exec "synclient TouchpadOff=$(synclient | awk '/TouchpadOff/ {print ($3+1)%2}')"
 bindsym XF86Tools exec "synclient TouchpadOff=$(synclient | awk '/TouchpadOff/ {print ($3+1)%2}')"
-
 bindsym XF86Display exec "arandr"
 
 # resize window (you can also use the mouse for that)
@@ -313,4 +310,4 @@ bindsym $mod+Shift+w mode "$mode_workspaces"
 exec --no-startup-id nitrogen --restore
 
 # polybar
-exec --no-startup-id ~/dotfiles/config/polybar/launch.sh
+exec --no-startup-id ~/dotfiles/config/polybar/launch.sh 
