@@ -55,11 +55,16 @@ installi3() {
   ln -sfn ${dir}/config/gsimplecal/config ${HOME}/.config/gsimplecal/config
 
   #py3status
-  sudo pip install py3status
-  ln -sfn ${dir}/config/i3status/i3status.conf ${HOME}/.i3/i3status.conf
-  sudo cp ${dir}/config/i3status/xrandr.py /usr/lib/python3.6/site-packages/py3status/modules
-  sudo cp ${dir}/config/i3status/pomodoro.py /usr/lib/python3.6/site-packages/py3status/modules
-  [ -e /etc/i3status.conf ] && sudo rm /etc/i3status.conf
+#   sudo pip install py3status
+#   ln -sfn ${dir}/config/i3status/i3status.conf ${HOME}/.i3/i3status.conf
+#   sudo cp ${dir}/config/i3status/xrandr.py /usr/lib/python3.6/site-packages/py3status/modules
+#   sudo cp ${dir}/config/i3status/pomodoro.py /usr/lib/python3.6/site-packages/py3status/modules
+#   [ -e /etc/i3status.conf ] && sudo rm /etc/i3status.conf
+
+  # polybar
+  ln -sfn ${dir}/config/polybar/config ${HOME}/.config/polybar
+
+
 }
 
 installFonts() {
