@@ -141,7 +141,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/pomodoro]
 type = custom/script
 ; Use pomodoro glyphs in Nerd fonts
-exec = pymodoro --break-prefix " " --pomodoro-prefix " " --pomodoro  --empty " " --break  --length 5 -sp ~/dotfiles/config/i3status/navi.mp3 -sb ~/dotfiles/config/i3status/navi.mp3 
+exec = pymodoro --break-prefix " " --pomodoro-prefix " " --pomodoro  --empty " " --break  --length 5 -sp ~/dotfiles/config/i3status/pomodoro.mp3 -sb ~/dotfiles/config/i3status/pomodoro.mp3 
 label = %output%
 tail = true
 interval = 1
