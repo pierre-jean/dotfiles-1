@@ -16,6 +16,7 @@ source ~/dotfiles/git-alias.sh
 source ~/dotfiles/functions.sh
 source ~/dotfiles/alias.sh
 source ~/dotfiles/paths.sh
+source ~/.env.sh
 
 # Needed for autojump to work
 source /etc/profile.d/autojump.bash
