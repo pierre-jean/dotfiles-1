@@ -5,7 +5,7 @@ foreground = #839496
 foreground-alt = #839496
 primary = #ffb52a
 secondary = #e60053
-alert = #dc322f
+alert = #bd2c40
 
 [global/wm]
 margin-top = 5
@@ -17,53 +17,13 @@ throttle-output-for = 10
 throttle-input-for = 30
 screenchange-reload = true
 
-[bar/top-mac]
-monitor = eDP-1
+[bar/top]
+monitor = ${env:POLYBAR_MONITOR:DP-1}
 monitor-strict = true
-dpi = 72
+dpi = ${env:POLYBAR_DPI:72}
 bottom = false
 width = 100%
-height = 50
-offset-x = 0
-offset-y = 0
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-overline-size = 0
-overline-color = #f00
-underline-size = 0
-underline-color = #00f
-
-border-bottom-size = 0
-border-bottom-color = ${colors.background}
-
-spacing = 1
-padding-left = 0
-padding-right = 2
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = hack:pixelsize=20;2
-font-1 = unifont:size=10;2
-font-2 = siji:pixelsize=10;3
-font-3 = FontAwesome:pixelsize=14;2
-font-4 = DroidSansMonoForPowerline Nerd Font:pixelsize=14;2
-
-modules-left = i3
-modules-center = date
-modules-right = pomodoro cpu memory backlight volume dropbox wlan battery powermenu
-
-tray-position = none
-tray-padding = 4
-
-[bar/top-external]
-monitor = DP-1
-monitor-strict = true
-dpi = 72
-bottom = false
-width = 100%
-height = 25
+height = ${env:POLYBAR_HEIGHT:25}
 offset-x = 0
 offset-y = 0
 
@@ -135,17 +95,17 @@ interval=5
 type = internal/backlight
 card = intel_backlight
 
-format = <label> <bar>
-label = ""
+format = <label> 
+label = " %percentage%%"
 
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = #ff
 bar-indicator-font = 2
-bar-fill = ─
+bar-fill = -
 bar-fill-font = 2
 bar-fill-foreground = #9f78e1
-bar-empty = ─
+bar-empty = -
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
@@ -154,39 +114,34 @@ type = internal/cpu
 interval = 2
 format = <label>
 format-prefix-foreground = ${colors.foreground-alt}
-label = %{A1:termite -e htop&:} %percentage%%
+label =  %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format = <label>
 format-prefix-foreground = ${colors.foreground-alt}
-label = %{A1:termite -e htop &:} %percentage_used%%
+label =  %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
-interval = 2.0
+interface = ${env:POLYBAR_WIFI_CARD:wlp3s0}
+interval = 5.0
 
 format-connected = <label-connected>
 format-connected-prefix = " "
 format-connected-prefix-foreground = #5b
 
-label-connected = "%{A1:termite --exec=nmtui -t floatme &:}%essid% U:%upspeed% | D:%downspeed%%{A}"
-label-disconnected = "%{A1:termite --exec=nmtui -t floatme &:}%{A}"
+label-connected = "%{A1:wicd-gtk &:}%essid%%{A}"
+label-disconnected = "%{A1:wicd-gtk &:}%{A}"
 label-disconnected-foreground = #5b
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/pomodoro]
 type = custom/script
 ; Use pomodoro glyphs in Nerd fonts
-exec = pymodoro --break-prefix " " --pomodoro-prefix " " --pomodoro  --empty " " --break  --length 5 -sp ~/dotfiles/config/i3status/pomodoro.mp3 -sb ~/dotfiles/config/i3status/pomodoro.mp3 
+exec = pymodoro --break-prefix " " --pomodoro-prefix " " --pomodoro  --empty " " --break  --length 5 -sp ~/dotfiles/config/i3status/navi.mp3 -sb ~/dotfiles/config/i3status/navi.mp3 
 label = %output%
 tail = true
 interval = 1
@@ -194,12 +149,10 @@ interval = 1
 click-left = if [ -f ~/.pomodoro_session ]; then rm ~/.pomodoro_session; else echo "25 5" > ~/.pomodoro_session; fi
 ; reset timer
 click-right = if [ -f ~/.pomodoro_session ]; then rm ~/.pomodoro_session; fi
-; Reduce pomodoro time
-click-middle = echo "$((`cut .pomodoro_session -d ' ' -f 1`-5)) 5" > .pomodoro_session
 
 [module/eth]
 type = internal/network
-interface = eno1
+interface = ${env:POLYBAR_ETHERNET_CARD:eno1}
 interval = 5.0
 
 format-connected-prefix = " "
@@ -211,16 +164,12 @@ label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
-interval = 1
+interval = 2
 
 date = "%d-%m-%y"
 time = "%H:%M"
-click-left = thunderbird
-
-;format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-
 label = %date% %time%
+format-prefix-foreground = ${colors.foreground-alt}
 
 [module/volume]
 type = internal/volume
@@ -241,12 +190,10 @@ type = internal/battery
 battery = BAT0
 adapter = AC
 full-at = 98
-time-format = "%H%{F#92}%M%{F-}"
 
-label-discharging = %percentage% %time%
+label-discharging = %percentage%% 
 
 format-charging = <animation-charging> <label-charging>
-
 format-discharging = <ramp-capacity> <label-discharging>
 
 format-full-prefix = " "
