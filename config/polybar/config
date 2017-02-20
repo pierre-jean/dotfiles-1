@@ -17,8 +17,48 @@ throttle-output-for = 10
 throttle-input-for = 30
 screenchange-reload = true
 
-[bar/top]
-;monitor = ${env:MONITOR:eDP1}
+[bar/top-mac]
+monitor = eDP-1
+monitor-strict = true
+dpi = 72
+bottom = false
+width = 100%
+height = 50
+offset-x = 0
+offset-y = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 0
+overline-color = #f00
+underline-size = 0
+underline-color = #00f
+
+border-bottom-size = 0
+border-bottom-color = ${colors.background}
+
+spacing = 1
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = hack:pixelsize=20;2
+font-1 = unifont:size=10;2
+font-2 = siji:pixelsize=10;3
+font-3 = FontAwesome:pixelsize=14;2
+font-4 = DroidSansMonoForPowerline Nerd Font:pixelsize=14;2
+
+modules-left = i3
+modules-center = date
+modules-right = pomodoro cpu memory backlight volume dropbox wlan battery powermenu
+
+tray-position = none
+tray-padding = 4
+
+[bar/top-external]
+monitor = DP-1
 monitor-strict = true
 dpi = 72
 bottom = false
