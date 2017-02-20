@@ -24,8 +24,9 @@ dunst
 acpi
 iw
 imagemagick
-<<<<<<< HEAD
-i3lock-blur
 gksu
 nitrogen
 i3lock-wrapper
+polybar
+pymodoro-git
+
