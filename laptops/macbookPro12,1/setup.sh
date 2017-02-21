@@ -34,4 +34,4 @@ ln -sfn ~/dotfiles/laptops/macbookPro12,1/env.sh ~/.env.sh
 # Alsa Audio
 asoundconf set-default-card PCH
 asoundconf set-pulseaudio
-cp sound.conf ~/etc/modprobe.d/sound.conf
+sudo cp sound.conf /etc/modprobe.d/sound.conf
