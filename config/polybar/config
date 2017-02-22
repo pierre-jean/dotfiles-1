@@ -164,12 +164,10 @@ label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
-interval = 2
-
-date = "%d-%m-%y"
-time = "%H:%M"
-label = %date% %time%
-format-prefix-foreground = ${colors.foreground-alt}
+label =  %date%  %time%
+date = %d-%m-%Y
+time = %H:%M
+interval = 5
 
 [module/volume]
 type = internal/volume
