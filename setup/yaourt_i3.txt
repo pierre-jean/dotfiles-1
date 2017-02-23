@@ -29,5 +29,6 @@ gksu
 nitrogen
 i3lock-wrapper
 polybar
+wireless_tools
 pymodoro-git
 
