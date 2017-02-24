@@ -41,12 +41,6 @@ installi3() {
   # Default thunar to file directories
   #gvfs-mime --set inode/directory thunar.desktop
   #xdg-mime default thunar.desktop inode/directory
-  # Window switcher
-  sudo pip install i3-py
-  sudo pip install quickswitch-i3
-  #for spotify py3 module
-  sudo pip install dbus-python
-  sleep 2
 
   ln -sfn ${dir}/config/i3 ${HOME}/.config/i3
 
@@ -54,16 +48,8 @@ installi3() {
   [ -d ${HOME}/.config/gsimplecal ] || mkdir -p ${HOME}/.config/gsimplecal
   ln -sfn ${dir}/config/gsimplecal/config ${HOME}/.config/gsimplecal/config
 
-  #py3status
-#   sudo pip install py3status
-#   ln -sfn ${dir}/config/i3status/i3status.conf ${HOME}/.i3/i3status.conf
-#   sudo cp ${dir}/config/i3status/xrandr.py /usr/lib/python3.6/site-packages/py3status/modules
-#   sudo cp ${dir}/config/i3status/pomodoro.py /usr/lib/python3.6/site-packages/py3status/modules
-#   [ -e /etc/i3status.conf ] && sudo rm /etc/i3status.conf
-
   # polybar
   ln -sfn ${dir}/config/polybar/config ${HOME}/.config/polybar
-
 
 }
 
