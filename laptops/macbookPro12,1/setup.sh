@@ -4,9 +4,7 @@ yaourt --noconfirm -S  \
   kbdlight \
 	bcwc-pcie-git \
 	acpilight \
-  mbpfan-git \
-  asoundconf \
-  alsa-plugins
+  mbpfan-git
 
 # Fix wifi connection flickering
 sudo cp 40-ipv6.conf /etc/sysctl.d
