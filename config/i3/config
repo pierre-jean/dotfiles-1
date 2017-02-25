@@ -30,8 +30,7 @@ workspace "$WS5" output eDP-1
 
 # Apps assigned to workspaces
 assign [instance="urxvt|ws1_termite|gnome-terminal"] $WS1
-assign [instance="franz"] $WS5
-assign [instance="nylas n1"] $WS5
+assign [instance="franz|slack|yakyak"] $WS5
 assign [class="Code"] $WS6
 assign [class="Atom"] $WS6
 assign [instance="subl3|sublime_text"] $WS6
@@ -40,8 +39,6 @@ assign [class="jetbrains(?)"] $WS3
 assign [class="genymotion"] $WS3
 assign [class="Genymotion Player"] $WS3
 assign [class="Scudcloud"] $WS4
-assign [instance="slack"] $WS4
-assign [instance="yakyak"] $WS4
 assign [class="Pidgin"] $WS4
 assign [instance="gitkraken"] $WS7
 assign [class="stremio"] $WS8
@@ -49,7 +46,7 @@ assign [class="^(?i)vlc$"] $WS8
 assign [class="Spotify"] $WS8
 assign [instance="caja"] $WS9
 assign [title="TweetDeck"] $WS0
-assign [class="wmail"] $WS5
+assign [class="wmail"] $WS6
 
 #Apps without borders
 #for_window [class="Firefox"] border 1pixel
