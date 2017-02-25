@@ -23,7 +23,7 @@ monitor-strict = true
 dpi = ${env:POLYBAR_DPI:72}
 bottom = false
 width = 100%
-height = ${env:POLYBAR_HEIGHT:30}
+height = ${env:POLYBAR_HEIGHT:40}
 offset-x = 0
 offset-y = 0
 
