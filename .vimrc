@@ -241,7 +241,7 @@ endif " has("autocmd")
 "===============================================================================
 "
 "
-
+au VimEnter *  NERDTree
 let NERDTreeShowHidden=1
 nmap <leader>nt :NERDTreeToggle<cr>
 nnoremap <silent> <Leader>1 :NERDTreeFind<CR>
