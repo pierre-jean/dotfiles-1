@@ -30,6 +30,8 @@ if has('mouse')
   set mouse=a
 endif
 
+" Use w!! to write read-only files
+cmap w!! w !sudo tee % >/dev/null
 "===============================================================================
 "                      PLUGINS
 "===============================================================================
@@ -314,4 +316,3 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
         \ | wincmd p | diffthis
 endif
-
