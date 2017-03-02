@@ -23,10 +23,14 @@ set $WS0 10 
 
 workspace "$WS1" output eDP-1
 workspace "$WS2" output eDP-1
+
 workspace "$WS3" output DP-1
 workspace "$WS3" output HDMI-2
-workspace "$WS4" output eDP-1
+workspace "$WS4" output DP-1
+workspace "$WS4" output HDMI-2
+
 workspace "$WS5" output eDP-1
+workspace "$WS6" output eDP-1
 
 # Apps assigned to workspaces
 assign [instance="urxvt|ws1_termite|gnome-terminal"] $WS1
