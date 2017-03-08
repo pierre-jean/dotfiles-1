@@ -211,3 +211,8 @@ cdls() { cd "$@" && ls; }
 killByName() {
   kill $(ps aux | grep $1 | awk '{print $2}')
 }
+
+dockerCleanUpContainers() {
+  docker ps -aq | xargs docker stop
+  docker ps -aq | xargs docker rm
+}
