@@ -1,3 +1,6 @@
 alsa-utils
 asoundconf
-gnome-alsamixer
+pulseaudio
+pulseaudio-ctl
+pavucontrol
+pulseaudio-dlna

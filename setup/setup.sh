@@ -215,7 +215,7 @@ installKhal() {
 installAudio() {
   yaourt -S --noconfirm ./yaourt_audio.txt
   asoundconf set-default-card PCH
-  echo "pcm.dsp { type plug  slave.pcm \"dmix\" }" >> ${HOME}/.asoundrc.asoundconf
+  asoundconf set-pulseaudio
 }
 
 installCompton() {
