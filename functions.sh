@@ -195,7 +195,7 @@ nitrogen --restore
 
 #Setup macbook with external monitor in Stockley Park
 macbook-stockley-monitor() {
-  xrandr --output HDMI-2 --primary --mode 1920x1080 --pos 296x0 --rotate normal --output eDP-1 --mode 2560x1600 --pos 0x1080 --rotate normal
+  xrandr --output HDMI-2 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output eDP-1 --mode 2560x1600 --pos 0x1440 --rotate normal --output DP-2 --off
 }
 
 kernelModuleParameters() {
