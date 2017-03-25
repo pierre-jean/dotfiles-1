@@ -12,3 +12,5 @@ slack-desktop
 keeweb-desktop
 libreoffice-fresh
 autojump
+unzip
+unrar
