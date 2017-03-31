@@ -2,7 +2,9 @@
 "                     GENERAL
 "===============================================================================
 
-set number		      " enable line nubers
+set number     " enable line nubers
+set numberwidth=2
+
 set nocompatible              " be iMproved, required
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set history=50		" keep 50 lines of command line history
@@ -243,7 +245,6 @@ endif " has("autocmd")
 "===============================================================================
 "
 "
-au VimEnter *  NERDTree
 let NERDTreeShowHidden=1
 nmap <leader>nt :NERDTreeToggle<cr>
 nnoremap <silent> <Leader>1 :NERDTreeFind<CR>
@@ -316,3 +317,8 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
         \ | wincmd p | diffthis
 endif
+
+highlight clear CursorLine    " highlight line-number only
+set cursorline
+hi CursorLineNR cterm=bold
+
