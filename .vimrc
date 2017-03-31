@@ -89,6 +89,7 @@ Plugin 'wincent/ferret'                                                  " Searc
 
 Plugin 'terryma/vim-multiple-cursors'                                    " Multiline cursors
 
+Plugin 'airblade/vim-gitgutter'                                          " Show line git status
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -321,4 +322,3 @@ endif
 highlight clear CursorLine    " highlight line-number only
 set cursorline
 hi CursorLineNR cterm=bold
-
