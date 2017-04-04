@@ -225,3 +225,11 @@ dockerCleanUpContainers() {
 checkListeningPorts() {
   sudo netstat -tulpn | grep LISTEN
 }
+
+findFileByContent() {
+  grep -rnw $2 -e $1
+}
+
+findFileByName() {
+  find $2 -name $1 -type f
+}
