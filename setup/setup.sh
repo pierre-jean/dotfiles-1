@@ -139,6 +139,11 @@ installDevTools() {
   installTerragrunt
   installIntellij
   installWeb
+  installAwsCli
+}
+
+installAwsCli() {
+  pip install --upgrade --user awscli
 }
 
 installTools() {
