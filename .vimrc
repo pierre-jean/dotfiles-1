@@ -13,6 +13,8 @@ set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set backupdir=~/.vim.backup " Save backups in custom folder
 set directory=~/.vim.tmp " Save tmp files in custom folder
+set undodir=~/.vim.undo " Save undo files in custom folder
+set undofile " Maintain undo history between sessions
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
