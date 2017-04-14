@@ -1,5 +1,6 @@
 [options]
 font = DroidSansMonoForPowerline Nerd Font 10
+scrollback_lines = 30000
 
 [colors]
 foreground = #839496
