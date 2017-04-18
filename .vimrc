@@ -13,6 +13,19 @@ set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set backupdir=~/.vim.backup " Save backups in custom folder
 set directory=~/.vim.tmp " Save tmp files in custom folder
+set undodir=~/.vim.undo " Save undo files in custom folder
+set undofile " Maintain undo history between sessions
+
+" Cursor shape to vertical bar while in insert mode
+let &t_SI = "\<Esc>[5 q"
+let &t_EI = "\<Esc>[0 q"
+
+" Typo avoider
+command! WQ wq
+command! Wq wq
+command! Wqa wqa
+command! W w
+command! Q q
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -322,3 +335,4 @@ endif
 highlight clear CursorLine    " highlight line-number only
 set cursorline
 hi CursorLineNR cterm=bold
+
