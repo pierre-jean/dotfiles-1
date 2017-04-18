@@ -1,6 +1,7 @@
 alias gpl='git prunelocal'
 alias gpr='git pull-request'
 alias gdl='git discard'
+alias glrb='git pull --rebase'
 
 ## Autocompleted alias
 __git_complete gco _git_checkout
