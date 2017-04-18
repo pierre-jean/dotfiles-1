@@ -235,10 +235,12 @@ findFileByName() {
 }
 
 showWifiPassword() {
-  if [ $# -eq 0 ]
-  then
-    sudo grep -H '^psk=' /etc/NetworkManager/system-connections/*
+  path="/etc/NetworkManager/system-connections/"
+  if [ $# -eq 0 ]; then
+    path="$path*"
   else
-    sudo grep -H '^psk=' /etc/NetworkManager/system-connections/"$1"
+    path="$path$1"
   fi
+  sudo grep -H '^psk=' $path | \
+    awk -F '/' '{print $5}'
 }
