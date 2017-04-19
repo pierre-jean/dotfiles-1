@@ -131,6 +131,17 @@ let g:gundo_preview_height = 40
 let g:gundo_right = 1
 
 "===============================================================================
+"                     CTRL-P PLUGIN
+"===============================================================================
+
+" ctrlp ignore non relevant files
+set wildignore+=*/node_modules/*,*/.git/*,*.so,*.swp,*.zip,*.exe,*.dll
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules)$'
+" ctrlp don't open files in plugins/other windows
+let g:ctrlp_dont_split = 'NERD_tree_2|help|quickfix'
+
+
+"===============================================================================
 "                     AIRLINE PLUGIN
 "===============================================================================
 
