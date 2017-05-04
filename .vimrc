@@ -47,6 +47,25 @@ endif
 
 " Use w!! to write read-only files
 cmap w!! w !sudo tee % >/dev/null
+
+" Changes in .vimrc are immediately reflected in Vim without having to re-start
+augroup autosourcing
+    autocmd!
+    autocmd BufWritePost .vimrc source %
+augroup END
+
+" j & k will go up/down one row in the editor, even if that row is the same line that was wrapped
+nnoremap j gj
+nnoremap k gk
+
+" edit .vimrc file in a new vertical buffer
+nmap <Leader>ev :vs ~/.vimrc<cr>
+
+" mappings for moving around splits
+noremap <C-j> <C-w>j
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
+noremap <C-k> <C-w>k
 "===============================================================================
 "                      PLUGINS
 "===============================================================================
