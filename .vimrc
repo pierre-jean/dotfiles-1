@@ -56,7 +56,9 @@ augroup END
 
 " j & k will go up/down one row in the editor, even if that row is the same line that was wrapped
 nnoremap j gj
+nnoremap <Down> g<Down>
 nnoremap k gk
+nnoremap <Up> g<Up>
 
 " edit .vimrc file in a new vertical buffer
 nmap <Leader>ev :vs ~/.vimrc<cr>

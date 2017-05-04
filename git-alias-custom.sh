@@ -3,6 +3,10 @@ alias gpr='git pull-request'
 alias gdl='git discard'
 alias glrb='git pull --rebase'
 
+gblame() { 
+  git log -p -M --follow --stat -- $1
+}
+
 ## Autocompleted alias
 __git_complete gco _git_checkout
 __git_complete gb _git_branch
@@ -14,3 +18,4 @@ __git_complete gbnm _git_branch
 __git_complete gbr _git_branch
 __git_complete gm _git_branch
 __git_complete gd _git_branch
+__git_complete gc _git_commit

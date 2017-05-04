@@ -30,4 +30,9 @@ export MOZ_USE_OMTC=1
 # Set keyboard to US
 setxkbmap -layout us -variant altgr-intl -option nodeadkeys
 
+# Set dir colors
 eval $(dircolors ~/.dircolors)
+
+#Increase history size
+HISTFILESIZE=1000000000
+HISTSIZE=1000000
