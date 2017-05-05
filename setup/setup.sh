@@ -80,11 +80,6 @@ installScala() {
   yaourt --noconfirm -S ./yaourt_scala.txt
 }
 
-installClojure() {
-  echo "Installing Clojure"
-  yaourt --noconfirm -S ./yaourt_clojure.txt
-}
-
 installGit() {
   echo "Installing Git"
   yaourt --noconfirm -S ./yaourt_git.txt
@@ -134,7 +129,6 @@ installDevTools() {
   installJava
   installAndroid
   installScala
-  installClojure
   installDocker
   installTerragrunt
   installIntellij

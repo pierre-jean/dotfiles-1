@@ -52,7 +52,7 @@ font-4 = DroidSansMonoForPowerline Nerd Font:pixelsize=14;2
 
 modules-left = i3
 modules-center = date
-modules-right = pomodoro cpu memory backlight volume dropbox wlan battery powermenu
+modules-right = cpu memory backlight volume dropbox wlan battery powermenu
 
 tray-position = none
 tray-padding = 4
