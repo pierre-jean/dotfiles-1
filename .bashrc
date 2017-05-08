@@ -9,6 +9,7 @@ export JAVA8_HOME=/usr/lib/jvm/java-8-jdk/
 export BROWSER=google-chrome-stable
 export EDITOR=vim
 export TERRAGRUNT_TFPATH=/usr/bin/terraform
+export ORION_PEM_LOCATION=~/.ssh/orion.pem
 
 source ~/dotfiles/prompt.sh
 source ~/dotfiles/git-completion.bash

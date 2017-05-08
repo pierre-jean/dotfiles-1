@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 #
 NAME_OF_INSTANCE=$1
 ENVIRONMENT=$2
@@ -7,7 +7,7 @@ function usage() {
     echo "Need to provide $1 e.g. sshy <name_of_system> <environment>"
 }
 
-function jq.publicDnsName() {
+function jqpublicDnsName() {
     jq -c '.Reservations[].Instances[] | select(.Tags[]? | select(.Value | contains("'$1' '$2'"))) | .PublicDnsName'
 }
 
@@ -28,7 +28,7 @@ if [ -z "$ORION_PEM_LOCATION" ]; then
     exit 1
 fi
 
-SERVER_URL=$(aws ec2 describe-instances --region=eu-west-1 | jq.publicDnsName $NAME_OF_INSTANCE $ENVIRONMENT | stripQuotes)
+SERVER_URL=$(aws ec2 describe-instances --region=eu-west-1 | jqpublicDnsName $NAME_OF_INSTANCE $ENVIRONMENT | stripQuotes)
 ssh -i $ORION_PEM_LOCATION -oStrictHostKeyChecking=no ec2-user@$SERVER_URL
 if [ "$?" = "255" ]; then
     echo "Failed to login to Amazon Linux, trying Ubuntu"
