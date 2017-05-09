@@ -13,3 +13,4 @@ libreoffice-fresh
 autojump
 unzip
 unrar
+jq
