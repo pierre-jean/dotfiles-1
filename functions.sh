@@ -244,3 +244,7 @@ showWifiPassword() {
   sudo grep -H '^psk=' $path | \
     awk -F '/' '{print $5}'
 }
+
+showPublicIp() {
+  curl ipinfo.io/ip
+}
