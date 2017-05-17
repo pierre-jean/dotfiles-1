@@ -1,17 +1,17 @@
 [user]
-	email = carlos@codurance.com
-	name = Carlos Morera de la Chica
+  email = carlos@codurance.com
+  name = Carlos Morera de la Chica
 [core]
-	ignorecase = false
-	fileMode = false
+  ignorecase = false
+  fileMode = false
 [push]
   default = current
 [pager]
   diff = diff-so-fancy | less --tabs=1,5 -RFX
   show = diff-so-fancy | less --tabs=1,5 -RFX
 [merge]
-	tool = vimdiff
-	conflictstyle = diff3
+  tool = vimdiff
+  conflictstyle = diff3
 [mergetool]
   prompt = false
 [alias]
