@@ -19,3 +19,4 @@ __git_complete gbr _git_branch
 __git_complete gm _git_branch
 __git_complete gd _git_branch
 __git_complete gc _git_commit
+__git_complete gl _git_pull

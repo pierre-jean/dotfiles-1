@@ -16,6 +16,8 @@ alias yun='yu --noconfirm'
 alias yunf='yun --force'
 alias yp='yaourt -Qm'
 alias yr='yaourt -R'
+alias wgup='sudo wg-quick up wg0-client'
+alias wgdown='sudo wg-quick down wg0-client'
 
 javaProject () { 
 	gradle init --type java-library
