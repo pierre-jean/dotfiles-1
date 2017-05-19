@@ -18,6 +18,8 @@ alias yp='yaourt -Qm'
 alias yr='yaourt -R'
 alias wgup='sudo wg-quick up wg0-client'
 alias wgdown='sudo wg-quick down wg0-client'
+alias openvpnup='sudo openvpn /etc/openvpn/streisand.ovpn &'
+alias openvpndown='sudo killall openvpn'
 
 javaProject () { 
 	gradle init --type java-library
