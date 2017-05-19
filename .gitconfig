@@ -16,4 +16,4 @@
   prompt = false
 [alias]
   discard = !git clean -df && git checkout -- .
-  prunelocal = !git branch -d $(git branch --merged)
+  prunelocal = !git branch -d $(git branch --merged) && git-delete-squashed
