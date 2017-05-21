@@ -20,6 +20,7 @@ alias wgup='sudo wg-quick up wg0-client'
 alias wgdown='sudo wg-quick down wg0-client'
 alias ovpnup='sudo openvpn /etc/openvpn/streisand.ovpn &'
 alias ovpndown='sudo killall openvpn'
+alias mountWindows='sudo mount /dev/sda4 /windows'
 
 javaProject () { 
 	gradle init --type java-library
