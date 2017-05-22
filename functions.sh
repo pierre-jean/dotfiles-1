@@ -227,7 +227,7 @@ checkListeningPorts() {
 }
 
 findFileByContent() {
-  grep -rnl $2 -e $1
+  grep -rnl $2 -e "$1"
 }
 
 findFileByName() {
