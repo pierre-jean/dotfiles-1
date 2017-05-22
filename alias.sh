@@ -21,17 +21,4 @@ alias wgdown='sudo wg-quick down wg0-client'
 alias ovpnup='sudo openvpn /etc/openvpn/streisand.ovpn &'
 alias ovpndown='sudo killall openvpn'
 alias mountWindows='sudo mount /dev/sda4 /windows'
-
-javaProject () { 
-	gradle init --type java-library
-	sed '$itestCompile "org.mockito:mockito-all:1.10.19"' build.gradle >> build.gradle
-	gradle --refresh-dependencies
-}
-
-scalaProject () { 
-	 gradle init --type scala-library
-}
-
-every() {
-	watch -c -n $1 $2
-}
+alias emptyTrash='rm -rf ~/.local/share/Trash/*'

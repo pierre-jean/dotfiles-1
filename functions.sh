@@ -248,3 +248,7 @@ showWifiPassword() {
 showPublicIp() {
   curl ipinfo.io/ip
 }
+
+every() {
+	watch -c -n $1 $2
+}
