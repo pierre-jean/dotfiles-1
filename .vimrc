@@ -226,6 +226,12 @@ autocmd Filetype *
     \	endif
 
 "===============================================================================
+"                     XML
+"===============================================================================
+
+au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+
+"===============================================================================
 "                     HASKELL
 "===============================================================================
 " http://www.stephendiehl.com/posts/vim_2016.html
@@ -367,4 +373,5 @@ endif
 highlight clear CursorLine    " highlight line-number only
 set cursorline
 hi CursorLineNR cterm=bold
+
 
