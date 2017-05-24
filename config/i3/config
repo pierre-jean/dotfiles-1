@@ -38,6 +38,7 @@ assign [instance="franz|slack|yakyak"] $WS5
 assign [class="Google-chrome"] $WS2
 assign [class="jetbrains(?)"] $WS3
 assign [instance="transmission-gtk"] $WS9
+assign [instance="vlc"] $WS8
 assign [class="wmail"] $WS6
 
 #Apps without borders
