@@ -246,7 +246,9 @@ showWifiPassword() {
 }
 
 showPublicIp() {
-  curl ipinfo.io/ip
+  IP=$(curl -s ipinfo.io/ip)
+  CITY=$(curl -s ipinfo.io/city)
+  echo $IP "-" $CITY
 }
 
 every() {
