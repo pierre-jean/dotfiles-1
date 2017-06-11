@@ -108,6 +108,23 @@ installTerragrunt() {
   sudo mv ./terragrunt_linux_386 /usr/bin/terragrunt
 }
 
+installHaskell() {
+  sudo pacman-key -r 4209170B
+  sudo pacman-key --lsign-key 4209170B
+  sudo pacman-key -r B0544167
+  sudo pacman-key --lsign-key B0544167
+  yaourt -Syu
+
+  yaourt -S haskell-stack haskell-stack-tool
+  stack setup
+  stack install ghc-mod hindent stylish-haskell cabal-install hoogle-5.0 hdevtools hlint
+  cabal update
+  echo "========"
+  echo "Your GHC path will be: $(stack path | grep ghc-paths)"
+  echo "========"
+  ln -sfn ${dir}/ghci ${HOME}/.ghci
+}
+
 installIntellij() {
   echo "Installing IntelliJ"
   yaourt --noconfirm -S \
@@ -134,6 +151,7 @@ installDevTools() {
   installIntellij
   installWeb
   installAwsCli
+  installHaskell
 }
 
 installAwsCli() {
@@ -169,7 +187,7 @@ installPacman() {
 }
 
 installYaourt() {
-  installPacman;
+  installPacman
   sudo pacman -S --needed base-devel git wget yajl
   wget https://aur.archlinux.org/cgit/aur.git/snapshot/package-query.tar.gz
   tar xvfz package-query.tar.gz
