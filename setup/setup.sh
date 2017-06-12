@@ -122,7 +122,7 @@ installHaskell() {
   echo "========"
   echo "Your GHC path will be: $(stack path | grep ghc-paths)"
   echo "========"
-  ln -sfn ${dir}/ghci ${HOME}/.ghci
+  ln -sfn ${dir}/.ghci ${HOME}/.ghci
 }
 
 installIntellij() {
