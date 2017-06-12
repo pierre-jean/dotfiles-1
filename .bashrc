@@ -34,6 +34,9 @@ setxkbmap -layout us -variant altgr-intl -option nodeadkeys
 # Set dir colors
 eval $(dircolors ~/.dircolors)
 
+# Limit prompt dirs depth 
+PROMPT_DIRTRIM=2
+
 #Increase history size
 HISTFILESIZE=1000000000
 HISTSIZE=1000000
