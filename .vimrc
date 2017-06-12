@@ -24,6 +24,7 @@ let &t_EI = "\<Esc>[0 q"
 command! WQ wq
 command! Wq wq
 command! Wqa wqa
+command! Qa qa
 command! W w
 command! Q q
 
