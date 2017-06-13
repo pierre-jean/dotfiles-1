@@ -8,7 +8,6 @@ archey3
 franz-bin
 yakyak
 slack-desktop
-keeweb-desktop
 libreoffice-fresh
 autojump
 unzip
@@ -16,3 +15,4 @@ unrar
 jq
 speedtest-cli
 evince
+tree
