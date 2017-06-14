@@ -279,7 +279,7 @@ mode "$mode_workspaces" {
 bindsym $mod+Shift+w mode "$mode_workspaces"
 
 # wallpaper
-exec --no-startup-id nitrogen --restore
+exec --no-startup-id variety
 
 # polybar
 exec --no-startup-id ~/dotfiles/config/polybar/launch.sh 
