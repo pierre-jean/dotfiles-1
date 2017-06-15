@@ -5,4 +5,4 @@ google-chrome-stable &
 yakyak &
 slack &
 wmail &
-compton -c -b &
+compton -c -i 0.95 -b &
