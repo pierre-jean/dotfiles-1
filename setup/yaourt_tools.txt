@@ -16,4 +16,3 @@ jq
 speedtest-cli
 evince
 tree
-variety

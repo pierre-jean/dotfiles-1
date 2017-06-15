@@ -162,6 +162,12 @@ installTools() {
   echo "Installing apps and tools"
   sleep 2
   yaourt --noconfirm -S ./yaourt_tools.txt
+  installVariety
+}
+
+installVariety() {
+  yaourt --noconfirm -S variety
+  ln -sfn ~/dotfiles/config/variety/config ~/.config/variety/variety.conf
 }
 
 installRedshift() {

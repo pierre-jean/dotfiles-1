@@ -183,14 +183,12 @@ arecord -vvv -f dat /dev/null
 
 # Setup macos X with external apple monitor
 macbook-apple-monitor() {
-xrandr --output DP-1 --mode 2560x1440 --pos 0x0 --output eDP-1 --primary --mode 2560x1600 --pos 0x1440
-nitrogen --restore
+  xrandr --output DP-1 --mode 2560x1440 --pos 0x0 --output eDP-1 --primary --mode 2560x1600 --pos 0x1440
 }
 
 # Setup macos X with external normal monitor
 macbook-normal-monitor() {
-xrandr --output HDMI-2 --primary --mode 1920x1080 --pos 0x240 --output eDP-1 --mode 2560x1600 --pos 1920x0
-nitrogen --restore
+  xrandr --output HDMI-2 --primary --mode 1920x1080 --pos 0x240 --output eDP-1 --mode 2560x1600 --pos 1920x0
 }
 
 #Setup macbook with external monitor in Stockley Park
