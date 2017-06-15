@@ -15,9 +15,14 @@ set $WS8 8 
 set $WS9 9 
 set $WS0 10 
 
-
 # assign gaps to workspaces
 #workspace "$WS1" gaps inner 10
+
+# enable gaps everywhere
+
+smart_borders on
+smart_gaps on
+gaps inner 10
 
 # assign workspace to screen
 
