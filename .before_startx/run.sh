@@ -5,5 +5,4 @@ google-chrome-stable &
 yakyak &
 slack &
 wmail &
-compton -c -i 0.75 -b &
-pulseaudio-dlna &
+compton -c -b &
