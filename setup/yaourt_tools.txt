@@ -16,3 +16,4 @@ jq
 speedtest-cli
 evince
 tree
+tig
