@@ -16,5 +16,9 @@ jq
 speedtest-cli
 evince
 tree
+<<<<<<< HEAD
 tig
+||||||| merged common ancestors
+=======
 aws-cli
+>>>>>>> Stop using pip directly
