@@ -104,7 +104,7 @@ facebook_message = ""
 # copyto_folder = <Default or Path to a custom folder>, the default is Default
 # Default means to use the XDG Pictures folder when home folder is unencrypted and /usr/share/backgrounds when it is encrypted.
 copyto_enabled = True
-copyto_folder = Default
+copyto_folder = /usr/share/backgrounds
 
 # Clock settings
 # clock_enabled = <True or False>

@@ -164,6 +164,7 @@ installTools() {
 installVariety() {
   yaourt --noconfirm -S variety
   ln -sfn ~/dotfiles/config/variety/config ~/.config/variety/variety.conf
+  sudo chmod a+w /usr/share/backgrounds/
 }
 
 installRedshift() {
