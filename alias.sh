@@ -18,3 +18,4 @@ alias mountWindows='sudo mount /dev/sda4 /windows'
 alias emptyTrash='rm -rf ~/.local/share/Trash/*'
 alias dotfiles='(cd ~/dotfiles && vim)'
 alias grep="grep --color=auto"
+alias restartX="systemctl restart lightdm"
