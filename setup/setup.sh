@@ -238,6 +238,14 @@ installCompton() {
   ln -sfn ${dir}/config/compton/compton.conf ${HOME}/.config/compton.conf
 }
 
+installLightDm() {
+  yaourt -S --noconfirm \
+    ligthdm \
+    lightdm-gtk-greeter
+  ln -sfn ${dir}/xprofile ${HOME}/.xprofile
+  sudo systemctl enable lightdm.service
+}
+
 installAppsOnStartUp() {
   mkdir -p ~/.before_startx
   cp ${dir}/.before_startx/run.sh ~/.before_startx/run.sh
@@ -264,6 +272,7 @@ echo "actionSystem.suspendFocusTransferIfApplicationInactive=false add this into
 ask "install yaourt?" Y && installYaourt;
 ask "install i3?" Y && installi3;
 ask "install compton?" Y && installCompton;
+ask "install lightdm?" Y && installLightDm;
 ask "install fonts?" Y && installFonts;
 ask "install dev tools?" Y && installDevTools;
 ask "install apps and tools?" Y && installTools;
