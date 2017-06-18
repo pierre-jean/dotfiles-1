@@ -220,7 +220,7 @@ mode $resize {
 }
 #lockscreen
 set $Locker i3lock-wrapper 
-bindsym $mod+Escape exec $Locker
+bindsym $mod+Escape exec dm-tool lock
 
 # Shutdown / reboot...
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (n) nyancat, (Shift+s) shutdown
