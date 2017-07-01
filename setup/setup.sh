@@ -241,10 +241,10 @@ installCompton() {
 
 installLightDm() {
   yaourt -S --noconfirm \
-    ligthdm \
+    lightdm \
     lightdm-gtk-greeter \
     lightdm-webkit2-greeter
-  ln -sfn ${dir}/xprofile ${HOME}/.xprofile
+  ln -sfn ${dir}/.xprofile ${HOME}/.xprofile
   sudo ln -sfn ${dir}/config/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
   sudo systemctl enable lightdm.service
 }
