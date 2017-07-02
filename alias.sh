@@ -16,6 +16,6 @@ alias ovpnup='sudo openvpn /etc/openvpn/streisand.ovpn &'
 alias ovpndown='sudo killall openvpn'
 alias mountWindows='sudo mount /dev/sda4 /windows'
 alias emptyTrash='rm -rf ~/.local/share/Trash/*'
-alias dotfiles='(cd ~/dotfiles && vim)'
+alias dotfiles='(cd ~/dotfiles && vim -c NERDTree)'
 alias grep="grep --color=auto"
 alias restartX="systemctl restart lightdm"
