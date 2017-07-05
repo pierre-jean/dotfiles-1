@@ -4,7 +4,8 @@ yaourt --noconfirm -S  \
   kbdlight \
 	bcwc-pcie-git \
 	acpilight \
-  mbpfan-git
+  mbpfan-git \
+  xf86-video-intel
 
 # Fix wifi connection flickering
 sudo cp 40-ipv6.conf /etc/sysctl.d
@@ -33,3 +34,6 @@ ln -sfn ~/dotfiles/laptops/macbookPro12,1/env.sh ~/.env.sh
 asoundconf set-default-card PCH
 asoundconf set-pulseaudio
 sudo cp sound.conf /etc/modprobe.d/sound.conf
+
+# Intel driver
+sudo cp 20-intel.conf /etc/X11/xorg.conf.d/20-synaptics.conf
