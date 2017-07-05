@@ -229,7 +229,7 @@ dockerCleanUpContainers() {
   docker ps -aq | xargs docker rm
 }
 
-checkListeningPorts() {
+showListeningPorts() {
   sudo netstat -tulpn | grep LISTEN
 }
 
