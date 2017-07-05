@@ -199,6 +199,12 @@ macbook-stockley-monitor() {
   variety --next
 }
 
+# Setup monitors at home
+home-monitor() {
+  xrandr --output DP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --mode 1600x1200 --pos 1920x0 --rotate left
+  variety --next
+}
+
 kernelModuleParameters() {
   cat /proc/modules | cut -f 1 -d " " | while read module; do \
     echo "Module: $module"; \
