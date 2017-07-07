@@ -125,6 +125,8 @@ Plugin 'wincent/ferret'                                                  " Searc
 Plugin 'terryma/vim-multiple-cursors'                                    " Multiline cursors
 
 Plugin 'airblade/vim-gitgutter'                                          " Show line git status
+
+Plugin 'skywind3000/asyncrun.vim'                                        " Async tasks
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -162,6 +164,16 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules)$'
 " ctrlp don't open files in plugins/other windows
 let g:ctrlp_dont_split = 'NERD_tree_2|help|quickfix'
 
+
+"===============================================================================
+"                     ASYNCRUN PLUGIN
+"===============================================================================
+augroup vimrc
+    " Open quickfix window when start running test
+    autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
+    " Focus quickfix and color the output when stop
+    autocmd User AsyncRunStop copen
+augroup END
 
 "===============================================================================
 "                     AIRLINE PLUGIN
