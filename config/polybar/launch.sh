@@ -8,6 +8,7 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # External monitor bar
 POLYBAR_MONITOR=DP1 polybar top &
+POLYBAR_MONITOR=DP2 polybar top &
 POLYBAR_MONITOR=HDMI2 polybar top &
 
 # MacBook Pro bar
