@@ -181,24 +181,6 @@ test-microphone() {
 arecord -vvv -f dat /dev/null
 }
 
-# Setup macos X with external apple monitor
-macbook-apple-monitor() {
-  xrandr --output DP1 --mode 2560x1440 --pos 0x0 --output eDP1 --primary --mode 2560x1600 --pos 0x1440
-  variety --next
-}
-
-# Setup macos X with external normal monitor
-macbook-normal-monitor() {
-  xrandr --output HDMI2 --primary --mode 1920x1080 --pos 0x240 --output eDP1 --mode 2560x1600 --pos 1920x0
-  variety --next
-}
-
-# Setup monitors at home
-home-monitor() {
-  xrandr --output DP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --mode 1600x1200 --pos 1920x0 --rotate left
-  variety --next
-}
-
 kernelModuleParameters() {
   cat /proc/modules | cut -f 1 -d " " | while read module; do \
     echo "Module: $module"; \
