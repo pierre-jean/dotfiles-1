@@ -216,6 +216,7 @@ let g:syntastic_check_on_wq = 1
 
 let g:syntastic_javascript_checkers = ['eslint', 'jshint']
 let g:syntastic_html_checkers = ['w3']
+let g:syntastic_loc_list_height=5
 
 "===============================================================================
 "                     AUTO COMPLETION 
