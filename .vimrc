@@ -23,6 +23,8 @@ let &t_EI = "\<Esc>[0 q"
 " Typo avoider
 command! WQ wq
 command! Wq wq
+command! WA wq
+command! Wa wq
 command! Wqa wqa
 command! Qa qa
 command! W w
