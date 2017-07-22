@@ -220,6 +220,8 @@ let g:syntastic_javascript_checkers = ['eslint', 'jshint']
 let g:syntastic_html_checkers = ['w3']
 let g:syntastic_loc_list_height=5
 
+nnoremap ]w :lnext<CR>
+nnoremap [w :lprevious<CR>
 "===============================================================================
 "                     AUTO COMPLETION 
 "===============================================================================
