@@ -19,3 +19,5 @@ alias emptyTrash='rm -rf ~/.local/share/Trash/*'
 alias dotfiles='(cd ~/dotfiles && vim -c NERDTree)'
 alias grep="grep --color=auto"
 alias restartX="systemctl restart lightdm"
+alias mit-scheme="rlwrap -r -c -f ~/dotfiles/config/mit-scheme/mit_scheme_bindings.txt mit-scheme"
+alias scheme="rlwrap -r -c -f ~/dotfiles/config/mit-scheme/mit_scheme_bindings.txt mit-scheme"
