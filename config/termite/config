@@ -1,5 +1,5 @@
 [options]
-font = DroidSansMonoForPowerline Nerd Font 10
+font = Terminus (TTF) 12
 scrollback_lines = 30000
 
 [colors]
