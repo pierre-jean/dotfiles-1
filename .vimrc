@@ -129,6 +129,8 @@ Plugin 'terryma/vim-multiple-cursors'                                    " Multi
 Plugin 'airblade/vim-gitgutter'                                          " Show line git status
 
 Plugin 'skywind3000/asyncrun.vim'                                        " Async tasks
+
+Plugin 'zhaocai/GoldenView.Vim'                                          " Splitters golden ratio
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -176,6 +178,12 @@ augroup vimrc
     " Focus quickfix and color the output when stop
     autocmd User AsyncRunStop copen
 augroup END
+
+"===============================================================================
+"                     GOLDEN RATIO PLUGIN
+"===============================================================================
+
+let g:goldenview__enable_default_mapping = 0
 
 "===============================================================================
 "                     AIRLINE PLUGIN
