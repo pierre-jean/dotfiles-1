@@ -4,3 +4,4 @@ ttf-ms-fonts
 ttf-droid-sans-mono-dotted-powerline-git
 ttf-font-linux
 nerd-fonts-complete
+terminus-font-td1
