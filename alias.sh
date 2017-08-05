@@ -1,5 +1,5 @@
 alias ls='ls --color=auto'
-alias ll='ls -la --color=auto'
+alias ll='ls -lah --color=auto'
 alias la='ll'
 alias y='yaourt'
 alias ys='yaourt -Ss'
@@ -17,7 +17,9 @@ alias ovpndown='systemctl stop openvpn-client@streisand.service'
 alias mountWindows='sudo mount /dev/sda4 /windows'
 alias emptyTrash='rm -rf ~/.local/share/Trash/*'
 alias dotfiles='(cd ~/dotfiles && vim -c NERDTree)'
-alias grep="grep --color=auto"
-alias restartX="systemctl restart lightdm"
-alias mit-scheme="rlwrap -r -c -f ~/dotfiles/config/mit-scheme/mit_scheme_bindings.txt mit-scheme"
-alias scheme="rlwrap -r -c -f ~/dotfiles/config/mit-scheme/mit_scheme_bindings.txt mit-scheme"
+alias grep='grep --color=auto'
+alias restartX='systemctl restart lightdm'
+alias mit-scheme='rlwrap -r -c -f ~/dotfiles/config/mit-scheme/mit_scheme_bindings.txt mit-scheme'
+alias scheme='rlwrap -r -c -f ~/dotfiles/config/mit-scheme/mit_scheme_bindings.txt mit-scheme'
+alias exa='exa -bghlaU --git --group-directories-first'
+alias weather='curl wttr.in/~London'
