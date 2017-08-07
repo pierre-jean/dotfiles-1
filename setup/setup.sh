@@ -58,9 +58,15 @@ installFonts() {
   sleep 2
   yaourt --noconfirm -S ./yaourt_fonts.txt
   mkdir -p ~/.config/fontconfig/conf.d/
+
   # Set font fallback configuration in place
   ln -sfn ${dir}/config/fontconfig/10-icons.conf ${HOME}/.config/fontconfig/conf.d/10-icons.conf
+
+  # Refresh user and global font paths
+  fc-cache -fv
   sudo fc-cache -fv
+
+  # Install vcconsole.font
   sudo bash -c 'echo -e "KEYMAP=us\nFONT=Lat2-Terminus16" > /etc/vconsole.conf'
   sudo sed -i /etc/mkinitcpio.conf -e 's/^\(HOOKS=\"[^\"]\+\)\"/\1 consolefont"/'
   sudo mkinitcpio -p linux
