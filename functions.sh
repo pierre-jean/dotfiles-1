@@ -210,11 +210,11 @@ showListeningPorts() {
 }
 
 findFileByContent() {
-  grep -rnl $2 -e "$1"
+  sudo grep -rinl $2 -e "$1"
 }
 
 findFileByName() {
-  find $2 -name $1 -type f
+  sudo find $2 -iname "*$1*" -type f
 }
 
 showWifiPassword() {
