@@ -1,5 +1,6 @@
 alias ls='ls --color=auto'
-alias ll='ls -lah --color=auto'
+# alias ll='ls -lah --color=auto'
+alias ll=exa
 alias la='ll'
 alias y='yaourt'
 alias ys='yaourt -Ss'
