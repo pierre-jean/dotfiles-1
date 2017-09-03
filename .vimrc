@@ -131,6 +131,9 @@ Plugin 'airblade/vim-gitgutter'                                          " Show 
 Plugin 'skywind3000/asyncrun.vim'                                        " Async tasks
 
 Plugin 'zhaocai/GoldenView.Vim'                                          " Splitters golden ratio
+
+Plugin 'chaoren/vim-wordmotion'                                          " Advance word motion
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
