@@ -38,18 +38,15 @@ underline-color = #00f
 border-bottom-size = 0
 border-bottom-color = ${colors.background}
 
-spacing = 1
-padding-left = 0
-padding-right = 2
-module-margin-left = 1
-module-margin-right = 2
+padding-right = 1
+module-margin = 1
 
-font-0 = xos4 Terminus:pixelsize=20;2
-font-1 = FontAwesome:pixelsize=14;2
+font-0 = xos4 Terminus:pixelsize=14;2
+font-1 = FontAwesome:pixelsize=16;2
 
 modules-left = i3
 modules-center = date
-modules-right = cpu memory backlight volume dropbox wlan battery powermenu
+modules-right = cpu memory backlight volume wlan battery
 
 tray-position = none
 tray-padding = 4
@@ -129,6 +126,8 @@ format-connected = <label-connected>
 format-connected-prefix = " "
 
 label-connected = "%{A1:termite --exec=nmtui -t floatme &:}%essid%    %downspeed%   %upspeed%%{A}"
+udspeed-minwidth = 3
+
 label-disconnected = "%{A1:termite --exec=nmtui -t floatme &:}%{A}"
 label-disconnected-foreground = #5b
 
@@ -160,7 +159,7 @@ label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
-label = "%{A1:thunderbird -t floatme &:} %date%  %time%%{A}"
+label =  %date%  %time%%{A}
 date = %d-%m-%Y
 time = %H:%M
 interval = 5
