@@ -4,6 +4,7 @@ alias ll=exa
 alias la='ll'
 alias y='yaourt'
 alias ys='yaourt -Ss'
+alias yl='yaourt -Q'
 alias yi='yaourt -S'
 alias yin='yi --noconfirm'
 alias yu='yaourt -Syua'
