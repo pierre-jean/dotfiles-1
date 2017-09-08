@@ -180,7 +180,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Take screenshot
 # bindsym --release Shift+Print exec --no-startup-id scrot -s
-bindsym --release $mod+F5 exec scrot ~/Screenshots/screenshot_%Y-%m-%d-%H_%M.jpg -s -q 100 
+bindsym --release $mod+F5 exec scrot ~/Screenshots/screenshot_%Y-%m-%d-%H_%M_%S.jpg -s -q 100 
 
 # Volume keys
 bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
