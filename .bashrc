@@ -11,6 +11,7 @@ export EDITOR=vim
 export TERRAGRUNT_TFPATH=/usr/bin/terraform
 export ORION_PEM_LOCATION=~/.ssh/orion.pem
 
+source ~/dotfiles/fb_colors.sh
 source ~/dotfiles/prompt.sh
 source ~/dotfiles/git-completion.bash
 source ~/dotfiles/git-alias.sh
