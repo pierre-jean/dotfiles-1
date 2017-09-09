@@ -149,11 +149,6 @@ installIntellij() {
   sudo sysctl --system
 }
 
-installWeb() {
-  npm install -g jshint
-  npm install -g eslint
-}
-
 installDevTools() {
   echo "Installing developer tools"
   sleep 2
@@ -234,6 +229,12 @@ installVim() {
   vim +PluginInstall +qall
 }
 
+installEmacs() {
+  yaourt -S --noconfirm emacs
+  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+  ln -sfn ${dir}/config/emacs/spacemacs ${HOME}/.spacemacs
+}
+
 installRanger() {
   yaourt -S ranger --noconfirm
   ranger --copy-config=scope
@@ -295,6 +296,7 @@ ask "install dev tools?" Y && installDevTools;
 ask "install apps and tools?" Y && installTools;
 ask "install themes?" Y && installThemes;
 ask "install vim config?" Y && installVim;
+ask "install emacs?" Y && installEmacs;
 ask "install audio?" Y && installAudio;
 
 ask "Install redshift + config?" Y && installRedshift
