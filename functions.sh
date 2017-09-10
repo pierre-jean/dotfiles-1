@@ -237,3 +237,15 @@ showPublicIp() {
 every() {
 	watch -c -n $1 $2
 }
+
+headphonesSoundOutput() {
+  pactl set-card-profile 0 output:analog-stereo
+}
+
+monitorSoundOutput() {
+  pactl set-card-profile 0 output:hdmi-stereo
+}
+
+tvSoundOutput() {
+  pactl set-card-profile 0 output:hdmi-stereo-extra1
+}
