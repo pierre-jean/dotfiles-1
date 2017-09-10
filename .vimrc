@@ -2,7 +2,8 @@
 "                     GENERAL
 "===============================================================================
 
-set number     " enable line nubers
+set number
+set relativenumber
 set numberwidth=2
 
 set nocompatible              " be iMproved, required
