@@ -169,7 +169,7 @@ interval = 5
 type = internal/volume
 
 label-volume = "%{A3:pavucontrol &:} %percentage%%%{A}"
-label-muted = "%{A3:pavucontrol &:} %{A}"
+label-muted = "%{A3:pavucontrol &:} 0%%{A}"
 
 ramp-volume-0 = 
 ramp-volume-1 = 
