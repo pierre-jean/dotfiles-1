@@ -4,13 +4,13 @@
 
 #only Workspace variables
 # To convert from font awesome U+f1d3 to symbol: https://r12a.github.io/apps/conversion/
-set $WS1 1 
+set $WS1 1 
 set $WS2 2 
 set $WS3 3 
 set $WS4 4 λ
 set $WS5 5 
 set $WS6 6 
-set $WS7 7 
+set $WS7 7 
 set $WS8 8 
 set $WS9 9 
 set $WS0 10 
@@ -40,6 +40,7 @@ workspace "$WS6" output eDP-1
 # Apps assigned to workspaces
 assign [instance="urxvt|ws1_termite|gnome-terminal"] $WS1
 assign [instance="franz|slack|yakyak"] $WS5
+assign [instance="slack"] $WS5
 assign [class="Google-chrome"] $WS2
 assign [class="jetbrains(?)"] $WS3
 assign [instance="transmission-gtk"] $WS9
