@@ -205,6 +205,11 @@ dockerCleanUpContainers() {
   docker ps -aq | xargs docker rm
 }
 
+dockerPrune() {
+  docker system prune
+  docker rmi $(docker images -a -q)
+}
+
 showListeningPorts() {
   sudo netstat -tulpn | grep LISTEN
 }
@@ -235,17 +240,17 @@ showPublicIp() {
 }
 
 every() {
-	watch -c -n $1 $2
+  watch -c -n $1 $2
 }
 
-headphonesSoundOutput() {
+soundHeadphonesOutput() {
   pactl set-card-profile 0 output:analog-stereo
 }
 
-monitorSoundOutput() {
+soundMonitorOutput() {
   pactl set-card-profile 0 output:hdmi-stereo
 }
 
-tvSoundOutput() {
+soundTvOutput() {
   pactl set-card-profile 0 output:hdmi-stereo-extra1
 }
