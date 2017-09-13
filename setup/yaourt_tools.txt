@@ -18,3 +18,4 @@ evince
 tree
 tig
 aws-cli
+shellcheck-static
