@@ -135,6 +135,8 @@ Plugin 'zhaocai/GoldenView.Vim'                                          " Split
 
 Plugin 'chaoren/vim-wordmotion'                                          " Advance word motion
 
+Plugin 'mpickering/hlint-refactor-vim'                                   " Apply hlint suggestions easily
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
