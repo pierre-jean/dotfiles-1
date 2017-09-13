@@ -39,8 +39,8 @@ workspace "$WS6" output eDP-1
 
 # Apps assigned to workspaces
 assign [instance="urxvt|ws1_termite|gnome-terminal"] $WS1
-assign [instance="franz|slack|yakyak"] $WS5
-assign [instance="slack"] $WS5
+assign [instance="franz|yakyak"] $WS5
+assign [instance="slack"] $WS7
 assign [class="Google-chrome"] $WS2
 assign [class="jetbrains(?)"] $WS3
 assign [instance="transmission-gtk"] $WS9
