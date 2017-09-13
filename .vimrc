@@ -137,6 +137,8 @@ Plugin 'chaoren/vim-wordmotion'                                          " Advan
 
 Plugin 'mpickering/hlint-refactor-vim'                                   " Apply hlint suggestions easily
 
+Plugin 'terryma/vim-expand-region'                                       " Syntax aware selection
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
