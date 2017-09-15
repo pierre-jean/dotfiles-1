@@ -231,8 +231,7 @@ installVim() {
 
 installEmacs() {
   yaourt -S --noconfirm emacs
-  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-  ln -sfn ${dir}/config/emacs/spacemacs ${HOME}/.spacemacs
+  ln -sfn ~/dotfiles/config/emacs/init.el ${HOME}/.emacs.d/
 }
 
 installRanger() {
