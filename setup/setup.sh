@@ -231,7 +231,8 @@ installVim() {
 
 installEmacs() {
   yaourt -S --noconfirm emacs
-  ln -sfn ~/dotfiles/config/emacs/init.el ${HOME}/.emacs.d/
+  mkdir -p ${HOME}/.emacs.d
+  ln -sfn ${dir}/config/emacs/init.el ${HOME}/.emacs.d/
 }
 
 installRanger() {
