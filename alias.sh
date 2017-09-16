@@ -29,7 +29,6 @@ alias yun='systemUpdate "--noconfirm";'
 alias yunf='yun --force'
 
 systemUpdate () {
-  set -x
   echo "Updating dotfiles"
   (cd "$dotfilesLocation" && git pull)
   yaourt -Syua "$1"
