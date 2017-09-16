@@ -132,7 +132,7 @@ installHaskell() {
 
   yaourt -S haskell-stack haskell-stack-tool
   stack setup
-  stack install ghc-mod hindent stylish-haskell cabal-install hoogle-5.0 hdevtools hlint apply-refact-0.3.0.1
+  stack install ghc-mod hindent stylish-haskell cabal-install hoogle-5.0 hdevtools hlint apply-refact-0.3.0.1 stylish-haskell
   cabal update
   echo "========"
   echo "Your GHC path will be: $(stack path | grep ghc-paths)"
