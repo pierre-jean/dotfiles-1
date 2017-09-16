@@ -1,17 +1,17 @@
 ;; Bootstrap `use-package'
-
 (require 'package)
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (setq package-enable-at-startup nil)
-(add-to-list
-  'package-archives
-  '("melpa" . "https://melpa.org/packages/"))
-
 (package-initialize)
 
 (unless
   (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+
+;; Functions
+(defalias 'pkg 'use-package)
 
 ;; Config
 (setq inhibit-startup-message t)
@@ -24,29 +24,27 @@
 (savehist-mode 1)
 
 ;; Appearance
-
-(use-package
+(pkg
   powerline
   :ensure t
   :config
   (powerline-center-evil-theme)
 
-  (use-package flycheck-color-mode-line
-               :ensure t
-               :config
-               (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)))
+  (pkg flycheck-color-mode-line
+       :ensure t
+       :config
+       (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)))
 
-(use-package leuven-theme :ensure t)
+(pkg leuven-theme :ensure t)
 
 ;; Evil mode
-
-(use-package
+(pkg
   evil
   :ensure t
   :config
   (evil-mode 1)
 
-  (use-package
+  (pkg
     evil-leader
     :ensure t
     :config
@@ -55,50 +53,111 @@
     (evil-leader/set-key "e" 'find-file)
     )
 
-  (use-package
+  (pkg
     evil-surround
     :ensure t
     :config
     (global-evil-surround-mode))
 
-  (use-package evil-indent-textobject :ensure t)
+  (pkg evil-indent-textobject :ensure t)
 
   ;; Visual line navigation
   (define-key evil-normal-state-map (kbd "gj") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "gk") 'evil-previous-visual-line))
 
-(use-package company-mode :ensure t)
+(pkg company :ensure t)
 
 ;; Haskell mode
-(use-package haskell-mode
-             :ensure t
-             :config
-             (use-package company-ghci :defer t))
+(pkg
+  haskell-mode
+  :ensure t
+  :config
+  (pkg company-ghci :defer t))
 
-(use-package intero
-             :ensure t
-             :config
-             (add-hook 'haskell-mode-hook 'intero-mode))
+(pkg
+  intero
+  :ensure t
+  :config
+  (add-hook 'haskell-mode-hook 'intero-mode))
 
-(use-package markdown-mode :ensure t)
-(use-package yaml-mode :ensure t)
+;; Scala mode
+(pkg
+  scala-mode
+  :ensure t
+  :pin melpa-stable
+  :init
+  (progn
+    (dolist (ext '(".cfe" ".cfs" ".si" ".gen" ".lock"))
+      (add-to-list 'completion-ignored-extensions ext)))
+  :config
+
+  ;; Automatically replace arrows with unicode ones when enabled
+  (defconst scala-unicode-arrows-alist
+            '(("=>" . "⇒")
+              ("->" . "→")
+              ("<-" . "←")))
+
+  (defun scala/replace-arrow-at-point ()
+    "Replace the arrow before the point (if any) with unicode ones.
+    An undo boundary is inserted before doing the replacement so that
+    it can be undone."
+    (let* ((end (point))
+           (start (max (- end 2) (point-min)))
+           (x (buffer-substring start end))
+           (arrow (assoc x scala-unicode-arrows-alist)))
+      (when arrow
+        (undo-boundary)
+        (backward-delete-char 2)
+        (insert (cdr arrow)))))
+
+    (defun scala/gt ()
+      "Insert a `>' to the buffer. If it's part of a right arrow (`->' or `=>'),
+      replace it with the corresponding unicode arrow."
+      (interactive)
+      (insert ">")
+      (scala/replace-arrow-at-point))
+
+      (defun scala/hyphen ()
+        "Insert a `-' to the buffer. If it's part of a left arrow (`<-'),
+        replace it with the unicode arrow."
+        (interactive)
+        (insert "-")
+        (scala/replace-arrow-at-point))
+
+        (defconst scala-use-unicode-arrows t)
+        (when scala-use-unicode-arrows
+          (define-key scala-mode-map
+                      (kbd ">") 'scala/gt)
+          (define-key scala-mode-map
+                      (kbd "-") 'scala/hyphen))
+
+        ;; Ensime
+        (pkg
+          ensime
+          :ensure t
+          :init
+          (add-hook 'scala-mode-hook 'scala/maybe-start-ensime))
+        (pkg sbt-mode :ensure t))
+
+(pkg markdown-mode :ensure t)
+(pkg yaml-mode :ensure t)
 
 ;; Syntax check
-(use-package
+(pkg
   flycheck
   :ensure t
   :config
   (global-flycheck-mode))
 
 ;; Zeal setup
-(use-package zeal-at-point :ensure t)
+(pkg zeal-at-point :ensure t)
 
 (add-to-list 'zeal-at-point-mode-alist '(haskell-mode . "haskell"))
 (global-set-key "\C-cd" 'zeal-at-point)
 (add-to-list 'exec-path "/usr/bin/zeal")
 
 ;; Neotree
-(use-package
+(pkg
   neotree
   :ensure t
   :init
@@ -110,40 +169,40 @@
   (define-key evil-normal-state-map (kbd "C-n") 'neotree-toggle))
 
 ;; Rest client
-(use-package restclient :ensure t)
+(pkg restclient :ensure t)
 
 ;; Emacs line number
 (global-linum-mode t)
 
-(use-package smooth-scrolling
-             :ensure t
-             :init
-             (setq scroll-margin 5
-                   scroll-conservatively 9999
-                   scroll-step 1))
+(pkg smooth-scrolling
+     :ensure t
+     :init
+     (setq scroll-margin 5
+           scroll-conservatively 9999
+           scroll-step 1))
 
 ;; helm settings (TAB in helm window for actions over selected items,
 ;; C-SPC to select items)
-(use-package helm 
-             :ensure t
-             :init (use-package helm-projectile :ensure t)
-             :config
-             (require 'helm-config)
-             (require 'helm-misc)
-             (require 'helm-projectile)
-             (require 'helm-locate)
-             (helm-mode 1)
-             (define-key evil-normal-state-map " " 'helm-mini)
-             (setq helm-quick-update t)
-             (setq helm-bookmark-show-location t)
-             (setq helm-buffers-fuzzy-matching t)
+(pkg helm
+     :ensure t
+     :init (pkg helm-projectile :ensure t)
+     :config
+     (require 'helm-config)
+     (require 'helm-misc)
+     (require 'helm-projectile)
+     (require 'helm-locate)
+     (helm-mode 1)
+     (define-key evil-normal-state-map " " 'helm-mini)
+     (setq helm-quick-update t)
+     (setq helm-bookmark-show-location t)
+     (setq helm-buffers-fuzzy-matching t)
 
-             ;; Ctrlp like
-             (global-set-key (kbd "C-p") 'projectile--find-file)
-             (define-key evil-normal-state-map (kbd "C-p") 'projectile--find-file)
+     ;; Ctrlp like
+     (global-set-key (kbd "C-p") 'projectile--find-file)
+     (define-key evil-normal-state-map (kbd "C-p") 'projectile--find-file)
 
-             ;; Override default command launcher
-             (global-set-key (kbd "M-x") 'helm-M-x))
+     ;; Override default command launcher
+     (global-set-key (kbd "M-x") 'helm-M-x))
 
 ;; Emacs global
 (global-set-key (kbd "C-l") 'evil-search-highlight-persist-remove-all)
@@ -154,17 +213,17 @@
 (provide 'init)
 
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (neotree yaml-mode markdown-mode intero haskell-mode evil-indent-textobject evil-surround evil-leader evil use-package powerline leuven-theme flycheck-color-mode-line))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+  '(package-selected-packages
+     (quote
+       (helm-projectile helm smooth-scrolling restclient zeal-at-point ensime scala-mode company-mode neotree yaml-mode markdown-mode intero haskell-mode evil-indent-textobject evil-surround evil-leader evil use-package powerline leuven-theme flycheck-color-mode-line))))
 
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+  )
