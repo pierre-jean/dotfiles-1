@@ -20,10 +20,10 @@
   (pkg evil-indent-textobject :ensure t)
 
   ;; Visual line navigation
-  (define-key evil-normal-state-map (kbd "gj") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "g <down>") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "gk") 'evil-previous-visual-line)
-  (define-key evil-normal-state-map (kbd "g <up>") 'evil-previous-visual-line)
+  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+  (define-key evil-normal-state-map (kbd "<down>") 'evil-next-visual-line)
+  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+  (define-key evil-normal-state-map (kbd "<up>") 'evil-previous-visual-line)
 
   ;; Buffer navigation
   (define-key evil-normal-state-map (kbd "C-w <up>") 'evil-window-up)
