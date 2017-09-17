@@ -141,6 +141,7 @@ Plugin 'terryma/vim-expand-region'                                       " Synta
 
 Plugin 'luochen1990/rainbow'                                             " Rainbow parenthesys 
 
+Plugin 'jnurmine/Zenburn'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -207,7 +208,7 @@ set laststatus=2 " This fixes a bug that prevents the bar not showing with nerdt
 "===============================================================================
 
 set background=dark
-colorscheme solarized
+colorscheme zenburn
 
 let g:airline_theme='solarized' " Set theme for airline plugin
 
