@@ -24,6 +24,11 @@ alias mit-scheme='rlwrap -r -c -f ~/dotfiles/config/mit-scheme/mit_scheme_bindin
 alias scheme='rlwrap -r -c -f ~/dotfiles/config/mit-scheme/mit_scheme_bindings.txt mit-scheme'
 alias exa='exa -bghlaU --git --group-directories-first'
 alias weather='curl wttr.in/~London'
+alias ffs='sudo $(fc -ln -1)'
+alias et='emacs -nw'
+alias ew='emacs'
+alias e='emacs'
+
 alias yu='systemUpdate;'
 alias yun='systemUpdate "--noconfirm";'
 alias yunf='yun --force'
