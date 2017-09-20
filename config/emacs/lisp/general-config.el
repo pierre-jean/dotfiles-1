@@ -54,6 +54,8 @@
 ;; No more # ... # files in the project
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 
+(setq vc-follow-symlinks t)
+
 ;(pkg
 ;  blank-mode
 ;  :ensure t
