@@ -28,6 +28,8 @@ alias ffs='sudo $(fc -ln -1)'
 alias et='emacs -nw'
 alias ew='emacs'
 alias e='emacs'
+alias yarn='yarn --emoji'
+alias ya='yarn --emoji'
 
 alias yu='systemUpdate;'
 alias yun='systemUpdate "--noconfirm";'
@@ -38,4 +40,3 @@ systemUpdate () {
   (cd "$dotfilesLocation" && git pull)
   yaourt -Syua "$1"
 }
-
