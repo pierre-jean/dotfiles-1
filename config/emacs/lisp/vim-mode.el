@@ -5,22 +5,10 @@
   (evil-mode 1)
 
   ;; Visual line navigation
-<<<<<<< HEAD
-  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "<down>") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-  (define-key evil-normal-state-map (kbd "<up>") 'evil-previous-visual-line)
-||||||| parent of e00320c... Fixes compile-mode evil navigation
-  (define-key evil-normal-state-map (kbd "gj") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "g <down>") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "gk") 'evil-previous-visual-line)
-  (define-key evil-normal-state-map (kbd "g <up>") 'evil-previous-visual-line)
-=======
-  (define-key evil-motion-state-map (kbd "gj") 'evil-next-visual-line)
-  (define-key evil-motion-state-map (kbd "g <down>") 'evil-next-visual-line)
-  (define-key evil-motion-state-map (kbd "gk") 'evil-previous-visual-line)
-  (define-key evil-motion-state-map (kbd "g <up>") 'evil-previous-visual-line)
->>>>>>> e00320c... Fixes compile-mode evil navigation
+  (define-key evil-motion-state-map (kbd "j") 'evil-next-visual-line)
+  (define-key evil-motion-state-map (kbd "<down>") 'evil-next-visual-line)
+  (define-key evil-motion-state-map (kbd "k") 'evil-previous-visual-line)
+  (define-key evil-motion-state-map (kbd "<up>") 'evil-previous-visual-line)
 
   ;; Window navigation
   (define-key evil-motion-state-map (kbd "C-w <up>") 'evil-window-up)
