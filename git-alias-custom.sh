@@ -2,9 +2,10 @@ alias gpl='git prunelocal'
 alias gpr='git pull-request'
 alias gdl='git discard'
 alias glrb='git pull --rebase'
+alias gcam='git add . && git commit -a -m'
 
 gblame() { 
-  git log -p -M --follow --stat -- $1
+  git log -p -M --follow --stat -- "$1"
 }
 
 # Copied this from: https://github.com/robbyrussell/oh-my-zsh/blob/3705d47bb3f3229234cba992320eadc97a221caf/lib/git.zsh
@@ -20,7 +21,7 @@ function git_current_branch() {
     [[ $ret == 128 ]] && return  # no git repo.
     ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
   fi
-  echo ${ref#refs/heads/}
+  echo "${ref#refs/heads/}"
 }
 
 ## Autocompleted alias

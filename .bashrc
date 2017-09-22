@@ -14,6 +14,7 @@ export ORION_PEM_LOCATION=~/.ssh/orion.pem
 source ~/dotfiles/prompt.sh
 source ~/dotfiles/git-completion.bash
 source ~/dotfiles/git-alias.sh
+source ~/dotfiles/git-alias-custom.sh
 source ~/dotfiles/functions.sh
 source ~/dotfiles/alias.sh
 source ~/dotfiles/paths.sh
