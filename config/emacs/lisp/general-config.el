@@ -41,8 +41,9 @@
         scroll-conservatively 9999
         scroll-step 1))
 
-;; No more # ... # files in the project
+;; No more ....~ (backup) or # ... # (auto-save) files in the project
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
+(setq auto-save-file-name-transforms `((".*" , "~/.emacs.d/.saves" t)))
 
 (setq vc-follow-symlinks t)
 
