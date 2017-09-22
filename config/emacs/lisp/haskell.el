@@ -1,3 +1,5 @@
+(require 'proper-gutter-mode)
+
 (pkg
   haskell-mode
   :ensure t
@@ -8,7 +10,9 @@
   intero
   :ensure t
   :config
-  (add-hook 'haskell-mode-hook 'intero-mode))
+  (add-hook 'haskell-mode-hook 'intero-mode)
+  (add-hook 'haskell-mode-hook 'proper-gutter-mode))
+
 
 ;; Zeal setup
 (pkg zeal-at-point :ensure t)
