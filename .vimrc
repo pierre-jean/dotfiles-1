@@ -17,6 +17,8 @@ set directory=~/.vim.tmp " Save tmp files in custom folder
 set undodir=~/.vim.undo " Save undo files in custom folder
 set undofile " Maintain undo history between sessions
 
+let mapleader = ","
+
 " Eliminates delay when pressing <ESC> in Insert mode to go to normal mode
 set ttimeoutlen=0
 
