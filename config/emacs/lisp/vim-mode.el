@@ -3,6 +3,7 @@
   :ensure t
   :config
   (evil-mode 1)
+  (define-key evil-motion-state-map (kbd "C-z") 'suspend-emacs)
 
   ;; Visual line navigation
   (define-key evil-motion-state-map (kbd "j") 'evil-next-visual-line)
