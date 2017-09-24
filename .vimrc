@@ -146,7 +146,7 @@ Plugin 'terryma/vim-expand-region'                                       " Synta
 
 Plugin 'luochen1990/rainbow'                                             " Rainbow parenthesys 
 
-Plugin 'jnurmine/Zenburn'                                                " Visual theme
+Plugin 'arcticicestudio/nord-vim'                                        " Visual theme
 
 Plugin 'tpope/vim-surround'                                              " Surroundings
 call vundle#end()            " required
@@ -215,9 +215,9 @@ set laststatus=2 " This fixes a bug that prevents the bar not showing with nerdt
 "===============================================================================
 
 set background=dark
-colorscheme zenburn
+colorscheme nord
 
-let g:airline_theme='solarized' " Set theme for airline plugin
+let g:airline_theme='nord' " Set theme for airline plugin
 
 "===============================================================================
 "                     SYNTAX HIGHLIGHTING
