@@ -14,23 +14,24 @@
 ;; Load modules
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (dolist (module '(general-config
-                   appearance
-                   vim-mode
-                   acklike
-                   auto-complete
-                   haskell
-                   javascript
-                   scala
-                   syntax-check
-                   file-explorer
-                   helm-fw
-                   ctrlp
-                   markdown
-                   yaml
-                   compile-mode
-                   rest
-                   vimscript
-                   clipboard))
+                  appearance
+                  vim-mode
+                  acklike
+                  auto-complete
+                  haskell
+                  javascript
+                  scala
+                  syntax-check
+                  file-explorer
+                  helm-fw
+                  ctrlp
+                  markdown
+                  yaml
+                  compile-mode
+                  rest
+                  vimscript
+                  clipboard
+                  el))
   (require module))
 
 (provide 'init)
