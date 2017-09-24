@@ -25,9 +25,9 @@ alias scheme='rlwrap -r -c -f ~/dotfiles/config/mit-scheme/mit_scheme_bindings.t
 alias exa='exa -bghlaU --git --group-directories-first'
 alias weather='curl wttr.in/~London'
 alias ffs='sudo $(fc -ln -1)'
-alias et='emacs -nw'
-alias ew='emacs'
-alias e='emacs'
+alias et='emacsclient -nw'
+alias ew='emacsclient'
+alias e='emacsclient'
 alias yarn='yarn --emoji'
 alias ya='yarn --emoji'
 
