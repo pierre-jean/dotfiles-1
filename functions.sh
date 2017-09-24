@@ -77,30 +77,30 @@ extract() {
     fi
   fi
 
-  filename=`basename "$1"`
+  filename=$(~basename "$1")
 
   #echo "${filename##*.}" debug
 
   case "${filename##*.}" in
     tar)
       echo -e "${clrstart}Extracting $1 to $DESTDIR: (uncompressed tar)${clrend}"
-      tar x${3}f "$1" -C "$DESTDIR"
+      tar x"${3}"f "$1" -C "$DESTDIR"
       ;;
     gz)
       echo -e "${clrstart}Extracting $1 to $DESTDIR: (gip compressed tar)${clrend}"
-      tar x${3}fz "$1" -C "$DESTDIR"
+      tar x"${3}"fz "$1" -C "$DESTDIR"
       ;;
     tgz)
       echo -e "${clrstart}Extracting $1 to $DESTDIR: (gip compressed tar)${clrend}"
-      tar x${3}fz "$1" -C "$DESTDIR"
+      tar x"${3}"fz "$1" -C "$DESTDIR"
       ;;
     xz)
       echo -e "${clrstart}Extracting  $1 to $DESTDIR: (gip compressed tar)${clrend}"
-      tar x${3}f -J "$1" -C "$DESTDIR"
+      tar x"${3}"f -J "$1" -C "$DESTDIR"
       ;;
     bz2)
       echo -e "${clrstart}Extracting $1 to $DESTDIR: (bzip compressed tar)${clrend}"
-      tar x${3}fj "$1" -C "$DESTDIR"
+      tar x"${3}"fj "$1" -C "$DESTDIR"
       ;;
     zip)
       echo -e "${clrstart}Extracting $1 to $DESTDIR: (zipp compressed file)${clrend}"
@@ -127,12 +127,12 @@ compress() {
   if [[ -n "$1" ]]; then
     FILE=$1
     case $FILE in
-      *.tar ) shift && tar cf $FILE $* ;;
-      *.tar.bz2 ) shift && tar cjf $FILE $* ;;
-      *.tar.gz ) shift && tar czf $FILE $* ;;
-      *.tgz ) shift && tar czf $FILE $* ;;
-      *.zip ) shift && zip $FILE $* ;;
-      *.rar ) shift && rar $FILE $* ;;
+      *.tar ) shift && tar cf "$FILE" "$*" ;;
+      *.tar.bz2 ) shift && tar cjf "$FILE" "$*" ;;
+      *.tar.gz ) shift && tar czf "$FILE" "$*" ;;
+      *.tgz ) shift && tar czf "$FILE" "$*" ;;
+      *.zip ) shift && zip "$FILE" "$*" ;;
+      *.rar ) shift && rar "$FILE" "$*" ;;
     esac
   else
     echo "usage: compress <foo.tar.gz> ./foo ./bar"
@@ -142,10 +142,10 @@ compress() {
 
 # FILE & STRINGS RELATED FUNCTIONS {{{
 ## FIND A FILE WITH A PATTERN IN NAME {{{
-ff() { find . -type f -iname '*'$*'*' -ls ; }
+ff() { find . -type f -iname '*'"$*"'*' -ls ; }
 #}}}
 ## FIND A FILE WITH PATTERN $1 IN NAME AND EXECUTE $2 ON IT {{{
-fe() { find . -type f -iname '*'$1'*' -exec "${2:-file}" {} \;  ; }
+fe() { find . -type f -iname '*'"$1"'*' -exec "${2:-file}" {} \;  ; }
 #}}}
 ## MOVE FILENAMES TO LOWERCASE {{{
 lowercase() {
@@ -155,7 +155,7 @@ lowercase() {
       */* ) dirname==${file%/*} ;;
       * ) dirname=.;;
     esac
-    nf=$(echo $filename | tr A-Z a-z)
+    nf=$(echo "$filename" | tr A-Z a-z)
     newname="${dirname}/${nf}"
     if [[ "$nf" != "$filename" ]]; then
       mv "$file" "$newname"
@@ -172,7 +172,7 @@ orphans() {
   if [[ ! -n $(pacman -Qdt) ]]; then
     echo "No orphans to remove."
   else
-    sudo pacman -Rns $(pacman -Qdtq)
+    sudo pacman -Rns "$(pacman -Qdtq)"
   fi
 }
 
@@ -185,9 +185,9 @@ kernelModuleParameters() {
   cat /proc/modules | cut -f 1 -d " " | while read module; do \
     echo "Module: $module"; \
     if [ -d "/sys/module/$module/parameters" ]; then \
-      ls /sys/module/$module/parameters/ | while read parameter; do \
+      ls /sys/module/"$module"/parameters/ | while read parameter; do \
       echo -n "Parameter: $parameter --> "; \
-      cat /sys/module/$module/parameters/$parameter; \
+      cat /sys/module/"$module"/parameters/"$parameter"; \
     done; \
   fi; \
   echo; \
@@ -197,7 +197,7 @@ done
 cdls() { cd "$@" && ls; }
 
 killByName() {
-  kill $(ps aux | grep $1 | awk '{print $2}')
+  kill "$(ps aux | grep "$1" | awk '{print $2}')"
 }
 
 dockerCleanUpContainers() {
@@ -207,7 +207,7 @@ dockerCleanUpContainers() {
 
 dockerPrune() {
   docker system prune
-  docker rmi $(docker images -a -q)
+  docker rmi "$(docker images -a -q)"
 }
 
 showListeningPorts() {
@@ -215,11 +215,11 @@ showListeningPorts() {
 }
 
 findFileByContent() {
-  sudo grep -rinl $2 -e "$1"
+  sudo grep -rinl "$2" -e "$1"
 }
 
 findFileByName() {
-  sudo find $2 -iname "*$1*" -type f
+  sudo find "$2" -iname "*$1*" -type f
 }
 
 showWifiPassword() {
@@ -229,18 +229,18 @@ showWifiPassword() {
   else
     path="$path$1"
   fi
-  sudo grep -H '^psk=' $path | \
+  sudo grep -H '^psk=' "$path" | \
     awk -F '/' '{print $5}'
 }
 
 showPublicIp() {
   IP=$(curl -s ipinfo.io/ip)
   CITY=$(curl -s ipinfo.io/city)
-  echo $IP "-" $CITY
+  echo "$IP" "-" "$CITY"
 }
 
 every() {
-  watch -c -n $1 $2
+  watch -c -n "$1" "$2"
 }
 
 soundHeadphonesOutput() {
