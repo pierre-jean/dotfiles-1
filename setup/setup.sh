@@ -17,6 +17,8 @@ ask() {
     fi
 
     # ask the question
+    # shellcheck disable=SC2162
+    # -r as suggested breaks this
     read -p "$1 [$prompt] " REPLY
 
     # default?
@@ -42,14 +44,14 @@ installi3() {
   #gvfs-mime --set inode/directory thunar.desktop
   #xdg-mime default thunar.desktop inode/directory
 
-  ln -sfn ${dir}/config/i3 ${HOME}/.config/i3
+  ln -sfn "${dir}/config/i3 ${HOME}/.config/i3"
 
   # gsimplecal configuration
-  [ -d ${HOME}/.config/gsimplecal ] || mkdir -p ${HOME}/.config/gsimplecal
-  ln -sfn ${dir}/config/gsimplecal/config ${HOME}/.config/gsimplecal/config
+  [ -d "${HOME}/.config/gsimplecal" ] || mkdir -p "${HOME}/.config/gsimplecal"
+  ln -sfn "${dir}/config/gsimplecal/config" "${HOME}/.config/gsimplecal/config"
 
   # polybar
-  ln -sfn ${dir}/config/polybar/config ${HOME}/.config/polybar
+  ln -sfn "${dir}/config/polybar/config ${HOME}/.config/polybar"
 
 }
 
@@ -60,7 +62,7 @@ installFonts() {
   mkdir -p ~/.config/fontconfig/conf.d/
 
   # Set font fallback configuration in place
-  ln -sfn ${dir}/config/fontconfig/10-icons.conf ${HOME}/.config/fontconfig/conf.d/10-icons.conf
+  ln -sfn "${dir}/config/fontconfig/10-icons.conf" "${HOME}/.config/fontconfig/conf.d/10-icons.conf"
 
   # Refresh user and global font paths
   fc-cache -fv
@@ -68,7 +70,7 @@ installFonts() {
 
   # Install vcconsole.font & colors
   yaourt --noconfirm -S mkinitcpio-colors-git
-  cp ${dir}/config/fontconfig/vconsole.conf /etc/
+  cp "${dir}/config/fontconfig/vconsole.conf" /etc/
 
   sudo sed -i /etc/mkinitcpio.conf -e 's/^\\\(HOOKS=\"base\s\)\([^\"]\+\)\"/\1colors consolefont \2"/'
   sudo mkinitcpio -p linux
@@ -98,7 +100,7 @@ installScala() {
 installGit() {
   echo "Installing Git"
   yaourt --noconfirm -S ./yaourt_git.txt
-  ln -sfn ${dir}/.gitconfig ${HOME}/.gitconfig
+  ln -sfn "${dir}/.gitconfig" "${HOME}/.gitconfig"
   gibo Emacs Vim JetBrains Tags Vagrant Windows macOS Linux Archives >> ~/.gitignore.global
 }
 
@@ -180,8 +182,8 @@ installRedshift() {
   echo "Installing redshift"
   sleep 2
   yaourt --noconfirm -S redshift
-  [ -d ${HOME}/.config/redshift ] || mkdir -p ${HOME}/.config/redshift
-  ln -sfn ${dir}/config/redshift/config ${HOME}/.config/redshift/config
+  [ -d "${HOME}/.config/redshift" ] || mkdir -p "${HOME}/.config/redshift"
+  ln -sfn "{dir}/config/redshift/config" "${HOME}/.config/redshift/config"
 }
 
 installScreensavers() {
@@ -192,7 +194,7 @@ installScreensavers() {
 
 installPacman() {
   sudo rm /etc/pacman.conf
-  ln -sfn ${dir}/config/pacman/pacman.conf /etc/pacman.conf
+  ln -sfn "${dir}/config/pacman/pacman.conf" /etc/pacman.conf
   sudo pacman-key --init
   sudo pacman-key --populate archlinux
   sudo pacman -Syu
@@ -221,7 +223,7 @@ installVim() {
   yaourt -S --noconfirm gvim
   #Install plugin system
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  ln -sfn ${dir}/.vimrc ${HOME}/.vimrc
+  ln -sfn "${dir}/.vimrc" "${HOME}/.vimrc"
   mkdir -p ~/.vim.backup
   mkdir -p ~/.vim.tmp
   #Require for ferret plugin to work (search text across files)
@@ -243,7 +245,7 @@ installEmacs() {
 installRanger() {
   yaourt -S ranger --noconfirm
   ranger --copy-config=scope
-  ln -sfn ${dir}/config/ranger/config ${HOME}/.config/ranger/rc.conf
+  ln -sfn "${dir}/config/ranger/config" "${HOME}/.config/ranger/rc.conf"
 }
 
 installAudio() {
@@ -256,7 +258,7 @@ installCompton() {
   yaourt -S --noconfirm \
     compton \
     xorg-xwininfo
-  ln -sfn ${dir}/config/compton/compton.conf ${HOME}/.config/compton.conf
+  ln -sfn "${dir}/config/compton/compton.conf" "${HOME}/.config/compton.conf"
 }
 
 installLightDm() {
@@ -264,17 +266,17 @@ installLightDm() {
     lightdm \
     lightdm-gtk-greeter \
     lightdm-webkit2-greeter
-  ln -sfn ${dir}/.xprofile ${HOME}/.xprofile
-  sudo ln -sfn ${dir}/config/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
+  ln -sfn "${dir}/.xprofile" "{HOME}/.xprofile"
+  sudo ln -sfn "${dir}/config/lightdm/lightdm.conf" /etc/lightdm/lightdm.conf
   sudo systemctl enable lightdm.service
 }
 
 installAppsOnStartUp() {
   mkdir -p ~/.before_startx
-  cp ${dir}/.before_startx/run.sh ~/.before_startx/run.sh
+  cp "${dir}/.before_startx/run.sh" ~/.before_startx/run.sh
   chmod a+x ~/.before_startx/run.sh
 }
-dir=`pwd`
+dir=$(pwd)
 if [ ! -e "${dir}/${0}" ]; then
   echo "Script not called from within repository directory. Aborting."
   exit 2
@@ -283,12 +285,12 @@ dir="${dir}/.."
 
 echo "PaNaVTEC dotfiles installer"
 # Makes dir for scrot screenshots
-[ -d ${HOME}/Pictures/Screenshots ] || mkdir -p ${HOME}/Pictures/Screenshots
-[ -d ${HOME}/.data ] || mkdir ${HOME}/.data
-[ -d ${HOME}/.i3 ] || mkdir ${HOME}/.i3
+[ -d "${HOME}/Pictures/Screenshots" ] || mkdir -p "${HOME}/Pictures/Screenshots"
+[ -d "${HOME}/.data" ] || mkdir "${HOME}/.data"
+[ -d "${HOME}/.i3" ] || mkdir "${HOME}/.i3"
 
 #Makes binary executable
-chmod a+x ${dir}/bin/*
+chmod a+x "${dir}/bin/*"
 
 echo "actionSystem.suspendFocusTransferIfApplicationInactive=false add this into intelliJ to prevent focus lose"
 
@@ -305,13 +307,13 @@ ask "install emacs?" Y && installEmacs;
 ask "install audio?" Y && installAudio;
 
 ask "Install redshift + config?" Y && installRedshift
-ask "Install symlink for .xinitrc?" Y && ln -sfn ${dir}/.xinitrc ${HOME}/.xinitrc
-ask "Install symlink for .bashrc?" Y && ln -sfn ${dir}/.bashrc ${HOME}/.bashrc
-ask "Install symlink for .bash_profile?" Y && ln -sfn ${dir}/.bash_profile ${HOME}/.bash_profile
+ask "Install symlink for .xinitrc?" Y && ln -sfn "${dir}/.xinitrc" "${HOME}/.xinitrc"
+ask "Install symlink for .bashrc?" Y && ln -sfn "${dir}/.bashrc" "${HOME}/.bashrc"
+ask "Install symlink for .bash_profile?" Y && ln -sfn "${dir}/.bash_profile" "${HOME}/.bash_profile"
 
-ask "Install configuration for bin?" Y && ln -sfn ${dir}/bin ${HOME}/.bin
-ask "Install configuration for dunst?" Y && ln -sfn ${dir}/config/dunst ${HOME}/.config/dunst
-ask "Install configuration for termite?" Y && ln -sfn ${dir}/config/termite ${HOME}/.config/termite && ln -sfn ${dir}/.dircolors ${HOME}/.dircolors;
+ask "Install configuration for bin?" Y && ln -sfn "${dir}/bin" "${HOME}/.bin"
+ask "Install configuration for dunst?" Y && ln -sfn "${dir}/config/dunst" "${HOME}/.config/dunst"
+ask "Install configuration for termite?" Y && ln -sfn "${dir}/config/termite" "${HOME}/.config/termite" && ln -sfn "${dir}/.dircolors" "${HOME}/.dircolors"
 ask "Install screensavers?" Y && installScreensavers;
 ask "Install Ranger" Y && installRanger;
 ask "Install apps to launch on system boot" Y && installAppsOnStartUp;
