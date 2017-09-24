@@ -146,7 +146,9 @@ Plugin 'terryma/vim-expand-region'                                       " Synta
 
 Plugin 'luochen1990/rainbow'                                             " Rainbow parenthesys 
 
-Plugin 'jnurmine/Zenburn'
+Plugin 'jnurmine/Zenburn'                                                " Visual theme
+
+Plugin 'tpope/vim-surround'                                              " Surroundings
 call vundle#end()            " required
 
 filetype plugin indent on    " required
