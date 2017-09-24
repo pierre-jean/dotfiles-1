@@ -10,10 +10,10 @@
        (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)))
 
 (pkg
-  zenburn-theme
+  nord-theme
   :ensure t
   :config
-  (load-theme 'zenburn t))
+  (load-theme 'nord t))
 
 (set-default-font "xos4 Terminus")
 (set-face-attribute 'default nil :height 150)
