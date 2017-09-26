@@ -234,7 +234,7 @@ installVim() {
 installEmacs() {
   mkdir -p "$HOME/.emacs.d/"
   # Install like this until emacs 26 is released in aur
-  (cd "$dir/config/emacs/install/" && make pkg -si)
+  (cd "$dir/config/emacs/install/" && makepkg -si)
   mkdir -p "$HOME/.emacs.saves"
   mkdir -p "$HOME/.emacs.undo"
   mkdir -p "$HOME/.emacs..saves"
