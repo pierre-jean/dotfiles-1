@@ -237,7 +237,6 @@ installEmacs() {
   (cd "$dir/config/emacs/install/" && makepkg -si)
   mkdir -p "$HOME/.emacs.saves"
   mkdir -p "$HOME/.emacs.undo"
-  mkdir -p "$HOME/.emacs..saves"
   touch "$HOME/.emacs.d/custom.el"
 
   ln -sfn "$dir/config/emacs/init.el" "$HOME/.emacs.d/"
