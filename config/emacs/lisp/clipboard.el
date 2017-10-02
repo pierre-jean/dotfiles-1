@@ -31,6 +31,6 @@
          1))
     ))
 
-(define-key evil-motion-state-map (kbd "C-c") 'copy-to-x-clipboard)
+(define-key evil-motion-state-map (kbd "M-c") 'copy-to-x-clipboard)
 
 (provide 'clipboard)
