@@ -8,8 +8,6 @@
 (pkg nord-theme 
   :ensure t
   :config
-  (set-face-attribute 'font-lock-comment-face nil
-                      :foreground "#81A1C1") ; nord9
   (set-face-attribute 'vertical-border nil
                       :foreground "#EBCB8B") ; nord13
   )
