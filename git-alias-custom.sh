@@ -40,3 +40,4 @@ __git_complete gl _git_pull
 __git_complete grb _git_rebase
 __git_complete gp _git_push
 __git_complete gcp _git_cherry_pick
+__git_complete gda _git_branch
