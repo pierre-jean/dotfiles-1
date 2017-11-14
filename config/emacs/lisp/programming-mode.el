@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 (require 'prettify)
 (require 'proper-gutter-mode)
 (require 'invisible-chars)
@@ -6,6 +7,7 @@
 (require 'paren)
 (require 'compile)
 (require 'code-snippets)
+(require 'compile)
 
 (define-minor-mode
   programming-mode
@@ -31,5 +33,10 @@
       (show-paren-mode -1)
       (yas-minor-mode +1)
       (flycheck-mode -1))))
+
+(defun set-compile-for (mode command)
+  (add-hook mode
+            (lambda ()
+              (set (make-local-variable 'compile-command) command))))
 
 (provide 'programming-mode)
