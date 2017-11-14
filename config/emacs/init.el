@@ -29,6 +29,7 @@
                    syntax-check
                    file-explorer
                    helm-fw
+                   git
                    ctrlp
                    markdown
                    yaml
