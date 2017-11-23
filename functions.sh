@@ -169,11 +169,7 @@ lowercase() {
 
 # Removes orphan packages with paman
 orphans() {
-  if [[ ! -n $(pacman -Qdt) ]]; then
-    echo "No orphans to remove."
-  else
-    sudo pacman -Rns "$(pacman -Qdtq)"
-  fi
+  yaourt -Qdt
 }
 
 # Test microphone
