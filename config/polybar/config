@@ -47,10 +47,19 @@ font-2 = ${env:POLYBAR_FONT_0}
 
 modules-left = i3
 modules-center = date
-modules-right = cpu memory backlight volume wlan battery
+modules-right = dockerd cpu memory backlight volume wlan battery
 
 tray-position = none
 tray-padding = 4
+
+[module/dockerd]
+ type = custom/script
+ interval = 20
+ format = <label>
+ format-prefix = " "
+ exec = ~/dotfiles/bin/docker_status.sh
+ click-left = xfsudo dockerd &
+ click-right = xfsudo pkill dockerd
 
 [module/i3]
 type = internal/i3
