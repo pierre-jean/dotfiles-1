@@ -4,8 +4,9 @@
 
 ;; Themes
 (defcustom available-themes '(nord spacemacs-light) "Available themes to cycle")
-(pkg spacemacs-theme :ensure t)
-(pkg nord-theme 
+(pkg spacemacs-theme :ensure t :defer t)
+(pkg
+  nord-theme
   :ensure t
   :config
   (set-face-attribute 'vertical-border nil
