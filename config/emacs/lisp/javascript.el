@@ -16,6 +16,7 @@
 (pkg
   indium
   :ensure t
+  :mode "\\.jsx?$"
   :config
   (setq indium-chrome-executable "inox"))
 
@@ -69,6 +70,7 @@
 (pkg
   js2-refactor
   :ensure t
+  :defer t
   :config
 
   (evil-leader/set-key "v" 'js2r-extract-var)
