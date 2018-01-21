@@ -47,10 +47,21 @@ font-2 = ${env:POLYBAR_FONT_0}
 
 modules-left = i3
 modules-center = date
-modules-right = dockerd cpu memory backlight volume wlan battery
+modules-right = dockerd cpu memory backlight pulseaudio wlan battery
 
 tray-position = none
 tray-padding = 4
+
+[module/pulseaudio]
+ type = internal/pulseaudio
+ sink = alsa_output.pci-0000_00_1f.3.hdmi-stereo
+ label-muted-foreground = #66
+ label-volume = "%{A3:pavucontrol &:} %percentage%%%{A}"
+ label-muted = "%{A3:pavucontrol &:} 0%%{A}"
+; Only applies if <ramp-volume> is used
+ ramp-volume-0 =
+ ramp-volume-1 =
+ ramp-volume-2 =
 
 [module/dockerd]
  type = custom/script
@@ -173,15 +184,6 @@ label =  %date%  %time%%{A}
 date = %d-%m-%Y
 time = %H:%M
 interval = 5
-
-[module/volume]
-type = internal/volume
-
-label-volume = "%{A3:pavucontrol &:} %percentage%%%{A}"
-label-muted = "%{A3:pavucontrol &:} 0%%{A}"
-
-ramp-volume-0 = 
-ramp-volume-1 = 
 
 [module/battery]
 type = internal/battery

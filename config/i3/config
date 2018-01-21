@@ -6,7 +6,7 @@
 # To convert from font awesome U+f1d3 to symbol: https://r12a.github.io/apps/conversion/
 set $WS1 1 
 set $WS2 2 
-set $WS3 3 
+set $WS3 3 λ
 set $WS4 4 λ
 set $WS5 5 
 set $WS6 6 
