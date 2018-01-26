@@ -1,4 +1,4 @@
-(pkg
+(use-package
   evil
   :ensure t
   :config
@@ -67,20 +67,20 @@
   (evil-ex-define-cmd "Q" "q")
   (evil-ex-define-cmd "Qa" "qa"))
 
-(pkg
+(use-package
   evil-surround
   :ensure t
   :config
   (global-evil-surround-mode))
 
-(pkg
+(use-package
   evil-leader
   :ensure t
   :config
   (global-evil-leader-mode)
   (evil-leader/set-leader ","))
 
-(pkg
+(use-package
   evil-numbers
   :ensure t
   :config
