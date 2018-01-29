@@ -279,5 +279,5 @@ findLargestFiles() {
   else
     COUNT=5
   fi
-  find -type f -exec du -Sh {} + | sort -rh | head -n $COUNT
+  sudo find -type f -exec du -Sh {} + | sort -rh | head -n $COUNT
 }
