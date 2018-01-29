@@ -272,3 +272,12 @@ screenMacbookWithNormalMonitor() {
   i3-restart.sh
   variety --next
 }
+
+findLargestFiles() {
+  if [[ -n "$1" ]]; then
+    COUNT=$1
+  else
+    COUNT=5
+  fi
+  find -type f -exec du -Sh {} + | sort -rh | head -n $COUNT
+}
