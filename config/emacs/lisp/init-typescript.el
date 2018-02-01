@@ -9,7 +9,13 @@
   (tide-setup)
   (eldoc-mode +1)
   (tide-hl-identifier-mode +1)
-  (setq company-tooltip-align-annotations t)
+
+  ; Bind tide keys
+  (evil-leader/set-key "b" 'tide-jump-to-definition)
+  (evil-leader/set-key "7" 'tide-references)
+
+  (location-list-buffer (rx bos "*tide-"))
+
   (setq
     tide-format-options '(:indentSize 2 :tabSize 2))
   (add-hook
