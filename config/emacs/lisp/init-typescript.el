@@ -18,6 +18,8 @@
 
   (setq
     tide-format-options '(:indentSize 2 :tabSize 2))
+
+;  (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook
     'flycheck-mode-hook
     (lambda () (progn
@@ -27,12 +29,24 @@
   (add-hook 'typescript-mode-hook 'tide-mode)
   (add-hook 'typescript-mode-hook 'company-mode))
 
+(setq c-default-style "bsd" c-basic-offset 2)
+
 (use-package
   web-mode
   :mode ("\\.tsx" . web-mode)
   :config
-  (add-hook 'web-mode-hook 'programming-mode)
-  (add-hook 'web-mode-hook 'company-mode)
-  (tide-setup))
+
+  (setq typescript-indent-level 4)
+  (set-compile-for 'typescript-mode "yarn test")
+
+  (use-package
+    tide
+    :ensure t
+    :pin melpa-stable
+    :config
+
+    (add-hook 'typescript-mode-hook 'programming-mode)
+    (add-hook 'typescript-mode-hook 'my/setup-tide)
+    (add-hook 'typescript-mode-hook 'company-mode)))
 
 (provide 'init-typescript)
