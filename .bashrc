@@ -11,7 +11,11 @@ export EDITOR=vim
 export TERRAGRUNT_TFPATH=/usr/bin/terraform
 export ORION_PEM_LOCATION=~/.ssh/orion.pem
 
-source ~/dotfiles/prompt.sh
+# Limit prompt dirs depth 
+PROMPT_DIRTRIM=2
+
+source ~/liquidprompt/liquidprompt
+# source ~/dotfiles/prompt.sh
 source ~/dotfiles/git-completion.bash
 source ~/dotfiles/git-alias.sh
 source ~/dotfiles/git-alias-custom.sh
@@ -34,9 +38,6 @@ setxkbmap -layout us -variant altgr-intl -option nodeadkeys
 
 # Set dir colors
 eval $(dircolors ~/.dircolors)
-
-# Limit prompt dirs depth 
-PROMPT_DIRTRIM=2
 
 #Increase history size
 HISTFILESIZE=1000000000
