@@ -8,6 +8,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export JAVA8_HOME=/usr/lib/jvm/java-8-jdk/
 export BROWSER=google-chrome-stable
 export EDITOR=vim
+export VISUAL=vim
 export TERRAGRUNT_TFPATH=/usr/bin/terraform
 export ORION_PEM_LOCATION=~/.ssh/orion.pem
 
