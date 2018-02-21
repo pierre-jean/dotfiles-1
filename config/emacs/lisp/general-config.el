@@ -37,6 +37,10 @@
         scroll-conservatively 9999
         scroll-step 1))
 
+;; Initial mode in text avoids lag
+(setq initial-major-mode 'text-mode
+      initial-scratch-message my-initial-msg)
+
 ; Backup files
 (setq
    backup-by-copying t
