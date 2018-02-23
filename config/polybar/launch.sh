@@ -35,5 +35,5 @@ POLYBAR_MONITOR=eDP1 \
   POLYBAR_HEIGHT=60 \
   POLYBAR_FONT_0="${POLYBAR_FONT_0}:pixelsize=24;2" \
   POLYBAR_FONT_1="${POLYBAR_FONT_1}:pixelsize=16;2" \
-  POLYBAR_FONT_2="${POLYBAR_FONT_2}:pixelsize=16;2" \
+  POLYBAR_FONT_2="${POLYBAR_FONT_2}:pixelsize=20;2" \
   polybar top &
