@@ -13,8 +13,8 @@ export POLYBAR_FONT_2="DroidSansMono Nerd Font Mono"
 # External monitor bar
 POLYBAR_MONITOR=DP1 \
   POLYBAR_FONT_0="${POLYBAR_FONT_0}:pixelsize=14;2" \
-  POLYBAR_FONT_1="${POLYBAR_FONT_1}:pixelsize=16;2" \
-  POLYBAR_FONT_2="${POLYBAR_FONT_2}:pixelsize=16;2" \
+  POLYBAR_FONT_1="${POLYBAR_FONT_1}:pixelsize=18;2" \
+  POLYBAR_FONT_2="${POLYBAR_FONT_2}:pixelsize=18;2" \
   polybar top &
 
 POLYBAR_MONITOR=DP2 \
