@@ -71,6 +71,12 @@
   (location-list-buffer (rx bos "*evil-registers*"))
 
 (use-package
+  evil-easymotion
+  :ensure t
+  :config
+  (evilem-default-keybindings "SPC"))
+
+(use-package
   evil-surround
   :ensure t
   :config
