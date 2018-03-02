@@ -170,6 +170,9 @@ installTools() {
   sleep 2
   yaourt --noconfirm -S ./yaourt_tools.txt
   installVariety
+
+  #urxvt
+  yaourt --noconfirm -S rxvt-unicode rxvt-unicode-terminfo urxvt-perls
 }
 
 installVariety() {

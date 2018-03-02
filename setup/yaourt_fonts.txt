@@ -5,3 +5,5 @@ ttf-droid-sans-mono-dotted-powerline-git
 ttf-font-linux
 nerd-fonts-complete
 terminus-font-td1
+noto-fonts-emoji
+ttf-symbola
