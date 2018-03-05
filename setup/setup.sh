@@ -173,6 +173,11 @@ installTools() {
 
   #urxvt
   yaourt --noconfirm -S rxvt-unicode rxvt-unicode-terminfo urxvt-perls
+
+  # Patcher matcher as described in 
+  # https://wiki.archlinux.org/index.php/Rxvt-unicode#Very_long_lines_cause_slowdown
+  mkdir -p "$HOME/.urxvt"
+  ln -sfn "$dir/config/urxvt/matcher" "$HOME/.urxvt/ext/matcher"
 }
 
 installVariety() {
