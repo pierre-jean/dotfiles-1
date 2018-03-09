@@ -1,6 +1,6 @@
 (defcustom my-browser "inox" "Current browser")
 
-(defcustom my-lines-mode 'normal "Type of lines. 'normal or 'relative")
+(defcustom my-lines-mode 'relative "Type of lines. 'normal or 'relative")
 (defcustom my-initial-msg nil "Initial welcome message")
 
 ;; Fonts
