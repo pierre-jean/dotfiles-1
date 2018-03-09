@@ -180,6 +180,15 @@ installTools() {
   ln -sfn "$dir/config/urxvt/matcher" "$HOME/.urxvt/ext/matcher"
 }
 
+installXresources() {
+  ln -sfn "$dir/config/Xresources/Xresources" "$HOME/.Xresources"
+  ln -sfn "$dir/config/Xresources/Xdefaults" "$HOME/.Xdefaults"
+  ln -sfn "$dir/config/Xresources/xcolors" "$HOME/.xcolors"
+  ln -sfn "$dir/config/urxvt/xurxvt" "$HOME/.xurxvt"
+  ln -sfn "$dir/config/simpleterminal/xst" "$HOME/.xst"
+}
+
+
 installVariety() {
   yaourt --noconfirm -S variety
   ln -sfn ~/dotfiles/config/variety/config ~/.config/variety/variety.conf
@@ -308,6 +317,7 @@ chmod a+x "${dir}/bin/*"
 
 echo "actionSystem.suspendFocusTransferIfApplicationInactive=false add this into intelliJ to prevent focus lose"
 
+installXresources;
 ask "install yaourt?" Y && installYaourt;
 ask "install i3?" Y && installi3;
 ask "install compton?" Y && installCompton;
