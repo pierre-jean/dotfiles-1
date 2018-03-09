@@ -42,7 +42,6 @@ workspace "$WS6" output eDP-1
 workspace "$WS7" output HDMI-2
 
 # Apps assigned to workspaces
-assign [instance="urxvt|ws1_termite|gnome-terminal"] $WS1
 assign [instance="franz|yakyak"] $WS5
 assign [instance="slack"] $WS7
 assign [class="Google-chrome"] $WS2
