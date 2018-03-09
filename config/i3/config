@@ -15,6 +15,9 @@ set $WS8 8 
 set $WS9 9 
 set $WS0 10 
 
+# Default terminal emulator
+set $TERMINAL urxvt
+
 # assign gaps to workspaces
 #workspace "$WS1" gaps inner 10
 
@@ -66,7 +69,7 @@ font pango:Roboto 10, FontAwesome Regular 10
 floating_modifier $mod
 
 # Keybindings
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec $TERMINAL
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+Alt+q exec --no-startup-id kill $(xprop -id `xdotool getwindowfocus` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$')
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'xos4 Terminus-13'"
@@ -232,7 +235,7 @@ mode "$mode_system" {
   bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
   bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
-  bindsym n exec --no-startup-id termite --exec=nyancat, mode "default"
+  bindsym n exec --no-startup-id $TERMINAL --exec=nyancat, mode "default"
   bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
 
 # back to normal: Enter or Escape
