@@ -1,4 +1,5 @@
-# If not running interactively, don't do anything
+#!/bin/bash
+
 [[ $- != *i* ]] && return
 set -o vi
 
