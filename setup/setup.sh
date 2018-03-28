@@ -172,7 +172,7 @@ installTools() {
   installVariety
 
   #urxvt
-  yaourt --noconfirm -S rxvt-unicode rxvt-unicode-terminfo urxvt-perls
+  yaourt --noconfirm -S rxvt-unicode rxvt-unicode-terminfo urxvt-perls urxvt-resize-font-git
 
   # Patcher matcher as described in 
   # https://wiki.archlinux.org/index.php/Rxvt-unicode#Very_long_lines_cause_slowdown
