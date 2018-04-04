@@ -34,6 +34,7 @@ alias ya='yarn --emoji'
 alias yu='systemUpdate;'
 alias yun='systemUpdate "--noconfirm";'
 alias yunf='yun --force'
+alias fixEmacs='sudo pacman -U /var/cache/pacman/pkg/librsvg-2\:2.42.2-1-x86_64.pkg.tar.xz'
 
 systemUpdate () {
   echo "Updating dotfiles"
