@@ -17,8 +17,15 @@ export ORION_PEM_LOCATION=~/.ssh/orion.pem
 # Limit prompt dirs depth 
 PROMPT_DIRTRIM=2
 
-source ~/liquidprompt/liquidprompt
-# source ~/dotfiles/prompt.sh
+powerline-daemon -q
+POWERLINE_COMMAND=$HOME/.local/bin/powerline-hs
+POWERLINE_CONFIG_COMMAND=/bin/true
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+
+#source ~/liquidprompt/liquidprompt
+#source ~/dotfiles/prompt.sh
 source ~/dotfiles/git-completion.bash
 source ~/dotfiles/git-alias.sh
 source ~/dotfiles/git-alias-custom.sh
