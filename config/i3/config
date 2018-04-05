@@ -292,5 +292,28 @@ bindsym $mod+Shift+w mode "$mode_workspaces"
 # wallpaper
 exec --no-startup-id variety
 
+bar {
+  position top
+  status_command i3blocks
+  workspace_buttons yes
+  separator_symbol " "
+  height 35
+  tray_padding 8
+  tray_output primary
+  font pango: xos4 Terminus, FontAwesome Regular 10
+  # tray_padding 3
+  # tray_output primary
+  colors {
+    separator #D8DEE9
+    background #3B4252
+    statusline #D8DEE9
+    # name ## border # background # text ##
+    focused_workspace #4C566A #4C566A #D8DEE9
+    active_workspace #ffb52a #2d2d2d #D8DEE9
+    inactive_workspace #2E3440 #2E3440 #D8DEE9
+    urgent_workspace #e60053 #e60053 #D8DEE9
+  }
+}
+
 # polybar
-exec --no-startup-id ~/dotfiles/config/polybar/launch.sh 
+# exec --no-startup-id ~/dotfiles/config/polybar/launch.sh 

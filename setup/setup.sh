@@ -53,6 +53,9 @@ installi3() {
   # polybar
   ln -sfn "${dir}/config/polybar/config ${HOME}/.config/polybar"
 
+  #i3blocks
+  ln -sfn "$dir/config/i3blocks/config" "$HOME/.i3blocks.conf"
+  yaourt --noconfirm -S sysstat ponymix
 }
 
 installFonts() {
