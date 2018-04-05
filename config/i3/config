@@ -307,11 +307,11 @@ bar {
     separator #D8DEE9
     background #3B4252
     statusline #D8DEE9
-    # name ## border # background # text ##
-    focused_workspace #4C566A #4C566A #D8DEE9
-    active_workspace #ffb52a #2d2d2d #D8DEE9
-    inactive_workspace #2E3440 #2E3440 #D8DEE9
-    urgent_workspace #e60053 #e60053 #D8DEE9
+    #name              #border  #background  #text
+    focused_workspace  #839496  #8394966     #eee8d5
+    active_workspace   #839496  #8394966     #eee8d5
+    inactive_workspace #3B4252  #3B4252      #eee8d5
+    urgent_workspace   #b58900  #b58900      #eee8d5
   }
 }
 
