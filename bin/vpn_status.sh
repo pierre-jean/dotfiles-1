@@ -1,7 +1,7 @@
 STATUS="$(pgrep wg)"
 
 if [ "$STATUS" ]; then
-  echo ' '
+  echo '   '
 else
-  echo ' '
+  echo '   '
 fi
