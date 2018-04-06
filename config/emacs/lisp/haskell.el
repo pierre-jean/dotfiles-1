@@ -147,7 +147,11 @@
   (add-hook 'haskell-mode-hook 'programming-mode)
   (add-hook 'haskell-mode-hook 'haskell/prettify)
   (add-hook 'haskell-mode-hook 'hs-doc)
-  (add-hook 'haskell-mode-hook 'intero-mode))
+  (add-hook 'haskell-mode-hook 'hs-doc)
+  (add-hook 'haskell-mode-hook 'intero-mode)
+  (global-set-key (kbd "C-M-b") 'intero-goto-definition)
+  )
+
 
 (defun hs-doc ()
   (interactive)
