@@ -4,16 +4,16 @@
 
 #only Workspace variables
 # To convert from font awesome U+f1d3 to symbol: https://r12a.github.io/apps/conversion/
-set $WS1 1 
-set $WS2 2 
-set $WS3 3 
-set $WS4 4 
-set $WS5 5 
-set $WS6 6 
-set $WS7 7 
-set $WS8 8 
-set $WS9 9 
-set $WS0 10 
+set $WS1 " 1    "
+set $WS2 " 2    "
+set $WS3 " 3    "
+set $WS4 " 4    "
+set $WS5 " 5    "
+set $WS6 " 6    "
+set $WS7 " 7    "
+set $WS8 " 8    "
+set $WS9 " 9    "
+set $WS0 " 10   "
 
 # Default terminal emulator
 set $TERMINAL urxvt
@@ -26,20 +26,6 @@ set $TERMINAL urxvt
 smart_borders on
 smart_gaps on
 gaps inner 10
-
-# assign workspace to screen
-
-workspace "$WS1" output eDP-1
-workspace "$WS2" output eDP-1
-
-workspace "$WS3" output DP-1
-workspace "$WS3" output HDMI-2
-workspace "$WS4" output DP-1
-workspace "$WS4" output HDMI-2
-
-workspace "$WS5" output eDP-1
-workspace "$WS6" output eDP-1
-workspace "$WS7" output HDMI-2
 
 # Apps assigned to workspaces
 assign [instance="franz|yakyak"] $WS5
