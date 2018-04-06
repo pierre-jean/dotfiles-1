@@ -49,7 +49,7 @@ esac
 vol=`getVolume`
 
 # determine icon
-if [ $vol -eq 0 ]; then
+if isMuted; then
   icon=""
 else
   if [ $vol -le 33 ]; then
