@@ -67,9 +67,7 @@ interval=30
 
 [wifi]
 label= 
-command=iwgetid -r
-interval=10
-separator=false
+interval=5
 
 [separator]
 
@@ -82,12 +80,6 @@ interval=2
 #label=⚡
 ##instance=1
 #interval=30
-
-[separator]
-
-[openvpn]
-command=vpn_status.sh
-interval=2
 
 [separator]
 
