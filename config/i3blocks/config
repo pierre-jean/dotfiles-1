@@ -26,43 +26,58 @@
 # Each block command defaults to the script name to avoid boilerplate.
 #command=/usr/lib/i3blocks/$BLOCK_NAME
 command=~/dotfiles/config/i3blocks/scripts/$BLOCK_NAME
-separator_block_width=15
 markup=none
 color=#eee8d5
 
-[bitcoin]
-label=
-command=bitcoin_ticker.sh
-interval=20
+full_text=〉
+align=center
+separator=false
+separator_block_width=7
+
+#[bitcoin]
+#label=
+#command=bitcoin_ticker.sh
+#interval=20
 
 [audio]
 instance=Master
 interval=3
 signal=10
+min_width=100%
+
+[separator]
 
 [cpu_usage]
 label=
 interval=2
-min_width= 100.00%
+min_width= 100%
+
+[separator]
 
 [memory]
-label=
+label=MEM
 interval=2
-min_width= 100.00%
+min_width=MEM 10.1G
+
+[separator]
 
 [openvpn]
 command=vpn_status.sh
 interval=2
+
+[separator]
 
 [dockerd]
 label=
 command=docker_status.sh
 interval=2
 
+[separator]
+
 [disk]
-label=HOME
-#instance=/mnt/data
 interval=30
+
+[separator]
 
 [wifi]
 label=
@@ -70,16 +85,28 @@ command=iwgetid -r
 interval=10
 separator=false
 
+[separator]
+
 [bandwidth]
 interval=5
 
-[battery]
-label=BAT
-label=⚡
-#instance=1
-interval=30
+#[battery]
+#label=BAT
+#label=⚡
+##instance=1
+#interval=30
+
+[separator]
 
 [time]
 label=
 command=date '+%d-%m-%Y %H:%M'
 interval=5
+
+[separator]
+
+[yaourt]
+interval=3600
+label=
+
+[separator]
