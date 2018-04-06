@@ -80,6 +80,7 @@ separator=false
 [separator]
 
 [bandwidth]
+min_width=  999K   999K
 interval=2
 
 #[battery]
