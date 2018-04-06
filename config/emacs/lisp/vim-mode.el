@@ -47,7 +47,6 @@
   (define-key evil-motion-state-map (kbd "] b") 'evil-next-buffer)
 
   (global-set-key (kbd "C-l") 'evil-search-highlight-persist-remove-all)
-  (global-set-key (kbd "C-l") 'evil-search-highlight-persist-remove-all)
 
   ;;; esc quits
   (defun minibuffer-keyboard-quit ()
