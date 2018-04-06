@@ -60,12 +60,6 @@ min_width=MEM 10.1G
 
 [separator]
 
-[openvpn]
-command=vpn_status.sh
-interval=2
-
-[separator]
-
 [disk]
 interval=30
 
@@ -88,6 +82,12 @@ interval=2
 #label=⚡
 ##instance=1
 #interval=30
+
+[separator]
+
+[openvpn]
+command=vpn_status.sh
+interval=2
 
 [separator]
 
