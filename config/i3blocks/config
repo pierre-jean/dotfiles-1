@@ -39,16 +39,15 @@ separator_block_width=7
 #command=bitcoin_ticker.sh
 #interval=20
 
-[audio]
-instance=Master
-interval=3
-signal=10
-min_width=100%
+[time]
+label= 
+command=date '+%d-%m-%Y %H:%M'
+interval=5
 
 [separator]
 
 [cpu_usage]
-label=
+label= 
 interval=2
 min_width= 100%
 
@@ -67,20 +66,13 @@ interval=2
 
 [separator]
 
-[dockerd]
-label=
-command=docker_status.sh
-interval=2
-
-[separator]
-
 [disk]
 interval=30
 
 [separator]
 
 [wifi]
-label=
+label= 
 command=iwgetid -r
 interval=10
 separator=false
@@ -88,7 +80,7 @@ separator=false
 [separator]
 
 [bandwidth]
-interval=5
+interval=2
 
 #[battery]
 #label=BAT
@@ -98,15 +90,24 @@ interval=5
 
 [separator]
 
-[time]
-label=
-command=date '+%d-%m-%Y %H:%M'
-interval=5
+[dockerd]
+label= 
+command=docker_status.sh
+interval=10
 
 [separator]
 
 [yaourt]
-interval=3600
-label=
+interval=1800
+label= 
 
 [separator]
+
+[audio]
+instance=Master
+interval=1
+signal=10
+min_width=100%
+
+[separator]
+
