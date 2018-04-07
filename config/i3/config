@@ -1,6 +1,6 @@
 # i3 config file Carlos
 #
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# PLEASE SEE HTTP://i3wm.org/docs/userguide.html for a complete reference!
 
 #only Workspace variables
 # To convert from font awesome U+f1d3 to symbol: https://r12a.github.io/apps/conversion/
@@ -279,16 +279,53 @@ bindsym $mod+Shift+w mode "$mode_workspaces"
 exec --no-startup-id variety
 
 bar {
+  position bottom
+  output primary
+  tray_output none
+  status_command i3blocks -c ~/dotfiles/config/i3blocks/bottom
+  workspace_buttons no
+  height 20
+  font pango: xos4 Terminus, FontAwesome Regular 9
+  colors {
+    separator #D8DEE9
+    background #3B4252
+    statusline #D8DEE9
+    #name              #border  #background  #text
+    focused_workspace  #839496  #8394966     #eee8d5
+    active_workspace   #839496  #8394966     #eee8d5
+    inactive_workspace #3B4252  #3B4252      #eee8d5
+    urgent_workspace   #b58900  #b58900      #eee8d5
+  }
+}
+bar {
+  output DP1
   position top
-  status_command i3blocks
+  status_command i3blocks -c ~/dotfiles/config/i3blocks/top_1600
   workspace_buttons yes
-  separator_symbol " "
-  height 45
-  tray_padding 14
+  height 40
+  tray_padding 13
   tray_output primary
   font pango: xos4 Terminus, FontAwesome Regular 10
-  # tray_padding 3
-  # tray_output primary
+  colors {
+    separator #D8DEE9
+    background #3B4252
+    statusline #D8DEE9
+    #name              #border  #background  #text
+    focused_workspace  #839496  #8394966     #eee8d5
+    active_workspace   #839496  #8394966     #eee8d5
+    inactive_workspace #3B4252  #3B4252      #eee8d5
+    urgent_workspace   #b58900  #b58900      #eee8d5
+  }
+}
+
+bar {
+  output HDMI2
+  position top
+  status_command i3blocks -c ~/dotfiles/config/i3blocks/top_1200
+  workspace_buttons yes
+  height 40
+  tray_output none
+  font pango: xos4 Terminus, FontAwesome Regular 10
   colors {
     separator #D8DEE9
     background #3B4252
