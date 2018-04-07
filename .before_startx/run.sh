@@ -1,4 +1,3 @@
-termite --name 'ws1_termite' &
 dropbox &
 parcellite &
 google-chrome-stable &
