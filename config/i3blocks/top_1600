@@ -31,7 +31,7 @@ color=#eee8d5
 
 [time]
 label= 
-command=date '+%d-%m-%Y %H:%M'
-interval=5
+instance=2643743
+interval=10
 min_width=1600
 align=center
