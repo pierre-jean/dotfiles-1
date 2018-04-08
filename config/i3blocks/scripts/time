@@ -40,8 +40,8 @@ fi
 
 DATE=$(date '+%d-%m-%Y %H:%M')
 
-  echo "${DATE} 〉  ${ICON} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-echo "${DATE} 〉  ${ICON} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+echo "${DATE}  ${ICON}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+echo "${DATE}  ${ICON}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
 echo ""
 
 if [[ "${WEATHER_TEMP}" -lt "${URGENT_LOWER}" ]] || [[ "${WEATHER_TEMP}" -gt "${URGENT_HIGHER}" ]]; then
