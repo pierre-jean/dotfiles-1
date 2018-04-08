@@ -39,5 +39,10 @@ alias fixEmacs='sudo pacman -U /var/cache/pacman/pkg/librsvg-2\:2.42.2-1-x86_64.
 systemUpdate () {
   echo "Updating dotfiles"
   (cd "$dotfilesLocation" && git pull)
+
+  echo "Upgrading system packages"
   yaourt -Syua "$1"
+
+  echo "Upgrade git completion package"
+  curl -o "$DOTFILES_LOCATION/git-completion.bash" https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 }
