@@ -223,14 +223,6 @@ showWifiPassword() {
   sudo grep -rH '^psk=' $path | awk -F '/' '{print $5}'
 }
 
-showPublicIp() {
-  local content=$(curl -s ipinfo.io/)
-  local ip=$(echo $content | jq -r .ip)
-  local city=$(echo $content | jq -r .city)
-  local country=$(echo $content | jq -r .country)
-  echo "$ip - $city ($country)"
-}
-
 every() {
   watch -c -n "$1" "$2"
 }
@@ -276,4 +268,8 @@ findLargestFiles() {
     COUNT=5
   fi
   sudo find -type f -exec du -Sh {} + | sort -rh | head -n $COUNT
+}
+
+showProcessPort() {
+  netstat -tlpn  | grep "$1"
 }
