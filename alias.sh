@@ -27,7 +27,7 @@ alias weather='curl wttr.in/~London'
 alias ffs='sudo $(fc -ln -1)'
 alias et='emacsclient -nw'
 alias ew='emacsclient'
-alias e='emacsclient'
+alias e='emacs -nw'
 alias yarn='yarn --emoji'
 alias ya='yarn --emoji'
 
