@@ -37,12 +37,13 @@ separator_block_width=7
 [disk]
 markup=pango
 signal=1
-interval=10
+interval=60
 
 [separator]
 
 [temperature]
 interval=5
+min_width= 99.9°C
 
 [separator]
 
@@ -55,7 +56,7 @@ min_width= 100%
 
 [memory]
 label=MEM
-interval=2
+interval=10
 min_width=MEM 10.1G
 
 [separator]
@@ -69,7 +70,13 @@ interval=5
 
 [bandwidth]
 min_width=  999K   999K
-interval=2
+interval=3
+
+[separator]
+
+[ip]
+min_width=188.163.3.148
+interval=30
 
 #[battery]
 #label=BAT
@@ -88,7 +95,8 @@ interval=10
 
 [yaourt]
 interval=1800
-label=
+label= 
+min_width= 10
 
 [separator]
 
