@@ -42,7 +42,6 @@ interval=10
 [separator]
 
 [temperature]
-label=
 interval=5
 
 [separator]
