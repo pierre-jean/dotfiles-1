@@ -32,4 +32,6 @@
     ((eq option ?r) (neotree-rename-node))
     (:else (message (format "Invalid option %c" option)))))
 
+(location-list-buffer (rx bos "*helm-mode-evil-ack-in*"))
+
 (provide 'file-explorer)
