@@ -37,12 +37,13 @@ alias yunf='yun --force'
 alias fixEmacs='sudo pacman -U /var/cache/pacman/pkg/librsvg-2\:2.42.2-1-x86_64.pkg.tar.xz'
 
 systemUpdate () {
-  echo "Updating dotfiles"
-  (cd "$dotfilesLocation" && git pull)
-
   echo "Upgrading system packages"
   yaourt -Syua "$1"
 
-  echo "Upgrade git completion package"
-  curl -o "$DOTFILES_LOCATION/git-completion.bash" https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+  echo "Updating dotfiles"
+  (cd "$dotfilesLocation" && git pull)
+
+  echo "Upgrade completion package"
+  sudo curl -o "/usr/local/bin/yarn-completion.bash" https://raw.githubusercontent.com/dsifford/yarn-completion/master/yarn-completion.bash
+  sudo curl -o "/usr/local/bin/git-completion.bash" https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 }

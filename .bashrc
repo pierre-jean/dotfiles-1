@@ -26,13 +26,12 @@ POWERLINE_BASH_SELECT=1
 
 #source ~/liquidprompt/liquidprompt
 #source ~/dotfiles/prompt.sh
-source ~/dotfiles/git-completion.bash
+source /usr/local/bin/git-completion.bash
 source ~/dotfiles/git-alias.sh
 source ~/dotfiles/git-alias-custom.sh
 source ~/dotfiles/functions.sh
 source ~/dotfiles/alias.sh
 source ~/dotfiles/paths.sh
-source ~/.env.sh
 
 # Needed for autojump to work
 source /etc/profile.d/autojump.bash
