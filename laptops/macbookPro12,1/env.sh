@@ -1,2 +1,0 @@
-export POLYBAR_HEIGHT=60
-export POLYBAR_ETHERNET_CARD='enp13s0'

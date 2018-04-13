@@ -62,7 +62,7 @@ min_width=MEM 10.1G
 [separator]
 
 [wifi]
-label= 
+label=
 interval=5
 
 [separator]
@@ -88,7 +88,7 @@ interval=10
 
 [yaourt]
 interval=1800
-label= 
+label=
 
 [separator]
 

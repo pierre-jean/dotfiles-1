@@ -27,9 +27,6 @@ sudo systemctl start mbpfan.service
 #Setup touchpad
 sudo cp 70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
 
-# polybar env vars
-ln -sfn ~/dotfiles/laptops/macbookPro12,1/env.sh ~/.env.sh
-
 # Alsa Audio
 asoundconf set-default-card PCH
 asoundconf set-pulseaudio

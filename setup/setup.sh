@@ -50,9 +50,6 @@ installi3() {
   [ -d "${HOME}/.config/gsimplecal" ] || mkdir -p "${HOME}/.config/gsimplecal"
   ln -sfn "${dir}/config/gsimplecal/config" "${HOME}/.config/gsimplecal/config"
 
-  # polybar
-  ln -sfn "${dir}/config/polybar/config ${HOME}/.config/polybar"
-
   #i3blocks
   ln -sfn "$dir/config/i3blocks/config" "$HOME/.i3blocks.conf"
   yaourt --noconfirm -S sysstat ponymix

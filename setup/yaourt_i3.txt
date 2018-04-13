@@ -28,7 +28,6 @@ iw
 imagemagick
 gksu
 nitrogen
-polybar
 wireless_tools
 pymodoro-git
 arandr

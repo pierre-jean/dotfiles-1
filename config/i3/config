@@ -4,16 +4,16 @@
 
 #only Workspace variables
 # To convert from font awesome U+f1d3 to symbol: https://r12a.github.io/apps/conversion/
-set $WS1 " 1    "
-set $WS2 " 2    "
-set $WS3 " 3    "
-set $WS4 " 4    "
-set $WS5 " 5    "
-set $WS6 " 6    "
-set $WS7 " 7    "
-set $WS8 " 8    "
-set $WS9 " 9    "
-set $WS0 " 10   "
+set $WS1 "1 "
+set $WS2 "2 "
+set $WS3 "3 "
+set $WS4 "4 "
+set $WS5 "5 "
+set $WS6 "6 "
+set $WS7 "7 "
+set $WS8 "8 "
+set $WS9 "9 "
+set $WS0 "10 "
 
 # Default terminal emulator
 set $TERMINAL urxvt
@@ -286,6 +286,27 @@ bar {
   workspace_buttons no
   height 20
   font pango: xos4 Terminus, FontAwesome Regular 10
+  colors {
+    separator #D8DEE9
+    background #3B4252
+    statusline #D8DEE9
+    #name              #border  #background  #text
+    focused_workspace  #839496  #8394966     #eee8d5
+    active_workspace   #839496  #8394966     #eee8d5
+    inactive_workspace #3B4252  #3B4252      #eee8d5
+    urgent_workspace   #b58900  #b58900      #eee8d5
+  }
+}
+#macbook display
+bar {
+  output eDP1
+  position top
+  status_command i3blocks -c ~/dotfiles/config/i3blocks/top_1600
+  workspace_buttons yes
+  height 60
+  tray_padding 18
+  tray_output eDP1
+  font pango: xos4 Terminus, FontAwesome Regular 16
   colors {
     separator #D8DEE9
     background #3B4252
