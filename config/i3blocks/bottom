@@ -95,8 +95,14 @@ interval=10
 
 [yaourt]
 interval=1800
+<<<<<<< HEAD
 label= 
 min_width= 10
+||||||| merged common ancestors
+label=
+=======
+label= 
+>>>>>>> Customise i3blocks
 
 [separator]
 

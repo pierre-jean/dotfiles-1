@@ -32,7 +32,7 @@ elif [[ "${WEATHER_MAIN}" = *Cloud* ]]; then
   ICON=${ICON_CLOUDY}
 elif [[ "${WEATHER_MAIN}" = *Clear* ]]; then
   ICON=${ICON_SUNNY}
-elif [[ "${WEATHER_MAIN}" = *Fog* ]] || [[ "${WEATHER_MAIN}" = *Mist* ]]; then
+elif [[ "${WEATHER_MAIN}" = *Fog* ]] || [[ "${WEATHER_MAIN}" = *Mist* ]] || [[ "${WEATHER_MAIN}" = *Haze* ]]; then
   ICON=${ICON_FOG}
 else
   ICON=${WEATHER_MAIN}
