@@ -1,8 +1,0 @@
-SSID=$(iwgetid -r)
-STATUS="$(pgrep wg)"
-
-if [ "$STATUS" ]; then
-  echo "$SSID "
-else
-  echo "$SSID "
-fi

@@ -61,6 +61,7 @@ min_width=MEM 10.1G
 [separator]
 
 [wifi]
+command=iwgetid -r
 label=
 interval=5
 
@@ -73,7 +74,7 @@ interval=2
 #[battery]
 #label=BAT
 #label=⚡
-##instance=1
+#instance=1
 #interval=30
 
 [separator]
