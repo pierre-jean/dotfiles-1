@@ -173,6 +173,11 @@ installTools() {
   # https://wiki.archlinux.org/index.php/Rxvt-unicode#Very_long_lines_cause_slowdown
   mkdir -p "$HOME/.urxvt"
   ln -sfn "$dir/config/urxvt/matcher" "$HOME/.urxvt/ext/matcher"
+
+   # Network Manager DNS setup
+   yaourt --noconfirm -S openresolv
+   sudo ln -sfn "$dir/config/networkmanager/rc-manager.conf" "/etc/NetworkManager/conf.d/rc-manager.conf"
+   sudo ln -sfn "$dir/config/networkmanager/resolvconf.conf" "/etc/resolvconf.conf"
 }
 
 installXresources() {
