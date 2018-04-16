@@ -297,16 +297,16 @@ bar {
     urgent_workspace   #b58900  #b58900      #eee8d5
   }
 }
+
 #macbook display
 bar {
   output eDP1
   position top
-  status_command i3blocks -c ~/dotfiles/config/i3blocks/top_1600
+  status_command i3blocks -c ~/dotfiles/config/i3blocks/top_macbook
+  tray_output none
   workspace_buttons yes
-  height 60
-  tray_padding 18
-  tray_output eDP1
-  font pango: xos4 Terminus, FontAwesome Regular 16
+  height 50
+  font pango: xos4 Terminus, FontAwesome Regular 15
   colors {
     separator #D8DEE9
     background #3B4252
@@ -318,10 +318,12 @@ bar {
     urgent_workspace   #b58900  #b58900      #eee8d5
   }
 }
+
+#office main
 bar {
-  output DP1
+  output DP2
   position top
-  status_command i3blocks -c ~/dotfiles/config/i3blocks/top_1600
+  status_command i3blocks -c ~/dotfiles/config/i3blocks/top_officemain
   workspace_buttons yes
   height 40
   tray_padding 13
@@ -339,10 +341,33 @@ bar {
   }
 }
 
+#home main
+bar {
+  output DP1
+  position top
+  status_command i3blocks -c ~/dotfiles/config/i3blocks/top_homemain
+  workspace_buttons yes
+  height 40
+  tray_padding 13
+  tray_output primary
+  font pango: xos4 Terminus, FontAwesome Regular 10
+  colors {
+    separator #D8DEE9
+    background #3B4252
+    statusline #D8DEE9
+    #name              #border  #background  #text
+    focused_workspace  #839496  #8394966     #eee8d5
+    active_workspace   #839496  #8394966     #eee8d5
+    inactive_workspace #3B4252  #3B4252      #eee8d5
+    urgent_workspace   #b58900  #b58900      #eee8d5
+  }
+}
+
+#home aux
 bar {
   output HDMI2
   position top
-  status_command i3blocks -c ~/dotfiles/config/i3blocks/top_1200
+  status_command i3blocks -c ~/dotfiles/config/i3blocks/top_homeaux
   workspace_buttons yes
   height 40
   tray_output none
