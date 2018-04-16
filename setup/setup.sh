@@ -126,15 +126,10 @@ installTerragrunt() {
 }
 
 installHaskell() {
-  sudo pacman-key -r 4209170B
-  sudo pacman-key --lsign-key 4209170B
-  sudo pacman-key -r B0544167
-  sudo pacman-key --lsign-key B0544167
-  yaourt -Syu
+  wget -qO- https://get.haskellstack.org/ | sh
 
-  yaourt -S haskell-stack haskell-stack-tool
   stack setup
-  stack install ghc-mod hindent stylish-haskell cabal-install hoogle-5.0 hdevtools hlint apply-refact-0.3.0.1 stylish-haskell intero
+  stack install ghc-mod hindent cabal-install hoogle hdevtools hlint apply-refact stylish-haskell intero
   cabal update
   echo "========"
   echo "Your GHC path will be: $(stack path | grep ghc-paths)"
