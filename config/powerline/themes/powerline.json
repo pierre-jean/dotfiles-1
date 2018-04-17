@@ -145,6 +145,10 @@
 					"changed": "○"
 				}
 			}
+		},
+
+		"powerline_gitstatus.gitstatus": {
+			"before": "↑ "
 		}
 	}
 }
