@@ -1,4 +1,7 @@
+(add-to-list 'load-path "/tmp/build/structured-haskell-mode/elisp")
 (require 'programming-mode)
+(require 'shm)
+(require 'shm-case-split)
 
 (defun haskell/prettify ()
   (prettify
@@ -106,9 +109,6 @@
       ("/>" . ?≯)
 
       ;; Containers / Collections
-      ("++" . ?⧺)
-      ("+++" . ?⧻)
-      ("|||" . ?⫴)
       ("elem" . ?∈)
       ("notElem" . ?∉)
       ("member" . ?∈)
@@ -142,13 +142,14 @@
   :mode "\\.hs$"
   :init (use-package intero :ensure t)
   :config
-  (custom-set-variables '(haskell-stylish-on-save t))
   (set-compile-for 'haskell-mode-hook "stack test")
   (add-hook 'haskell-mode-hook 'programming-mode)
   (add-hook 'haskell-mode-hook 'haskell/prettify)
-  (add-hook 'haskell-mode-hook 'hs-doc)
+  (add-hook 'haskell-mode-hook 'structured-haskell-mode)
   (add-hook 'haskell-mode-hook 'hs-doc)
   (add-hook 'haskell-mode-hook 'intero-mode)
+  (define-key shm-map (kbd "C-c C-s") 'shm/case-split)
+  (define-key shm-map (kbd "C-,") 'shm/newline-indent)
   (global-set-key (kbd "C-M-b") 'intero-goto-definition)
   )
 
