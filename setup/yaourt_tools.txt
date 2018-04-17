@@ -21,3 +21,4 @@ aws-cli
 shellcheck-static
 asciinema
 network-manager-applet
+bind-tools
