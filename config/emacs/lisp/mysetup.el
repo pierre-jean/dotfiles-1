@@ -7,6 +7,7 @@
 (defcustom my-font "xos4 Terminus" "Emacs font")
 (defcustom my-font-height 150 "Emacs font height")
 
+(use-package free-keys :ensure t :defer t)
 ;; Themes
 (defcustom available-themes '(nord spacemacs-light) "Available themes to cycle")
 (use-package spacemacs-theme :ensure t :defer t)
