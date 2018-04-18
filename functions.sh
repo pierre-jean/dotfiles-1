@@ -240,24 +240,23 @@ soundTvOutput() {
 }
 
 screenHomeLayout() {
-  xrandr --output DP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --mode 1600x1200 --pos 1920x0 --rotate left --output DP2 --off
+  xrandr --output DP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal \
+         --output HDMI2 --mode 1600x1200 --pos 1920x0 --rotate left
   variety --next
   soundMonitorOutput
 }
 
 screenHomeWithTvLayout() {
-  xrandr --output DP2 --mode 1360x768 --pos 3120x0 --rotate normal --output DP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --mode 1600x1200 --pos 1920x0 --rotate left
+  xrandr --output DP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal \
+         --output DP2 --mode 1360x768 --pos 3120x0 --rotate normal \
+         --output HDMI2 --mode 1600x1200 --pos 1920x0 --rotate left
   variety --next
   soundTvOutput
 }
 
-screenMacbookWithAppleMonitor() {
-  xrandr --output DP1 --mode 2560x1440 --pos 0x0 --output eDP1 --primary --mode 2560x1600 --pos 0x1440
-  variety --next
-}
-
-screenMacbookWithNormalMonitor() {
-  xrandr --output HDMI2 --primary --mode 1920x1080 --pos 0x240 --output eDP1 --mode 2560x1600 --pos 1920x0
+screenMacbookLayout() {
+  xrandr --output eDP1 --mode 2560x1600 --pos 2560x0 --rotate normal \
+         --output DP2 --primary --mode 2560x1440 --pos 0x80 --rotate normal
   variety --next
 }
 
