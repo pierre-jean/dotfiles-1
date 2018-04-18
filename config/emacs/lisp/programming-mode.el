@@ -10,6 +10,7 @@
 (require 'gotodefinition)
 (require 'init-documentation)
 (require 'init-code-folding)
+(require 'init-expand-region)
 
 (define-minor-mode
   programming-mode

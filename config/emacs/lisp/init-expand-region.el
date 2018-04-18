@@ -3,7 +3,9 @@
   :ensure t
   :defer t
   :config
-  (evil-leader/set-key "<up>" 'er/expand-region)
-  (evil-leader/set-key "<down>" er/contract-region))
+  )
+
+(global-set-key (kbd "ESC <up>") 'er/expand-region)
+(global-set-key (kbd "ESC <down>") 'er/contract-region)
 
 (provide 'init-expand-region)
