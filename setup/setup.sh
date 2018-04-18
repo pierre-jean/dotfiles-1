@@ -273,8 +273,42 @@ installEmacs() {
 
 installRanger() {
   yaourt -S ranger --noconfirm
-  ranger --copy-config=scope
-  ln -sfn "${dir}/config/ranger/config" "${HOME}/.config/ranger/rc.conf"
+  ln -sfn "$dir/config/ranger/config" "$HOME/.config/ranger/rc.conf"
+  ln -sfn "$dir/config/ranger/scope.sh" "$HOME/.config/ranger/scope.sh"
+}
+
+installMutt() {
+  yaourt -S --noconfirm neomutt
+  ln -sfn "$dir/config/mutt/.muttrc" "$HOME/.muttrc"
+}
+
+installKhal() {
+  yaourt -S --noconfirm khal vdirsyncer
+
+  mkdir -p "$HOME/.config/khal"
+  mkdir -p "$HOME/.config/vdirsyncer"
+
+  ln -sfn "$dir/config/khal/khal.conf" "$HOME/.config/khal/khal.conf"
+  cp "$dir/config/khal/vdirsyncerconfig" "$HOME/.config/vdirsyncer/config"
+=======
+  ln -sfn "$dir/config/ranger/config" "$HOME/.config/ranger/rc.conf"
+  ln -sfn "$dir/config/ranger/scope.sh" "$HOME/.config/ranger/scope.sh"
+}
+
+installMutt() {
+  yaourt -S --noconfirm neomutt
+  ln -sfn "$dir/config/mutt/.muttrc" "$HOME/.muttrc"
+}
+
+installKhal() {
+  yaourt -S --noconfirm khal vdirsyncer
+
+  mkdir -p "$HOME/.config/khal"
+  mkdir -p "$HOME/.config/vdirsyncer"
+
+  ln -sfn "$dir/config/khal/khal.conf" "$HOME/.config/khal/khal.conf"
+  cp "$dir/config/khal/vdirsyncerconfig" "$HOME/.config/vdirsyncer/config"
+>>>>>>> 6a76e30... Add ranger scope configuration to preview images
 }
 
 installAudio() {
