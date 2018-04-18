@@ -1,5 +1,6 @@
 (add-to-list 'load-path "/tmp/build/structured-haskell-mode/elisp")
 (require 'programming-mode)
+(require 'shm)
 
 (defun haskell/prettify ()
   (prettify
@@ -147,7 +148,10 @@
   (add-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)
   (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
   (add-hook 'haskell-mode-hook 'intero-mode)
-  (global-set-key (kbd "C-M-b") 'intero-goto-definition)
+  (add-hook 'haskell-mode-hook 'structured-haskell-mode)
+  (global-set-key (kbd "C-b") 'intero-goto-definition)
+  (global-set-key (kbd "C-M-_") 'shm/add-operand)
+;  (define-key map (kbd "") 'shm/backward-node)
   )
 
 
