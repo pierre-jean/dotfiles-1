@@ -149,9 +149,8 @@
   (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
   (add-hook 'haskell-mode-hook 'intero-mode)
   (add-hook 'haskell-mode-hook 'structured-haskell-mode)
-  (global-set-key (kbd "C-b") 'intero-goto-definition)
+  (global-set-key (kbd "C-g") 'intero-goto-definition)
   (global-set-key (kbd "C-M-_") 'shm/add-operand)
-;  (define-key map (kbd "") 'shm/backward-node)
   )
 
 
