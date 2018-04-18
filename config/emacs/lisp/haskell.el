@@ -1,4 +1,4 @@
-(add-to-list 'load-path "/tmp/build/structured-haskell-mode/elisp")
+(add-to-list 'load-path "~/Repositories/Haskell/structured-haskell-mode/elisp")
 (require 'programming-mode)
 (require 'shm)
 
