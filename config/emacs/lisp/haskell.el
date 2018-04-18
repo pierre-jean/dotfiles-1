@@ -62,6 +62,7 @@
 
   (use-package company-ghci :ensure t :defer t)
 
+  (custom-set-variables '(haskell-stylish-on-save f))
   (set-compile-for 'haskell-mode-hook "stack test")
   (add-hook 'haskell-mode-hook 'programming-mode)
   (add-hook 'haskell-mode-hook 'haskell/prettify)
