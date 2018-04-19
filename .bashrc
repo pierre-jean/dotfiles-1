@@ -12,7 +12,6 @@ export BROWSER=google-chrome-stable
 export EDITOR=vim
 export VISUAL=vim
 export TERRAGRUNT_TFPATH=/usr/bin/terraform
-export ORION_PEM_LOCATION=~/.ssh/orion.pem
 
 # Limit prompt dirs depth 
 PROMPT_DIRTRIM=2
