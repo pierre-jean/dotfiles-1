@@ -22,3 +22,4 @@ shellcheck-static
 asciinema
 network-manager-applet
 bind-tools
+w3m
