@@ -27,6 +27,7 @@ POWERLINE_BASH_SELECT=1
 #source ~/liquidprompt/liquidprompt
 #source ~/dotfiles/prompt.sh
 source /usr/local/bin/git-completion.bash
+source ~/.bash_shortcuts
 source ~/dotfiles/git-alias.sh
 source ~/dotfiles/git-alias-custom.sh
 source ~/dotfiles/functions.sh
