@@ -27,7 +27,7 @@
                    vim-mode
                    acklike
                    auto-complete
-                   haskell
+                   init-haskell
                    javascript
                    init-java
                    init-groovy

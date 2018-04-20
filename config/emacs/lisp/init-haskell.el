@@ -62,7 +62,6 @@
 
   (use-package company-ghci :ensure t :defer t)
 
-  (custom-set-variables '(haskell-stylish-on-save f))
   (set-compile-for 'haskell-mode-hook "stack test")
   (add-hook 'haskell-mode-hook 'programming-mode)
   (add-hook 'haskell-mode-hook 'haskell/prettify)
@@ -72,11 +71,13 @@
   (add-hook 'haskell-mode-hook 'intero-mode)
   (add-hook 'haskell-mode-hook 'structured-haskell-mode)
   (global-set-key (kbd "C-M-_") 'shm/add-operand)
+  (setq haskell-process-auto-import-loaded-modules t)
+  (setq haskell-process-log t)
+  (setq haskell-process-suggest-remove-import-lines t)
   )
-
 
 (defun hs-doc ()
   (interactive)
   (setq-local helm-dash-docsets '("Haskell")))
 
-(provide 'haskell)
+(provide 'init-haskell)
