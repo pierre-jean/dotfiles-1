@@ -1,5 +1,5 @@
 (add-to-list 'load-path "~/Repositories/Haskell/structured-haskell-mode/elisp")
-(require 'programming-mode)
+(require 'init-programming-mode)
 (require 'shm)
 
 (defun haskell/prettify ()
@@ -63,7 +63,7 @@
   (use-package company-ghci :ensure t :defer t)
 
   (set-compile-for 'haskell-mode-hook "stack test")
-  (add-hook 'haskell-mode-hook 'programming-mode)
+  (add-hook 'haskell-mode-hook 'init-programming-mode)
   (add-hook 'haskell-mode-hook 'haskell/prettify)
   (add-hook 'haskell-mode-hook 'hs-doc)
   (add-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)

@@ -1,4 +1,4 @@
-(require 'programming-mode)
+(require 'init-programming-mode)
 
 (use-package go-mode
   :mode ("\\.go\\'" . go-mode)
@@ -7,7 +7,7 @@
     (set-compile-for 'go-mode-hook "go build")
     (add-hook 'before-save-hook 'gofmt-before-save)
 
-    (add-hook 'go-mode-hook 'programming-mode)
+    (add-hook 'go-mode-hook 'init-programming-mode)
     (add-hook 'go-mode-hook 'company-mode))
 
 (use-package

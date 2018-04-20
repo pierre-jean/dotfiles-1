@@ -1,4 +1,4 @@
-(require 'programming-mode)
+(require 'init-programming-mode)
 
 (use-package
   scala-mode
@@ -49,7 +49,7 @@
 
     (ensime))
 
-  (add-hook 'scala-mode-hook 'programming-mode)
+  (add-hook 'scala-mode-hook 'init-programming-mode)
   (add-hook 'scala-mode-hook 'scala/prettify))
 
 (use-package sbt-mode :ensure t :mode "\\.scala$")

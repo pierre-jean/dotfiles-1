@@ -1,4 +1,4 @@
-nit-(use-package
+(use-package
   company
   :ensure t
   :diminish company-mode

@@ -1,4 +1,4 @@
-(require 'programming-mode)
+(require 'init-programming-mode)
 
 (defun prettify-js-for (mode-hook)
   (defun javascript/prettify ()
@@ -42,7 +42,7 @@
 
   (set-compile-for 'js-mode-hook "yarn test:unit")
 
-  (add-hook 'js-mode-hook 'programming-mode)
+  (add-hook 'js-mode-hook 'init-programming-mode)
   (add-hook 'js-mode-hook 'company-mode)
   (add-hook 'js-mode-hook 'js-doc)
   (prettify-js-for 'js-mode-hook)
@@ -63,7 +63,7 @@
   (setq
     web-mode-markup-indent-offset 2
     web-mode-code-indent-offset 2)
-  (add-hook 'web-mode-hook 'programming-mode))
+  (add-hook 'web-mode-hook 'init-programming-mode))
 
 (use-package tern :defer t :config (add-hook 'js-mode-hook 'tern-mode))
 

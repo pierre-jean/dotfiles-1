@@ -25,7 +25,7 @@
     (lambda () (progn
                  (flycheck-add-mode 'typescript-tslint 'typescript-mode))))
   (add-hook 'before-save-hook 'tide-format-before-save)
-  (add-hook 'typescript-mode-hook 'programming-mode)
+  (add-hook 'typescript-mode-hook 'init-programming-mode)
   (add-hook 'typescript-mode-hook 'tide-mode)
   (add-hook 'typescript-mode-hook 'company-mode))
 
@@ -43,7 +43,7 @@
     :pin melpa-stable
     :config
 
-    (add-hook 'typescript-mode-hook 'programming-mode)
+    (add-hook 'typescript-mode-hook 'init-programming-mode)
     (add-hook 'typescript-mode-hook 'my/setup-tide)
     (add-hook 'typescript-mode-hook 'company-mode)))
 
