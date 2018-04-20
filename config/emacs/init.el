@@ -26,7 +26,7 @@
                    init-appearance
                    init-vim-mode
                    init-acklike
-                   auto-complete
+                   init-auto-complete
                    init-haskell
                    javascript
                    init-java
