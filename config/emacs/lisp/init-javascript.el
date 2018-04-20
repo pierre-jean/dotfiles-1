@@ -106,4 +106,4 @@
   (interactive)
   (setq-local helm-dash-docsets '("JavaScript" "NodeJS" "React" "Sinon")))
 
-(provide 'javascript)
+(provide 'init-javascript)
