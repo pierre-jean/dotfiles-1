@@ -59,7 +59,7 @@
     "gitstatus_branch_detached": { "fg": "mediumpurple",    "bg": "gray2", "attrs": [] },
     "gitstatus_tag":             { "fg": "darkcyan",        "bg": "gray2", "attrs": [] },
     "gitstatus_behind":          { "fg": "gray10",          "bg": "gray2", "attrs": [] },
-    "gitstatus_ahead":           { "fg": "gray10",          "bg": "gray2", "attrs": [] },
+    "gitstatus_ahead":           { "fg": "darkestgreen" ,          "bg": "gray2", "attrs": ["bold"] },
     "gitstatus_staged":          { "fg": "green",           "bg": "gray2", "attrs": [] },
     "gitstatus_unmerged":        { "fg": "brightred",       "bg": "gray2", "attrs": [] },
     "gitstatus_changed":         { "fg": "mediumorange",    "bg": "gray2", "attrs": [] },
