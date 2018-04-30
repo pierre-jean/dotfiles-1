@@ -117,5 +117,9 @@
   (interactive)
   (setq-local helm-dash-docsets '("JavaScript" "NodeJS" "React" "Sinon")))
 
+(use-package
+  web-beautify
+  :ensure t
+  :defer t)
 
 (provide 'init-javascript)
