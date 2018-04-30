@@ -26,7 +26,11 @@
 				"priority": 40
 			},
       {
-        "function": "powerline_gitstatus.gitstatus",
+        "function": "powerline_gitstatus.gitstatus_ahead",
+        "priority": 40
+      },
+      {
+        "function": "powerline_gitstatus.gitstatus_behind",
         "priority": 40
       }
 		]

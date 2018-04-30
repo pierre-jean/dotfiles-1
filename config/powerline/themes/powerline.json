@@ -146,9 +146,11 @@
         }
       }
     },
-
-    "powerline_gitstatus.gitstatus": {
+    "powerline_gitstatus.gitstatus_ahead": {
       "before": "↑ "
+    },
+    "powerline_gitstatus.gitstatus_behind": {
+      "before": "↓ "
     }
   }
 }
