@@ -78,11 +78,13 @@ interval=3
 min_width=188.163.3.148
 interval=30
 
-#[battery]
-#label=BAT
-#label=⚡
-#instance=1
-#interval=30
+[separator]
+
+[batterybar]
+label= 
+interval=30
+markup=pango
+min_width=bat: ■■■■■
 
 [separator]
 
