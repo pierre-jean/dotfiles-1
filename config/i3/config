@@ -258,7 +258,7 @@ bindsym $mod+F12 mode "$mode_monitor"
 # Scratchpad
 for_window [title="^ranger$"] move scratchpad
 bindsym $mod+Shift+F scratchpad show
-exec --no-startup-id ranger
+exec --no-startup-id $TERMINAL -t ranger ranger
 
 set $mode_workspaces Go to workspace... 10+
 mode "$mode_workspaces" {
