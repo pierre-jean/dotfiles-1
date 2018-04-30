@@ -6,7 +6,6 @@ google-chrome
 google-talkplugin
 archey3
 franz-bin
-yakyak
 slack-desktop
 libreoffice-fresh
 autojump
@@ -24,3 +23,4 @@ network-manager-applet
 bind-tools
 w3m
 ffmpegthumbnailer
+whatsapp-desktop

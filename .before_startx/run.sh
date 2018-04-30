@@ -5,3 +5,4 @@ google-chrome-stable &
 slack &
 wmail &
 nm-applet &
+Whatsapp &
