@@ -151,6 +151,12 @@
     },
     "powerline_gitstatus.gitstatus_behind": {
       "before": "↓ "
+    },
+    "powerline_gitstatus.gitstatus_staged": {
+      "before": "● "
+    },
+    "powerline_gitstatus.gitstatus_unmerged": {
+      "before": "✖ "
     }
   }
 }
