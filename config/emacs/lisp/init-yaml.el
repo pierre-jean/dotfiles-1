@@ -5,5 +5,5 @@
   :ensure t
   :mode "\\.ya?ml$"
   :config
-  (add-hook 'yaml-mode-hook 'init-programming-mode))
+  (add-hook 'yaml-mode-hook 'programming-mode))
 (provide 'init-yaml)
