@@ -1,4 +1,4 @@
-# dotfiles
+# dotfiles awdawa
 
 My configuration automated to be setted up in minutes. 
 
