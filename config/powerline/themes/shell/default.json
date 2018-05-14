@@ -44,6 +44,10 @@
       {
         "function": "powerline_gitstatus.gitstatus_changed",
         "priority": 40
+      },
+      {
+        "function": "powerline_gitstatus.gitstatus_untracked",
+        "priority": 40
       }
 		]
 	}

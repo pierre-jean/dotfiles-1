@@ -160,7 +160,9 @@
     },
     "powerline_gitstatus.gitstatus_changed": {
       "before": "✚ "
+    },
+    "powerline_gitstatus.gitstatus_untracked": {
+      "before": "… "
     }
-
   }
 }
