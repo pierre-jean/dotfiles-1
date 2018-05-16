@@ -307,7 +307,7 @@ bar {
   output eDP1
   position top
   status_command i3blocks -c ~/dotfiles/config/i3blocks/top_macbook
-  tray_output none
+  tray_output primary
   workspace_buttons yes
   height 50
   font pango: xos4 Terminus, FontAwesome Regular 15
