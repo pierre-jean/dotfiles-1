@@ -29,14 +29,14 @@
   :interpreter "node"
   :defer t
   :config
-  (setq js-indent-level 2
+  (setq js-indent-level 4
         evil-shift-width 2
-        js-switch-indent-offset 2
-        js2-basic-offset 2
+        js-switch-indent-offset 4
+        js2-basic-offset 4
         js2-bounce-indent-p -1
         js2-assume-strict t
-        sgml-basic-offset 2
-        c-basic-offset 2
+        sgml-basic-offset 4
+        c-basic-offset 4
         js2-pretty-multiline-declarations 'all
         js2-strict-missing-semi-warning nil)
 
