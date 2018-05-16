@@ -1,8 +1,8 @@
-alias gpl='git prunelocal'
 alias gpr='git pull-request'
 alias gdl='git discard'
 alias glrb='git pull --rebase'
 alias gcam='git add . && git commit -a -m'
+alias gprune='git branch | grep -v master | xargs git branch -D'
 
 gblame() { 
   git log -p -M --follow --stat -- "$1"
