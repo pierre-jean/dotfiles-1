@@ -80,4 +80,6 @@
   (interactive)
   (setq-local helm-dash-docsets '("Haskell")))
 
+(location-list-buffer (rx bos "*Intero-Help*"))
+
 (provide 'init-haskell)
