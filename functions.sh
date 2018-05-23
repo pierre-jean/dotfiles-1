@@ -228,15 +228,15 @@ every() {
 }
 
 soundHeadphonesOutput() {
-  pactl set-card-profile 0 output:analog-stereo
+  ponymix set-profile output:analog-stereo
 }
 
 soundMonitorOutput() {
-  pactl set-card-profile 0 output:hdmi-stereo
+  ponymix set-profile output:hdmi-stereo
 }
 
 soundTvOutput() {
-  pactl set-card-profile 0 output:hdmi-stereo-extra1
+  ponymix set-profile output:hdmi-stereo-extra1
 }
 
 screenHomeLayout() {
