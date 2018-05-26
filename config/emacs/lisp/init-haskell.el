@@ -1,6 +1,4 @@
-(add-to-list 'load-path "~/Repositories/Haskell/structured-haskell-mode/elisp")
 (require 'init-programming-mode)
-(require 'shm)
 
 (defun haskell/prettify ()
   (prettify
@@ -69,8 +67,6 @@
   (add-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)
   (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
   (add-hook 'haskell-mode-hook 'intero-mode)
-  (add-hook 'haskell-mode-hook 'structured-haskell-mode)
-  (global-set-key (kbd "C-M-_") 'shm/add-operand)
   (setq haskell-process-auto-import-loaded-modules t)
   (setq haskell-process-log t)
   (setq haskell-process-suggest-remove-import-lines t)
