@@ -308,6 +308,7 @@ bar {
   position top
   status_command i3blocks -c ~/dotfiles/config/i3blocks/top_macbook
   tray_output primary
+  tray_padding 14
   workspace_buttons yes
   height 50
   font pango: xos4 Terminus, FontAwesome Regular 15
@@ -330,8 +331,6 @@ bar {
   status_command i3blocks -c ~/dotfiles/config/i3blocks/top_officemain
   workspace_buttons yes
   height 40
-  tray_padding 8
-  tray_output primary
   font pango: xos4 Terminus, FontAwesome Regular 10
   colors {
     separator #D8DEE9
