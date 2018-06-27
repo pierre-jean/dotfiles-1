@@ -30,7 +30,7 @@
   :defer t
   :config
   (setq js-indent-level 4
-        evil-shift-width 2
+        evil-shift-width 4
         js-switch-indent-offset 4
         js2-basic-offset 4
         js2-bounce-indent-p -1
@@ -72,8 +72,8 @@
   :defer t
   :config
   (setq
-    web-mode-markup-indent-offset 2
-    web-mode-code-indent-offset 2)
+    web-mode-markup-indent-offset 4
+    web-mode-code-indent-offset 4)
   (add-hook 'web-mode-hook 'programming-mode))
 
 (use-package tern :defer t :config (add-hook 'js-mode-hook 'tern-mode))
@@ -96,8 +96,8 @@
   :mode "\\.json\\'"
   :defer t
   :config
-  (setq json-reformat:indent-width 2
-        js-indent-level 2)
+  (setq json-reformat:indent-width 4
+        js-indent-level 4)
   (add-hook 'json-mode-hook 'whitespace-mode)
   (add-hook 'json-mode-hook 'proper-gutter-mode))
 

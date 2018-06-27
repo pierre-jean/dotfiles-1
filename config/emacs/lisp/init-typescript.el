@@ -17,14 +17,14 @@
   (location-list-buffer (rx bos "*tide-"))
 
   (setq
-    tide-format-options '(:indentSize 2 :tabSize 2))
+    tide-format-options '(:indentSize 4 :tabSize 4))
 
-;  (add-hook 'before-save-hook 'tide-format-before-save)
+  (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook
     'flycheck-mode-hook
     (lambda () (progn
                  (flycheck-add-mode 'typescript-tslint 'typescript-mode))))
-  (add-hook 'before-save-hook 'tide-format-before-save)
+ ; (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook 'programming-mode)
   (add-hook 'typescript-mode-hook 'tide-mode)
   (add-hook 'typescript-mode-hook 'company-mode))
@@ -34,7 +34,7 @@
   :mode ("\\.tsx" . web-mode)
   :config
 
-  (setq typescript-indent-level 2)
+  (setq typescript-indent-level 4)
   (set-compile-for 'typescript-mode "yarn test")
 
   (use-package
