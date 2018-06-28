@@ -295,3 +295,7 @@ findLargestFiles() {
 showProcessPort() {
   netstat -tlpn  | grep "$1"
 }
+
+disableIpV6() {
+  sudo sh -c 'echo 1 > /proc/sys/net/ipv6/conf/wlp3s0/disable_ipv6'
+}
